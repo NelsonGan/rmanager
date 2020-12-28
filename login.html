@@ -1,33 +1,25 @@
 <html>
 <head>
     <title>Login</title>
-    <link rel="stylesheet" href="stylesheets/login.css">
     <link rel="stylesheet" href="stylesheets/default.css">
+    <link rel="stylesheet" href="stylesheets/login.css">
 </head>
 <body>
-    <div class="login_body">
-        <div class="login_center">
-            <h1>RManager</h1>
-                <form action="includes/login.inc.php" method="post" class="login_form">
-                    <div class="txt_field">
-                        <input type="email" name="mail" required>
-                        <span></span>
-                        <label>Username</label>
-                    </div>
-
-                    <div class="txt_field">
-                        <input type="password" name="pwd" required>
-                        <span></span>
-                        <label>Password</label>
-                    </div>
-
-                    <centre>
-                        <div class="login_button">
-                            <input style="width: 315px; height: 45px; border-radius: 20px;" type="submit" name="login-submit" value="Login" class="btn">
-                        </div>
-                      </centre>
-                </form>
-        </div>
+    <img class="logo" src="images/logo.png">
+    <div class="wrapper">
+      <div class="input-data">
+        <input type="text" placeholder= "Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'" required>
+      </div>
     </div>
+    <div class="wrapper">
+      <div class="input-data">
+        <input type="text" placeholder= "Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'" required>
+      </div>
+    </div>
+    <center>
+      <div class="login-btn">
+        <input type="submit" value="Login">
+      </div>
+    </center>
 </body>
 </html>
