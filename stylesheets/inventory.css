@@ -1,0 +1,36 @@
+body {
+    display:flex;
+}
+
+body span {
+    color: white;
+}
+
+.topbar {
+    background: #262626; 
+    width: 100%;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.topbar span {
+    margin: 3px;
+    color: white;
+    font-size: 20px;
+    margin-left: 30px;
+}
+
+.itemtable{
+    width:80%;
+    border: 3px solid black;
+    margin-top: 50px;
+}
+
+.itemtable th {
+    text-align: left;
+}
+
+.itemtable td{
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
