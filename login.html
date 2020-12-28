@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="stylesheets/login.css">
+    <link rel="stylesheet" href="stylesheets/default.css">
+</head>
+<body>
+    <div class="login_body">
+        <div class="login_center">
+            <h1>RManager</h1>
+                <form action="includes/login.inc.php" method="post" class="login_form">
+                    <div class="txt_field">
+                        <input type="email" name="mail" required>
+                        <span></span>
+                        <label>Username</label>
+                    </div>
+
+                    <div class="txt_field">
+                        <input type="password" name="pwd" required>
+                        <span></span>
+                        <label>Password</label>
+                    </div>
+
+                    <centre>
+                        <div class="login_button">
+                            <input style="width: 315px; height: 45px; border-radius: 20px;" type="submit" name="login-submit" value="Login" class="btn">
+                        </div>
+                      </centre>
+                </form>
+        </div>
+    </div>
+</body>
+</html>
