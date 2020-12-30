@@ -5,5 +5,3 @@ function openDrop(){
     document.getElementById('todrop').style.display = "flex";
   }
 }
-
-
