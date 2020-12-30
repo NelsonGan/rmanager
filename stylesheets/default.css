@@ -9,6 +9,12 @@ body{
   display: flex;
 }
 
+.mainbody{
+  width: 85%;
+  margin-left: 15%;
+  position: fixed;
+}
+
 .topbar {
   background: #262626; 
   width: 100%;
@@ -20,15 +26,11 @@ body{
   margin: 3px;
   color: white;
   font-size: 20px;
-  margin-left: 15%;
+  margin-left: 15px;
   vertical-align: middle;
 }
 
-.mainbody{
-  width: 85%;
-  margin-left: 15%;
-  position: fixed;
-}
+
 
 .btn {
     background-color: black;
