@@ -3,10 +3,10 @@
     height: 250px;
     width: 250px;
     text-align: center;
-    transition: all 1s;
+    transition: all 0.2s;
 }
 
-img{
+.profile img{
     margin: 10px 10px ;
     height: 100px;
     width: 100px;
@@ -14,4 +14,9 @@ img{
 
 .profile:hover{
     transform: scale(1.1);
+}
+
+.staff {
+    margin-top: 50px;
+    margin-left: 30px;
 }

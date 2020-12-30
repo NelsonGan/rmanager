@@ -25,6 +25,7 @@ td {
     color: white;
     outline: none;
     transition: all 0.5s;
+    font-size: 20px;
 }
 
 .btn:hover {
@@ -39,5 +40,9 @@ td {
 
 #approve:hover, #decline:hover {
     background-color: white;
+}
+
+.leavetable{
+    margin-top: 50px;
 }
 
