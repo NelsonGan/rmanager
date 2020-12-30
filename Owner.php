@@ -14,7 +14,18 @@
     <div class="topbar">
       <span>Sales Reports</span>
     </div>
-    <div id="piechart"></div>
+    <center>
+    <table class="columns">
+      <tr>
+        <th><div id="barchart"></div>
+        <th><div id="curve_chart"></div>
+      </tr>
+      <tr>
+        <th><div id="piechart"></div>
+        <th><div id="combochart"></div>
+      </tr>
+    </table>
+  </center>
   </div>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>

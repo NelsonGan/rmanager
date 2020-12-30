@@ -18,7 +18,8 @@ body {
     margin-left: 30px;
 }
 
-#piechart {
-  margin-top: 40px;
-  width: 30%;
+#barchart, #piechart, #curve_chart, #combochart{
+  margin-left: 20px;
+  margin-top: 20px;
+  border: 1px solid #ccc;
 }
