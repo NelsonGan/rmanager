@@ -5,13 +5,13 @@
   <title>Owner</title>
   <link rel="stylesheet" href="stylesheets/default.css">
   <link rel="stylesheet" href="stylesheets/owner.css">
-  
+
 </head>
 <body>
   <div style="flex: 1";>
-        <?php include "ownernav.html"; ?>
+        <?php include "sidebar.html"; ?>
   </div>
-  <div style="flex: 6;">
+  <div class="mainbody">
     <div class="topbar">
       <span>Sales Reports</span>
     </div>
