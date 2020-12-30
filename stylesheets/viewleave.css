@@ -1,0 +1,43 @@
+th {
+    border: 1px solid black;
+    color: white;
+    background-color: black;
+}
+
+th, td {
+    padding: 10px 50px;
+    text-align: center;
+}
+
+td {
+    vertical-align: text-top;
+    width: 150px;
+    height: 60px;
+}
+
+.btn {
+    display: block;
+    margin: 5px;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    outline: none;
+    transition: all 0.5s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    color: black;
+    border: black solid;
+}
+
+#approve, #decline{
+    background-color: black;
+}
+
+#approve:hover, #decline:hover {
+    background-color: white;
+}
+

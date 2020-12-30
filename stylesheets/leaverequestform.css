@@ -1,0 +1,25 @@
+.staffInfo img {
+    width: 30%;
+}
+
+hr{
+    border-top: 2px solid black;
+}
+
+h1{
+    text-align: center;
+}
+
+.dateSection {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.commentSection {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.commentSection label {
+    vertical-align: top;
+}
