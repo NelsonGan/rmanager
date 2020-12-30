@@ -5,18 +5,14 @@
 </head>
 
 <body>
-    <div style="flex: 1;">
-        <?php include "sidebar.html"; ?>
-    </div>
+    <?php include "sidebar.html"; ?>
     
-    <div style="flex: 5;">
-        <div class="mainbody">
-            <div class="topbar">
-                <span>Default Text</span>
-            </div>
-
-            <!-- Write your code here! -->
-
+    <div class="mainbody">
+        <div class="topbar">
+            <span>Default Text</span>
         </div>
+
+        <!-- Write your code here! -->
+
     </div>
 </body>
