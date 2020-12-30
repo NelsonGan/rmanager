@@ -1,0 +1,97 @@
+.main-container 
+{
+    display: flex;
+}
+.left-container 
+{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.left-container img 
+{
+    max-width: 100%;
+    margin-top: 15px;
+}
+
+
+.right-container 
+{
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.left-container p
+{
+    color: grey;
+    padding: 10px 0px 10px 30px;
+
+}
+
+.left-container ul 
+{
+    padding-left: 10px;
+    list-style-type: disc;
+}
+
+.left-container ul li 
+{
+    padding: 10px;
+}
+
+.content 
+{
+    display: flex;
+}
+
+.content-left 
+{
+    flex: 1;
+}
+
+.content-right
+{
+    flex: 3
+}
+
+.name 
+{
+    font-size: 30px;
+    font-weight: bold;
+    margin: 45px 0px 3px 0px;
+}
+
+.job-title
+{
+    font-size: 15px;
+    font-weight: italic;
+
+}
+
+.about 
+{
+    margin: 30px 0px 20px 0px;
+    border-bottom: 2px solid black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.title 
+{
+    color: grey;
+    margin-top: 15px;
+}
+
+.content-left p 
+{
+    margin: 20px 0px;
+}
+
+.content-right p
+{
+    margin: 20px 0px;
+}

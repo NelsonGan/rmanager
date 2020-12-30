@@ -1,7 +1,6 @@
 <html>
 <head>
     <title>Login</title>
-    <link rel="stylesheet" href="stylesheets/default.css">
     <link rel="stylesheet" href="stylesheets/login.css">
 </head>
 <body>
@@ -13,7 +12,7 @@
     </div>
     <div class="wrapper">
       <div class="input-data">
-        <input type="text" placeholder= "Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'" required>
+        <input type="password" placeholder= "Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'" required>
       </div>
     </div>
     <center>
