@@ -1,0 +1,17 @@
+.profile{
+    display: inline-block;
+    height: 250px;
+    width: 250px;
+    text-align: center;
+    transition: all 1s;
+}
+
+img{
+    margin: 10px 10px ;
+    height: 100px;
+    width: 100px;
+}
+
+.profile:hover{
+    transform: scale(1.1);
+}
