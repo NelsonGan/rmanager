@@ -5,6 +5,7 @@
   <title>Owner</title>
   <link rel="stylesheet" href="stylesheets/default.css">
   <link rel="stylesheet" href="stylesheets/owner.css">
+  
 </head>
 <body>
   <div style="flex: 1";>
