@@ -5,6 +5,30 @@ body, html {
   background: #F5F5F5;
 }
 
+body{
+  display: flex;
+}
+
+.topbar {
+  background: #262626; 
+  width: 100%;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.topbar span {
+  margin: 3px;
+  color: white;
+  font-size: 20px;
+  margin-left: 30px;
+}
+
+
+.mainbody{
+  width: 100%;
+  margin: 0px;
+}
+
 .btn {
     background-color: black;
     font-size: 20px;
