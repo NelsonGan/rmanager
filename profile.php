@@ -10,7 +10,7 @@
     
     <div class="mainbody">
         <div class="topbar">
-            <span>Default Text</span>
+            <span>Profile</span>
         </div>
 
         <div class="main-container">
@@ -26,14 +26,14 @@
                 </ul>
             </div>
             <div class="right-container">
-                <p class="name">Muhammad Ali</p>
+                <p class="name">Muhammad Ali <input type="submit" class="btn" value="Update" style="margin-left: 10px; height: 35px;"> </p>
                 <p class="job-title">Full-Time Staff</p>
 
                 <p class="about">About</p>
 
                 <p class="title">Contact Information</p>
                 <div class="content">
-                <div class="content-left">
+                    <div class="content-left">
                         <p>Phone:</p>
                         <p>Address:</p>
                         <p>Email:</p>
