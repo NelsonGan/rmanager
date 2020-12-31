@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap");
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+#addadminprofile > div > div > div.modal-header1 {
+  display: flex;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+  border-bottom: 1px solid #dee2e6;
+  border-top-left-radius: calc(0.3rem - 1px);
+  border-top-right-radius: calc(0.3rem - 1px);
+}
+
+#price,
+#quantity {
+  padding-left: 10px;
+  border-radius: 5px;
+  border-width: thin;
+  width: 120px;
+  text-align: center;
+}
+
+/* #container{
+    position: relative;
+  }
+
+  #addd{
+    margin-top: 1px;
+    margin-right: 2px;
+    position:absolute;
+    top:0;
+    right:0;
+
+    
+} */
+
+#container {
+  margin: auto;
+  padding: 0;
+  max-width: 100%;
+}
+
+#left {
+  float: left;
+}
+
+#right {
+  float: right;
+}
+
+.table tr,
+.table td,
+.table th {
+  text-align: center;
+}
+
+td {
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#create,
+#cancel {
+  font-size: 18px;
+}

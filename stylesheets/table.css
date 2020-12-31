@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 50px auto;
+  max-width: 100%;
+  justify-content: center;
+}
+
+body > form > div.form-group > label {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 180px;
+}
+
+#size,
+#cname {
+  width: 50%;
+  text-align: center;
+}
+
+#shoesize > div > div > input:active,
+#shoesize > div > div > input:focus,
+#shoesize > div > div > input.selected {
+  background-color: grey;
+  color: white;
+  outline: 0px;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+#shoesize > div > div > input {
+  width: 150px;
+  height: 130px;
+}
+
+#next{
+  margin-left:85%;
+  font-size: 18px;
+}
