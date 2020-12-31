@@ -1,10 +1,12 @@
 
 // Load google charts
 google.charts.load('current', {'packages':['corechart']});
+google.charts.load("current", {packages:["calendar"]});
 google.charts.setOnLoadCallback(drawChart);
 google.charts.setOnLoadCallback(drawChart1);
 google.charts.setOnLoadCallback(drawChart2);
 google.charts.setOnLoadCallback(drawChart3);
+google.charts.setOnLoadCallback(drawAttendance);
 
 // Draw the chart and set the chart values
 function drawChart() {
@@ -92,3 +94,34 @@ function drawChart3() {
         var chart = new google.visualization.ComboChart(document.getElementById('combochart'));
         chart.draw(data, options);
       }
+function drawAttendance() {
+ var dataTable = new google.visualization.DataTable();
+ dataTable.addColumn({ type: 'date', id: 'Date' });
+ dataTable.addColumn({ type: 'number', id: 'Attended/Leave' });
+ dataTable.addRows([
+    [ new Date(2020, 3, 13), 20 ],
+    [ new Date(2020, 3, 14), 30 ],
+    [ new Date(2020, 3, 15), 40 ],
+    [ new Date(2020, 3, 16), 20 ],
+    [ new Date(2020, 3, 17), 30 ],
+    // Many rows omitted for brevity.
+    [ new Date(2021, 9, 4), 20 ],
+    [ new Date(2021, 9, 5), 30 ],
+    [ new Date(2021, 9, 12), 40 ],
+    [ new Date(2021, 9, 13), 28 ],
+    [ new Date(2021, 9, 19), 34 ],
+    [ new Date(2021, 9, 23), 40 ],
+    [ new Date(2021, 9, 24), 10 ],
+    [ new Date(2021, 9, 30), 30 ]
+  ]);
+
+ var chart = new google.visualization.Calendar(document.getElementById('Attendacechart'));
+
+ var options = {
+   title: "Staff Attendance",
+   width: '1200',
+   height: '550'
+ };
+
+ chart.draw(dataTable, options);
+}
