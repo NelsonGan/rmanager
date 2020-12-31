@@ -29,7 +29,7 @@
                 <p class="name">Muhammad Ali <input type="submit" class="btn" value="Update" style="margin-left: 10px; height: 35px;"> </p>
                 <p class="job-title">Full-Time Staff</p>
 
-                <p class="about">About</p>
+                <p class="section">About</p>
 
                 <p class="title">Contact Information</p>
                 <div class="content">
@@ -55,6 +55,29 @@
                         <p>Male</p>
                     </div>
                 </div>  
+
+                <p class="section">Leave (30 Days History)</p>
+
+                <table class="leavetable">
+                <tr>
+                    <th style="width: 25%;">Date</th>
+                    <th>Reason</th>
+                    <th style="width: 20%;">Status</th>
+                </tr>
+                <tr>
+                    <td>25 December 2020</td>
+                    <td>Celebrate Christmas</td>
+                    <td>Pending Approval</td>
+                </tr>
+                <tr>
+                    <td>2 December 2020</td>
+                    <td>Return to hometown</td>
+                    <td>Declined</td>
+                </tr>
+                </table>
+
+                <input type="submit" class="btn" value="Apply Leave" style="margin: 15px 0px; height: 35px; width: 130px; padding: 2px;">
+
             </div>  
         </div>
     </div>
