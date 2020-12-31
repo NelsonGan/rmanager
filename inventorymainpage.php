@@ -2,7 +2,7 @@
 <head>
     <title>Confirm</title>
     <link href="stylesheets/default.css" rel="stylesheet" type="text/css">
-    <link href="stylesheets/inventory.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/inventorymainpage.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -10,49 +10,39 @@
     
     <div class="mainbody">
         <div class="topbar">
-            <span>Inventory Submission</span>
+            <span>Inventory</span>
         </div>
 
         <center>
-            <p style="margin-top: 40px; font-size: 30px;">Inventory Record Submission</p>
+            <p style="margin-top: 40px; font-size: 30px;">Inventory</p>
 
-            <div>
-                <p class="locationtitle">Storeroom</p>
-                <hr class="line">
-                <table class="itemtable">
-                    <tr>
-                        <th style="width: 30%;">Item Code</th>
-                        <th style="width: 40%;">Item Name</th>
-                        <th style="width: 40%;">Quantity</th>
-                    </tr>
+            <table class="daytable">
+                <tr>
+                    <td style="width: 70%;">Inventory Record for January 2020</td>
+                    <td style="width: 30%;"><button type='button' class="createbtn">Create Record</button></td>
+                </tr>
+            </table>
 
-                    <tr>
-                        <td>001</td>
-                        <td>Potato</td>
-                        <td>6</td>
-                    </tr>
-                </table>
-            </div>
+            <table class="daytable">
+                <tr>
+                    <td style="width: 70%;">Inventory Record for February 2020</td>
+                    <td style="width: 30%;"><button type='button' class="createbtn">Create Record</button></td>
+                </tr>
+            </table>
 
-            <div>
-                <p class="locationtitle">Kitchen</p>
-                <hr class="line">
-                <table class="itemtable">
-                    <tr>
-                        <th style="width: 30%;">Item Code</th>
-                        <th style="width: 40%;">Item Name</th>
-                        <th style="width: 40%;">Quantity</th>
-                    </tr>
+            <table class="daytable">
+                <tr>
+                    <td style="width: 70%;">Inventory Record for March 2020</td>
+                    <td style="width: 30%;"><button type='button' class="createbtn">Create Record</button></td>
+                </tr>
+            </table>
 
-                    <tr>
-                        <td>001</td>
-                        <td>Potato</td>
-                        <td>6</td>
-                    </tr>
-                </table>
-            </div>
-
-            <input type="Submit" value="Submit" class="btn" id="submitrecord">
+            <table class="daytable">
+                <tr>
+                    <td style="width: 70%;">Inventory Record for April 2020</td>
+                    <td style="width: 30%;"><button type='button' class="createbtn">Create Record</button></td>
+                </tr>
+            </table>
         </center>
         
     </div>
