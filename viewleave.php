@@ -31,12 +31,26 @@
                         <td>Return to hometown</td>
                         <td>
                             <center>
-                                <button class = "btn" id = "approve">Approve</button>
-                                <button  class = "btn" id = "decline">Decline</button>
+                            <button class = "btn" id = "approve" onclick="document.getElementById('id01').style.display='block'">Approve</button>
+                            <button  class = "btn" id = "decline" onclick="document.getElementById('id01').style.display='block'">Decline</button>
                             </center>
                         </td>
                     </tr>
                 </table>
+                <div id="id01" class="modal">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <form class="modal-content">
+                        <div class="container">
+                            <h1>Confirmation</h1>
+                            <p>Are you sure you want to [action]?</p>
+                    
+                            <div class="clearfix">
+                            <button class="modalBtn" id="yesBtn">Yes</button>
+                            <button class="modalBtn" id="noBtn">No</button>
+                            </div>
+                        </div>
+                     </form>
+                </div>
             </div>
         </center>
     </div>
