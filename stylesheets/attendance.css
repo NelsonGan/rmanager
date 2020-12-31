@@ -1,0 +1,36 @@
+.container 
+{
+    margin-top: 20px;
+}
+
+.container p
+{
+    font-size: 35px;
+    text-align: center;
+}
+
+.container input
+{
+    margin: 5px;
+}
+
+.attendancetable 
+{
+    width: 75%;
+    text-align: left;
+    border-collapse: collapse;
+    margin-top: 25px;
+    font-size: 20px;
+    border-spacing: 10px;
+}
+
+.attendancetable, .attendancetable th, .attendancetable td 
+{
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.attendancetable td 
+{
+    background-color: rgb(231, 231, 231);
+}
