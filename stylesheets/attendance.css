@@ -27,7 +27,7 @@
 .attendancetable, .attendancetable th, .attendancetable td 
 {
     border: 1px solid black;
-    padding: 5px;
+    padding: 8px;
 }
 
 .attendancetable td 
