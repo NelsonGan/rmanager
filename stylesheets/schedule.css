@@ -4,21 +4,91 @@
 }
 
 .timetable{
-    margin-top: 50px;
-    font-size: 32px;
-    font-weight: bold;
+    margin-top: 60px;
+    font-size: 26px;
     border-collapse: collapse;
+    text-align: center;
+    position: relative;
+    width: 98%;
 }
 
-.timetable td{
-    padding-left: 25px;
-    padding-right: 25px;
+#HeaderRow td{
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 #HeaderRow{
     border-bottom: 4px solid black;
+    font-weight: bold;
 }
 
 #HeaderRow td{
     padding-bottom: 20px;
+}
+
+.slot{
+    margin-top: 20px;
+    border-bottom: 2px solid black;
+    text-align: left;
+    width: 95%;
+    padding: 10px;
+    font-size: 20px;
+    margin: 2%;
+}
+
+.slot p{
+    margin-bottom: 5px;
+}
+
+.addstaff{
+    padding: 2px 4px;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.addstaff:hover{
+    cursor: pointer;
+}
+
+.removeslot{
+    color: red;
+    box-shadow: 0px;
+    border-style: none;
+    outline: none;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.removeslot:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.day{
+    border-right: 5px solid black;
+    vertical-align: top;
+}
+
+#Sunday{
+    border-right: none;
+}
+
+.date{
+    font-size: 22px;
+    font-style: italic;
+    font-weight: normal;
+}
+
+.manage{
+    height: 300px;
+    width: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    background-color: red;
+}
+
+.stafflist{
+    background-color: black;
 }
