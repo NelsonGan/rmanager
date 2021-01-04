@@ -2,7 +2,7 @@
 <head>
     <title>Default Title</title>
     <link href="stylesheets/default.css" rel="stylesheet" type="text/css">
-    <link href="stylesheets/update_profile.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/updateprofile.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -18,15 +18,22 @@
             <p class="name">Muhammad Ali</p>
                 <div class="content">
                     <div class="content-left">
+                        <p>Email:</p>
                         <p>Phone:</p>
                         <p>Address:</p>
-                        <p>Email:</p>
-                        <p>Password:</p>
+                        <p>Role:</p>
+                        <p>Current Password:</p>
+                        <p>New Password:</p>
                         <p>Confirm Password:</p>
                     </div>
                     <div class="content-right">
                         <input type="textbox"><br>
                         <input type="textbox"><br>
+                        <input type="textbox"><br>
+                        <select id="role" name="role">
+                            <option value="full-time">Full-time</option>
+                            <option value="part-time">Part-time</option>
+                        </select><br>
                         <input type="textbox"><br>
                         <input type="textbox"><br>
                         <input type="textbox"><br>
