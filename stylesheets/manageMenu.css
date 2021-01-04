@@ -11,6 +11,10 @@
     color: white;
 }
 
+.tab:hover{
+    cursor: pointer;
+}
+
 #foodTab{
     background: white;
     color: black;
