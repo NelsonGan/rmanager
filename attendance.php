@@ -25,16 +25,20 @@
                     <th style="width: 33%;">Date</th>
                     <th style="width: 33%;">Time</th>
                     <th style="width: 33%;">Status</th>
+                    <th style="width: 33%;">Hours Worked</th>
                 </tr>
                 <tr>
                     <td>25 December 2020</td>
                     <td>6:00PM</td>
                     <td>Clocked Out</td>
+                    <td rowspan="2" style="text-align: center;">9</td>
                 </tr>
                 <tr>
                     <td>25 December 2020</td>
-                    <td>8:00AM</td>
+                    <td>9:00AM</td>
                     <td>Clocked In</td>
+                </tr>
+                <tr>
                 </tr>
                 </table>
 

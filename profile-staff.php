@@ -2,7 +2,7 @@
 <head>
     <title>Default Title</title>
     <link href="stylesheets/default.css" rel="stylesheet" type="text/css">
-    <link href="stylesheets/profile.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/profile-staff.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
