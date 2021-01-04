@@ -1,0 +1,56 @@
+.wrapper {
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.tab {
+    display: inline-block;
+    border: black solid;
+    padding: 5px 10px;
+    background: black;
+    color: white;
+}
+
+.tab:hover{
+    cursor: pointer;
+}
+
+#foodTab{
+    background: white;
+    color: black;
+}
+
+#food {
+    display: block;
+}
+
+#drinks, #appetizers, #desserts {
+    display: none;
+}
+
+.foodComponent {
+    margin-top: 20px;
+    margin-right: 20px;
+    border: black solid;
+    display: inline-block;
+    padding: 10px 10px;
+}
+
+.foodImg {
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    padding-top: 10px;
+}
+
+.foodInfo {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+button {
+    background: black;
+    color: white;
+}

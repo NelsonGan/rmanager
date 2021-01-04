@@ -23,6 +23,7 @@
                     <li>Wednesday - 9:00am to 5pm</li>
                     <li>Thursday - 9:00am to 5pm</li>
                     <li>Friday - 9:00am to 5pm</li>
+                    <li><input type="submit" class="btn" value="View Attendance" style="margin-left: 0px; height: 35px;"></li>
                 </ul>
             </div>
             <div class="right-container">
@@ -75,20 +76,6 @@
                     <td>Declined</td>
                 </tr>
                 </table>
-
-                <p class="section">Pay</p>
-                <div class="content-left">
-                    <p>Birthday:</p>
-                    <p>Gender:</p>
-                </div>
-                <div class="content-right">
-                    <p>June 23, 2001</p>
-                    <p>Male</p>
-                </div>
-
-            
-
-
             </div>  
         </div>
     </div>

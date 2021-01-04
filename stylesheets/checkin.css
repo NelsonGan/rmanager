@@ -1,20 +1,17 @@
-.container p 
+.container 
 {
-    font-size: 30px;
-    margin: 5px 5px 10px 5px;
-    font-weight: bold;
+    margin-top: 20px;
 }
 
-.details 
+.container p
 {
-    width: 40%;
-    border-collapse: collapse;
-    margin: 10px;
+    font-size: 35px;
+    text-align: center;
 }
 
-.details td, .details tr 
+.container input
 {
-    padding: 5px;
+    margin: 5px;
 }
 
 .attendancetable 
@@ -23,9 +20,8 @@
     text-align: left;
     border-collapse: collapse;
     margin-top: 25px;
-    font-size: 15px;
+    font-size: 20px;
     border-spacing: 10px;
-    margin: 10px;
 }
 
 .attendancetable, .attendancetable th, .attendancetable td 
