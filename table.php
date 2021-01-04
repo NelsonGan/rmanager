@@ -125,7 +125,7 @@
 
         if (isset($_POST["submit"])) {
 
-            include("conn.php");
+            include("includes/conn.php");
 
             $name = $_POST['cname'];
             $table = $_POST['table'];

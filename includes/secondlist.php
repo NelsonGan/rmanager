@@ -1,5 +1,5 @@
 <?php
-include "conn.php";
+include ("conn.php");
 $id = $_POST['product_1_id'];
 $sql = "SELECT * FROM menu WHERE Item_ID= $id";
 $result = mysqli_query($con, $sql);
