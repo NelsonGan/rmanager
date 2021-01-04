@@ -12,6 +12,13 @@
         <div class="topbar">
             <span>Staff List</span>
         </div>
+
+        <div class="search">
+            <center>
+                <input type="text" class="searchbar" placeholder="Filter...">
+                <button type="button" id="addstaff">Add Staff</button>
+            </center>
+        </div>
         
         <div class="staff">
             <div class = "profile">
