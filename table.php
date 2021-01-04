@@ -156,6 +156,7 @@
         ?>
     </div>
 </body>
+
 <script>
     function SetSize(ShoeSize) {
         document.getElementById("size").value = ShoeSize;

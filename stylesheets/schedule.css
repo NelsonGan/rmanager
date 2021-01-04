@@ -1,0 +1,24 @@
+.toptext{
+    font-size: 30px;
+    margin-top: 50px;
+}
+
+.timetable{
+    margin-top: 50px;
+    font-size: 32px;
+    font-weight: bold;
+    border-collapse: collapse;
+}
+
+.timetable td{
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+#HeaderRow{
+    border-bottom: 4px solid black;
+}
+
+#HeaderRow td{
+    padding-bottom: 20px;
+}

@@ -12,7 +12,7 @@ body{
 .mainbody{
   width: 85%;
   margin-left: 15%;
-  position: fixed;
+  position: relative;
 }
 
 .topbar {
