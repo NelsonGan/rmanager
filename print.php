@@ -16,7 +16,7 @@
 
 <body onload="window.print();">
     <?php
-    include("conn.php");
+    include("includes/conn.php");
     $orderid = intval($_GET['orderid']);
     //$sql = "SELECT * FROM orders WHERE orderid= $orderid";
     $sql = "SELECT o.*,od.* FROM orders o JOIN order_detail od on o.orderid=od.orderid WHERE od.orderid= " . $orderid . "";
@@ -68,7 +68,7 @@
                             <tbody>
 
                                 <?php
-                                include("conn.php");
+                                include("includes/conn.php");
                                 $sql = "SELECT od.*,m.Name FROM order_detail od JOIN menu m on od.Item_ID = m.Item_ID WHERE od.orderid= " . $orderid . "";
 
                                 $result = mysqli_query($con, $sql);

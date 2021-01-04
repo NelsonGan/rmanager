@@ -149,7 +149,7 @@
                                     <tbody>
 
                                         <?php
-                                        include("conn.php");
+                                        include("includes/conn.php");
                                         $lastid = $_SESSION["orderid"];
                                         $sql = "SELECT od.*,m.Name FROM order_detail od JOIN menu m on od.Item_ID = m.Item_ID WHERE od.orderid= " . $lastid . "";
 
@@ -170,7 +170,7 @@
                                             $id = $row['orderdetail_ID'];
 
 
-                                            echo '<td><a href="deleteod.php?id=' . $id . '">
+                                            echo '<td><a href="includes/deleteod.php?id=' . $id . '">
                                             <button type="button" class="btn btn-outline-danger delete" style="border: solid 2px;"><i class="fa fa-close"></i></button></td></a></td>';
                                             echo '<tr>';
                                             $counter++;
@@ -182,7 +182,7 @@
                             </div>
 
                             <br /> <br />
-                            <form action="createo.php" method="post">
+                            <form action="includes/createo.php" method="post">
                                 <div class="col-md-6 col-xs-12 pull pull-right">
 
 
@@ -229,7 +229,7 @@
             <div style="display: flex; align-items: center; justify-content: center;">
                 <div style="margin:0 auto; display:block;">
                     <button type="submit" name="create" id="create" class="btn btn-primary" style="left: 50; margin-right: 50px;">Create Order</button>
-                    <a onclick="return confirm('Are you sure you want to cancel this orrder?')" href="table.php" class="btn btn-warning" id="cancel">Cancel</a>
+                    <a onclick="return confirm('Are you sure you want to cancel this order?')" href="includes/deleteo1.php?orderid=<?php echo $lastid?>" class="btn btn-warning" id="cancel">Cancel</a>
                 </div>
             </div>
             </form>
@@ -264,7 +264,7 @@
                         </button>
                     </div>
 
-                    <form id="oform" name="oform" action="createodl.php" method="post">
+                    <form id="oform" name="oform" action="includes/createodl.php" method="post">
                         <div class="modal-body">
 
                             <input type="hidden" id="source" name="source" value="">
@@ -323,7 +323,8 @@
 
                 function load_data(fname) {
                     $.ajax({
-                        url: "load.php",
+                        url: "includes/load.php",
+                        //url:"C:\wamp64\www\RManager\load.php",
                         method: "POST",
                         data: {
                             fname: fname
@@ -348,7 +349,8 @@
                 //load data for price input
                 $('#product_1').change(function() {
                     $.ajax({
-                        url: 'secondlist.php',
+                        url: 'includes/secondlist.php',
+                        //url:"C:\wamp64\www\RManager\secondlist.php",
                         data: {
                             product_1_id: $(this).val()
                         },

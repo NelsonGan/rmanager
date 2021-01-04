@@ -8,7 +8,7 @@ $id = intval($_GET['id']);
 $result = mysqli_query($con, "DELETE FROM order_detail WHERE orderdetail_ID=$id");
 
 mysqli_close($con);
-header("Location: Order1.php");
+header("Location: ../Order1.php");
 // if ($source == 'history') {
 //     echo '<script>
 // window.location.href="edito.php?orderid=' . $id . '";

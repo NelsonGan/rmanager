@@ -20,7 +20,7 @@ if (isset($_POST["save"])) {
 
     if (mysqli_num_rows($result) > 0) {
         echo '<script>alert("Item has already existed in the list.");
-    window.location.href="Order1.php";
+    window.location.href="../Order1.php";
     </script>';
     } else {
 
@@ -31,11 +31,11 @@ if (isset($_POST["save"])) {
         if (mysqli_query($con, $sql)) {
             if ($source == 'history') {
                 echo '<script>
-        window.location.href="edito.php?orderid='.$orderid.'";
+        window.location.href="../edito.php?orderid='.$orderid.'";
         </script>';
             } else {
                 echo '<script>
-            window.location.href="Order1.php";
+            window.location.href="../Order1.php";
             </script>';
             }
             echo json_encode(array("statusCode" => 200));
