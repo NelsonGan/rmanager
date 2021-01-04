@@ -20,7 +20,7 @@ if (isset($_POST["save"])) {
 
     if (mysqli_num_rows($result) > 0) {
         echo '<script>alert("Item has already existed in the list.");
-    window.location.href="../Order1.php";
+    window.location.href="../Order.php";
     </script>';
     } else {
 
@@ -35,7 +35,7 @@ if (isset($_POST["save"])) {
         </script>';
             } else {
                 echo '<script>
-            window.location.href="../Order1.php";
+            window.location.href="../Order.php";
             </script>';
             }
             echo json_encode(array("statusCode" => 200));

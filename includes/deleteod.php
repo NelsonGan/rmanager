@@ -15,7 +15,7 @@ header("Location: ../Order1.php");
 // </script>';
 // } else {
 //     echo '<script>
-// window.location.href="Order1.php";
+// window.location.href="Order.php";
 // </script>';
 // }
 ?>
