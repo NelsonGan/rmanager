@@ -125,7 +125,7 @@
 
         if (isset($_POST["submit"])) {
 
-            include("conn.php");
+            include("includes/conn.php");
 
             $name = $_POST['cname'];
             $table = $_POST['table'];
@@ -141,7 +141,7 @@
                 $_SESSION["table"] = $table;
 
                 echo '<script>alert("You have chosen table number ' . $table . '");
-                window.location.href="Order1.php";
+                window.location.href="Order.php";
                 </script>';
             } else {
                 die('Error:' . mysqli_error($con));

@@ -113,7 +113,7 @@
                 <script>
                     $(function() {
                         $("#search").autocomplete({
-                            source: 'backend.php'
+                            source: 'includes/backend.php'
                         });
                     });
                 </script>
@@ -167,7 +167,7 @@
             </thead>
             <tbody>
                 <?php
-                include("conn.php");
+                include("includes/conn.php");
 
                 if (isset($_POST['submit'])) {
                     $search = $_POST['search'];
@@ -225,7 +225,7 @@
                     echo '<td>' . $row['netamount'] . '</td>';
                     echo '<td>' . $row['paidstatus'] . '</td>';
                     echo '<td><a href="edito.php?orderid=' . $row['orderid'] . '"><button type="button" class="btn btn-outline-warning editbtn"><i class="fa fa-edit" aria-hidden="true"></i></button></a></td>';
-                    echo '<td><a onclick="return confirm(\'Delete record for OrderID ' . $row['orderid'] . '?\')" href="deleteo.php?orderid=' . $row['orderid'] . '">
+                    echo '<td><a onclick="return confirm(\'Delete record for OrderID ' . $row['orderid'] . '?\')" href="includes/includes/deleteo.php?orderid=' . $row['orderid'] . '">
       <button type="button" class="btn btn-outline-danger delete"><i class="fa fa-close"></button></td></a></td>';
                     echo '<td><a href="print.php?orderid=' . $row['orderid'] . '">
       <button type="button" class="btn btn-outline-primary print"><i class="fa fa-print" aria-hidden="true"></i></button></td></a></td>';

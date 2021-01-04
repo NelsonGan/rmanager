@@ -81,7 +81,7 @@
 
 
     <?php
-    include("conn.php");
+    include("includes/conn.php");
     $orderid = intval($_GET['orderid']);
     $sql = "SELECT * FROM orders WHERE orderid= $orderid";
     $result = mysqli_query($con, $sql);
@@ -182,7 +182,7 @@
                                     <tbody>
 
                                         <?php
-                                        include("conn.php");
+                                        include("includes/conn.php");
                                         //$lastid = $_SESSION["orderid"];
                                         $sql = "SELECT od.*,m.Name FROM order_detail od JOIN menu m on od.Item_ID = m.Item_ID WHERE od.orderid= " . $orderid . "";
 
@@ -203,7 +203,7 @@
                                             $id = $row['orderdetail_ID'];
 
 
-                                            echo '<td><a href="deleteod1.php?id=' . $id . '&orderid=' . $orderid . '">
+                                            echo '<td><a href="includes/deleteod1.php?id=' . $id . '&orderid=' . $orderid . '">
                                             <button type="button" class="btn btn-outline-danger delete" style="border: solid 2px;"><i class="fa fa-close"></i></button></td></a></td>';
                                             echo '<tr>';
                                             $counter++;
@@ -215,7 +215,7 @@
                             </div>
 
                             <br /> <br />
-                            <form action="updateo.php" method="post">
+                            <form action="includes/updateo.php.php" method="post">
                                 <div class="col-md-6 col-xs-12 pull pull-right">
 
 

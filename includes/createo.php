@@ -16,7 +16,7 @@ if (isset($_POST["create"])) {
 
 
         echo '<script>alert("New Order for ' . $name . ' has been created");
-        window.location.href="table.php";
+        window.location.href="../table.php";
                 </script>';
     } else {
         die('Error:' . mysqli_error($con));
