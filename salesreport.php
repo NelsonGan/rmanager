@@ -7,7 +7,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <title>Owner</title>
   <link rel="stylesheet" href="stylesheets/default.css">
-  <link rel="stylesheet" href="stylesheets/owner.css">
+  <link rel="stylesheet" href="stylesheets/salesreport.css">
 
 </head>
 <body>
