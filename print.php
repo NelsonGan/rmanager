@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,8 +10,6 @@
     <link rel="stylesheet" type="text/css" href="./stylesheets/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./stylesheets/font-awesome.min.css">
 </head>
-
-
 
 <body onload="window.print();">
     <?php
