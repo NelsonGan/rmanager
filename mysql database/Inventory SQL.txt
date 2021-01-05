@@ -1,0 +1,37 @@
+CREATE TABLE position(
+    Position_ID int(20) AUTO_INCREMENT,
+    contracttype varchar(20),
+    hourlyrate int(10),
+    PRIMARY KEY(Position_ID)
+);
+
+CREATE TABLE staff(
+    Staff_ID int(20) AUTO_INCREMENT,
+    name varchar(20),
+    Position_ID int(20),
+    FOREIGN KEY (Position_ID) REFERENCES position(Position_ID),
+    datejoined date,
+    PRIMARY KEY(Staff_ID)
+);
+
+CREATE TABLE supplier(
+    Supplier_ID int(20) AUTO_INCREMENT,
+    companyname VARCHAR(30),
+    phonenumber varchar(20),
+    email varchar(20),
+    address varchar(30),
+    PRIMARY KEY(Supplier_ID)
+ );
+    
+ CREATE TABLE inventory(
+     Inventory_ID int(20) AUTO_INCREMENT,
+     PRIMARY KEY(Inventory_ID)
+ );
+    
+CREATE TABLE inventory_log(
+    Log_ID int(20) AUTO_INCREMENT PRIMARY KEY,
+    Inventory_
+    creationdate date,
+    logmonth varchar(10),
+    logyear int(4)
+    staffid
