@@ -1,13 +1,20 @@
 CREATE TABLE position(
     Position_ID int(20) AUTO_INCREMENT,
-    contracttype varchar(20),
+    contracttype varchar(50),
     hourlyrate int(10),
     PRIMARY KEY(Position_ID)
 );
 
 CREATE TABLE staff(
     Staff_ID int(20) AUTO_INCREMENT,
-    name varchar(20),
+    name varchar(50),
+    email varchar(50),
+    password varchar(50),
+    gender varchar(50),
+    dob date,
+    phone varchar(50),
+    address varchar(200),
+    role varchar(50),
     Position_ID int(20),
     FOREIGN KEY (Position_ID) REFERENCES position(Position_ID),
     datejoined date,
@@ -16,10 +23,10 @@ CREATE TABLE staff(
 
 CREATE TABLE supplier(
     Supplier_ID int(20) AUTO_INCREMENT,
-    companyname VARCHAR(30),
-    phonenumber varchar(20),
-    email varchar(20),
-    address varchar(30),
+    companyname VARCHAR(50),
+    phonenumber varchar(50),
+    email varchar(50),
+    address varchar(200),
     PRIMARY KEY(Supplier_ID)
  );
     
