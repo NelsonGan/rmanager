@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <?php include "sidebar.html"; ?>
+    <?php include "sidebar.php"; ?>
     
     <div class="mainbody">
         <div class="topbar">
@@ -18,6 +18,7 @@
             <p class="name">Enter Information</p>
                 <div class="content">
                     <div class="content-left">
+                        <p>Name:</p>
                         <p>Email:</p>
                         <p>New Password:</p>
                         <p>Confirm Password:</p>
@@ -28,6 +29,7 @@
                         <p>Role:</p>
                     </div>
                     <div class="content-right">
+                        <input type="textbox"><br>
                         <input type="textbox"><br>
                         <input type="textbox"><br>
                         <input type="textbox"><br>

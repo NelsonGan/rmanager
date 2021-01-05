@@ -12,7 +12,7 @@
 </head>
 <body>
   <div style="flex: 1";>
-        <?php include "sidebar.html"; ?>
+    <?php include "sidebar.php";?>
   </div>
   <div class="mainbody">
     <div class="topbar">

@@ -1,0 +1,51 @@
+CREATE TABLE staff(
+    Staff_ID int(20) AUTO_INCREMENT,
+    name varchar(50),
+    email varchar(50),
+    pwd varchar(50),
+    gender varchar(50),
+    dob date,
+    phone varchar(50),
+    address varchar(200),
+    role varchar(50),
+    hourlyrate decimal(10,2),
+    datejoined date,
+    PRIMARY KEY(Staff_ID)
+);
+
+CREATE TABLE supplier(
+    Supplier_ID int(20) AUTO_INCREMENT,
+    companyname VARCHAR(50),
+    phonenumber varchar(50),
+    email varchar(50),
+    address varchar(200),
+    PRIMARY KEY(Supplier_ID)
+ );
+    
+ CREATE TABLE inventory(
+     Inventory_ID int(20) AUTO_INCREMENT,
+     itemname varchar(20),
+     quantity int(5),
+     Supplier_ID int(20),
+     FOREIGN KEY (Supplier_ID) REFERENCES supplier(Supplier_ID),
+     unit varchar(10),
+     PRIMARY KEY(Inventory_ID)
+ );
+ 
+ CREATE TABLE inventory_log(
+    Log_ID int(20) AUTO_INCREMENT,
+    creationdate date,
+    logmonth varchar(10),
+    logyear int(4),
+    Staff_ID int(20),
+    FOREIGN KEY (Staff_ID) REFERENCES staff(Staff_ID),
+    PRIMARY KEY (Log_ID)
+);
+ 
+ CREATE TABLE log_details(
+     LD_ID int(20) AUTO_INCREMENT,
+     Inventory_ID int(20),
+     FOREIGN KEY (Inventory_ID) REFERENCES inventory(Inventory_ID),
+     amount int(10),
+     PRIMARY KEY(LD_ID)
+);

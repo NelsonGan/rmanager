@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <?php include "sidebar.html"; ?>
+    <?php include "sidebar.php";?>
     
     <div class="mainbody">
         <div class="topbar">

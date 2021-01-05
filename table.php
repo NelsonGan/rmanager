@@ -1,13 +1,10 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf=8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <title>RManager</title>
-
     <meta name="description" content="IE=edge">
     <meta name="desciption" content="">
     <meta name="viewpoint" content="width=device-width, intitial-scale=1">
@@ -15,30 +12,22 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="./stylesheets/table.css">
     <link href="stylesheets/default.css" rel="stylesheet" type="text/css">
-
-
-
-
     <script src="scripts/jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <link rel="stylesheet" href="stylesheets/sidebar.css">
     <script src="javascripts/sidebar.js"></script>
-
 </head>
 
 <body>
-    <?php include "sidebar.html"; ?>
+    <?php include "sidebar.php"; ?>
 
     <div class="mainbody">
         <div class="topbar">
