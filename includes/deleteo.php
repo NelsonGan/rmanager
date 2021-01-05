@@ -22,5 +22,5 @@ $sql = "DELETE o.*, od.* FROM orders o, order_detail od WHERE o.orderid=$id AND 
 $result = mysqli_query($con, $sql);
 
 mysqli_close($con);
-header("Location: history.php");
+header("Location: ../history.php");
 ?>

@@ -53,6 +53,10 @@
             margin-left: 15px;
             vertical-align: middle;
         }
+
+        body > div.sidebar > ul{
+        padding-left:0;
+    }
     </style>
 </head>
 

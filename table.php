@@ -24,6 +24,12 @@
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <link rel="stylesheet" href="stylesheets/sidebar.css">
     <script src="javascripts/sidebar.js"></script>
+
+    <style>
+    body > div.sidebar > ul{
+        padding-left:0;
+    }
+    </style>
 </head>
 
 <body>
@@ -36,15 +42,15 @@
 <br><br>
         <form action="table.php" method="post">
 
-            <div class="form-group">
+            <div class="form-group" id="custa">
 
-                <label for="cname" class="col-sm-1 control-label">Customer Name :</label>
+                <label for="cname" class="col-sm-2 control-label">Customer Name :</label>
                 <div class="col-sm-7">
                     <input class="form-control" id="cname" name="cname" autocomplete="off" required>
                 </div>
                 <br><br><br>
 
-                <label for="size" class="col-sm-1 control-label">Table number :</label>
+                <label for="size" class="col-sm-2 control-label">Table number :</label>
                 <div class="col-sm-7">
                     <input class="form-control" id="size" name="table" readonly>
                 </div>

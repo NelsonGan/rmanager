@@ -1,29 +1,49 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf=8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <title>RManager</title>
+
     <meta name="description" content="IE=edge">
     <meta name="desciption" content="">
     <meta name="viewpoint" content="width=device-width, intitial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/history.css">
+
+
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
     <!-- jQuery UI -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+
     <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
     <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
     <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
-    
+
+
+
     <style>
         .mainbody {
             width: 85%;
@@ -59,10 +79,28 @@
             margin-left: 15px;
             vertical-align: middle;
         }
+
+        body>div.sidebar>ul {
+            padding-left: 0;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        a:hover{
+            text-decoration:underline;
+        }
+
     </style>
+
+
+
 </head>
+
 <body>
-<?php include "sidebar.php";?>
+    <?php include "sidebar.php"; ?>
 
     <div class="mainbody">
         <div class="topbar">
@@ -201,7 +239,7 @@
                     echo '<td>' . $row['netamount'] . '</td>';
                     echo '<td>' . $row['paidstatus'] . '</td>';
                     echo '<td><a href="edito.php?orderid=' . $row['orderid'] . '"><button type="button" class="btn btn-outline-warning editbtn"><i class="fa fa-edit" aria-hidden="true"></i></button></a></td>';
-                    echo '<td><a onclick="return confirm(\'Delete record for OrderID ' . $row['orderid'] . '?\')" href="includes/includes/deleteo.php?orderid=' . $row['orderid'] . '">
+                    echo '<td><a onclick="return confirm(\'Delete record for OrderID ' . $row['orderid'] . '?\')" href="includes/deleteo.php?orderid=' . $row['orderid'] . '">
       <button type="button" class="btn btn-outline-danger delete"><i class="fa fa-close"></button></td></a></td>';
                     echo '<td><a href="print.php?orderid=' . $row['orderid'] . '">
       <button type="button" class="btn btn-outline-primary print"><i class="fa fa-print" aria-hidden="true"></i></button></td></a></td>';
@@ -213,13 +251,13 @@
             </tbody>
         </table>
 
-    
 
 
-        </div>
+
+    </div>
 
     <div class="clearfix"></div>
-  
+
 </body>
 
 

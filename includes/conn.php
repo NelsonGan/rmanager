@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect("localhost","root","","rmanager","3306");
+$con = mysqli_connect("localhost","root","","rmanager","3308");
 
 
 // if (mysqli_connect_errno())

@@ -18,6 +18,10 @@ body > form > div.form-group > label {
   width: 180px;
 }
 
+#custa{
+  margin-left:80px;
+}
+
 #size,
 #cname {
   width: 50%;
