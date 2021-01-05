@@ -1,7 +1,7 @@
 CREATE TABLE position(
     Position_ID int(20) AUTO_INCREMENT,
     contracttype varchar(50),
-    hourlyrate int(10),
+    hourlyrate decimal(10,2),
     PRIMARY KEY(Position_ID)
 );
 
