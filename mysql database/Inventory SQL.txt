@@ -8,7 +8,7 @@ CREATE TABLE staff(
     phone varchar(50),
     address varchar(200),
     role varchar(50),
-    hourlyrate decimal(10,2)
+    hourlyrate decimal(10,2),
     datejoined date,
     PRIMARY KEY(Staff_ID)
 );
