@@ -49,3 +49,13 @@ CREATE TABLE supplier(
      amount int(10),
      PRIMARY KEY(LD_ID)
 );
+
+CREATE TABLE leaves(
+    Leave_ID int(20) AUTO_INCREMENT,
+    Staff_ID int(20),
+    FOREIGN KEY (Staff_ID) REFERENCES staff(Staff_ID),
+    leavedate date,
+    reason varchar(500),
+    status varchar(30),
+    PRIMARY KEY(Leave_ID)
+);
