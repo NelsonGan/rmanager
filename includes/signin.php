@@ -23,7 +23,7 @@ if (isset($_POST['login-submit'])) {
             $_SESSION['role'] = $row['role'];
 
             if ($row['role'] == 'Owner') {
-                header("Location: ../Owner.php?login=success");
+                header("Location: ../viewstaff.php?login=success");
             }
 
             else {
