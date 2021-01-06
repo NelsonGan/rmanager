@@ -1,0 +1,56 @@
+.container 
+{
+    margin: 20px;
+    border: 1px solid grey;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.content 
+{
+    display: flex;
+}
+
+.content-left 
+{
+    flex: 1;
+}
+
+.content-right
+{
+    flex: 3
+}
+
+.content-left p
+{
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+.content-right input 
+{
+    height: 30px;
+    padding: 1px;
+    margin-bottom: 20px;
+    width: 35%
+}
+
+.content-right select
+{
+    height: 30px;
+    padding: 1px;
+    margin-bottom: 20px;
+    width: 35%
+}
+
+.uploadImageText {
+    margin-top: 60px;
+}
+
+.uploadImageTextBox {
+    margin-top: 20px;
+}
+
+textarea {
+    width: 325px;
+}

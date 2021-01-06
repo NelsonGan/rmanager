@@ -30,52 +30,65 @@
 }
 
 .foodComponent {
-    margin-top: 20px;
     width: 550px;
     height: 250px;
-    border: black solid;
+    border-top: black solid;
+    border-bottom: black solid;
+    border-left: black solid;
     display: flex;
-    float: left;
+    margin-top: 20px;
     margin-right: 20px;
+    float: left;
+    transition: all 1s;
+    outline: 1px solid transparent;
 }
 
-.foodImg {
-    height: 200px;
-    width: 200px;
-    margin: 25px 25px;
-    border: black solid;
+.foodComponent:hover {
+    transform: scale(1.025);
+}
+
+.foodComponent, .imageContainer, .foodInfo {
+    display: flex;
 }
 
 .imageContainer {
-    flex: 1;    
+    flex: 0 0 50%;
 }
 
 .foodInfo {
-    flex:1;     
+    flex: 0 0 50%;
     display: flex;
     flex-direction: column;
-    max-width: 250px;
+    max-width: 275px;
+    border-right: black solid;
+    transition: all 1s;
+}
+
+.foodImage {
+    width: 200px;
+    height: 200px;
+    margin: 25px 36px;
+    border: black solid;
 }
 
 .infoContainer {
-    flex: 2;
+    flex: 0 0 75%;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    padding-top: 25px;
 }
 
-.infoText {
-    margin-top: 40px;   
+.infoContainer p {
+    padding-top: 5px;
 }
 
 .buttonContainer {
-    flex: 1;
+    flex: 0 0 25%;
 }
 
 #button {
-    margin-top: 25px;
-    margin-left: 150px;
-}
-
-.foodDesc {
-    overflow-wrap: break-word;
+    margin-top: 10px;
+    margin-left: 175px;
 }
 
 .addButton {
