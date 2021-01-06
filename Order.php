@@ -73,6 +73,7 @@
 
         body > div.mainbody > div.topbar{
             height:52px;
+        }
     </style>
 </head>
 
