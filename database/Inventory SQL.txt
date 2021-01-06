@@ -24,11 +24,11 @@ CREATE TABLE supplier(
     
  CREATE TABLE inventory(
      Inventory_ID int(20) AUTO_INCREMENT,
-     itemname varchar(20),
-     quantity int(5),
      Supplier_ID int(20),
      FOREIGN KEY (Supplier_ID) REFERENCES supplier(Supplier_ID),
+     itemname varchar(20),
      unit varchar(10),
+     price decimal(10,2),
      PRIMARY KEY(Inventory_ID)
  );
  
