@@ -9,6 +9,11 @@
     <?php include "sidebar.php"; ?>
 
     <?php
+        require ("includes/conn.php");
+        $id = $_SESSION['Staff_ID'];
+        $sql = "SELECT * FROM staff WHERE Staff_ID=$id";
+        $result = mysqli_query($con, $sql);
+        $row = mysqli_fetch_assoc($result);
     ?>
     
     <div class="mainbody">
@@ -29,8 +34,8 @@
                 </ul>
             </div>
             <div class="right-container">
-                <p class="name">Muhammad Ali <input type="submit" class="btn" value="Update" style="margin-left: 10px; height: 35px;"> </p>
-                <p class="job-title">Full-Time Staff</p>
+                <p class="name"><?php echo $row['name'];?><input type="submit" class="btn" value="Update" style="margin-left: 10px; height: 35px;"> </p>
+                <p class="job-title"><?php echo $row['role'];?></p>
 
                 <p class="section">About</p>
 
@@ -42,9 +47,9 @@
                         <p>Email:</p>
                     </div>
                     <div class="content-right">
-                        <p>017-687-4028</p>
-                        <p>2, Jalan Gahsing, Cheras</p>
-                        <p>mail2001@gmail.com</p>
+                        <p><?php echo $row['phone'];?></p>
+                        <p><?php echo $row['address'];?></p>
+                        <p><?php echo $row['email'];?></p>
                     </div>
                 </div>  
                 <p class="title">Basic Information</p>
@@ -54,12 +59,11 @@
                         <p>Gender:</p>
                     </div>
                     <div class="content-right">
-                        <p>June 23, 2001</p>
-                        <p>Male</p>
+                        <p><?php echo $row['dob'];?></p>
+                        <p><?php echo $row['gender'];?></p>
                     </div>
-                </div>  
-
-                <p class="section">Leave (30 Days History)</p>
+                </div>
+                <p class="section">Leave Application (Latest)</p>
 
                 <table class="leavetable">
                 <tr>
@@ -67,19 +71,20 @@
                     <th>Reason</th>
                     <th style="width: 20%;">Status</th>
                 </tr>
+                <?php 
+                    $sql = "SELECT * FROM leaves WHERE Staff_ID=$id ORDER BY leavedate DESC LIMIT 10";
+                    $results = mysqli_query($con, $sql);
+                    while ($row = mysqli_fetch_assoc($results)){
+                ?>
                 <tr>
-                    <td>25 December 2020</td>
-                    <td>Celebrate Christmas</td>
-                    <td>Pending Approval</td>
+                    <td><?php echo $row['leavedate']?></td>
+                    <td><?php echo $row['reason']?></td>
+                    <td><?php echo $row['status']?></td>
                 </tr>
-                <tr>
-                    <td>2 December 2020</td>
-                    <td>Return to hometown</td>
-                    <td>Declined</td>
-                </tr>
+                <?php }?>
                 </table>
 
-                <input type="submit" class="btn" value="Apply Leave" style="margin: 15px 0px; height: 35px; width: 130px; padding: 2px;">
+                <a href="leaverequestform.php" type="submit" class="btn" style="margin: 15px 0px; height: 35px; width: 120px; padding: 5px;">Apply Leave</a>
 
             </div>  
         </div>
