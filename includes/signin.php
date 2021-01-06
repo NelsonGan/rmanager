@@ -19,7 +19,7 @@ if (isset($_POST['login-submit'])) {
 
         if ($row = mysqli_fetch_assoc($result)) {
             session_start();
-            $_SESSION['staffid'] = $row['Staff_ID'];
+            $_SESSION['Staff_ID'] = $row['Staff_ID'];
             $_SESSION['role'] = $row['role'];
 
             if ($row['role'] == 'Owner') {
