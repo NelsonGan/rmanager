@@ -1,33 +1,12 @@
 
 // Load google charts
 google.charts.load('current', {'packages':['corechart']});
-google.charts.load("current", {packages:["calendar"]});
-google.charts.setOnLoadCallback(drawChart);
+google.charts.load("current", {'packages':["calendar"]});
 google.charts.setOnLoadCallback(drawChart1);
 google.charts.setOnLoadCallback(drawChart2);
 google.charts.setOnLoadCallback(drawChart3);
 google.charts.setOnLoadCallback(drawAttendance);
 
-// Draw the chart and set the chart values
-function drawChart() {
-  var data = google.visualization.arrayToDataTable([
-  ['Task', 'Sales per Day'],
-  ['Monday', 8000],
-  ['Tuesday', 7000],
-  ['Wednesday', 4000],
-  ['Thursday', 2000],
-  ['Friday', 10000],
-  ['Saturday',12000],
-  ['Sunday',10000]
-]);
-
-  // Optional; add a title and set the width and height of the chart
-  var options = {'title':'Sales Reports', 'width':600, 'height':400};
-
-  // Display the chart inside the <div> element with id="piechart"
-  var chart = new google.visualization.BarChart(document.getElementById('barchart'));
-  chart.draw(data, options);
-}
 function drawChart1() {
         var data = google.visualization.arrayToDataTable([
           ['Year', 'Sales', 'Expenses'],
