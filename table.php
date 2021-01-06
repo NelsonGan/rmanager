@@ -34,6 +34,18 @@
             text-decoration: none;
             font-size: 16px;
         }
+
+        body > div.sidebar > ul > li{
+            height: 49.600px;
+        }
+
+        body > div.sidebar > ul > li> a{
+            height: 17.6px;
+        }
+
+        body > div.mainbody > div.topbar{
+            height:52px;
+        }
     </style>
 
 
