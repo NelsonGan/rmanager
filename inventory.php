@@ -7,6 +7,8 @@
 
 <body>
     <?php include "sidebar.php";?>
+    <?php include "includes/conn.php"?>
+    <?php include "includes/conversionfunctions.php"?>
     
     <div class="mainbody">
         <div class="topbar">
@@ -14,7 +16,7 @@
         </div>
 
         <center>
-            <p style="margin-top: 40px; font-size: 30px;">Inventory Record for December 2020</p>
+            <p style="margin-top: 40px; font-size: 30px;">Inventory Record for <?php numToMonth($_GET['month']); echo('&nbsp;'); echo $_GET['year'] ?></p>
 
             <input type="text" id="itemfilter" placeholder="Filter:">
             <select id="locations" name="locations">
@@ -33,23 +35,17 @@
                         <th style="width: 40%;">Quantity</th>
                     </tr>
 
-                    <tr>
-                        <td>001</td>
-                        <td>Potato</td>
-                        <td><input type="text" class="quantity"></td>
-                    </tr>
-
-                    <tr>
-                        <td>001</td>
-                        <td>Potato</td>
-                        <td><input type="text" class="quantity"></td>
-                    </tr>
-
-                    <tr>
-                        <td>001</td>
-                        <td>Potato</td>
-                        <td><input type="text" class="quantity"></td>
-                    </tr>
+                    <?php
+                    $sql = "SELECT * FROM inventory";
+                    $result = mysqli_query($con, $sql);
+                    while ($row = mysqli_fetch_assoc($result)){
+                        echo '<tr>';
+                        echo "<td>".sprintf("%04d",$row['Inventory_ID'])."</td>";
+                        echo "<td>".$row['itemname']."</td>";
+                        echo '<td><input type="text" class="quantity"></td>';
+                        echo "</tr>";
+                    }
+                    ?>
                 </table>
 
                 <input type="Submit" value="Submit" class="btn" id="submitrecord">
