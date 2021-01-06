@@ -58,6 +58,11 @@
         body>div.sidebar>ul {
             padding-left: 0;
         }
+
+        a ,a:hover{
+            text-decoration: none;
+            font-size: 16px;
+        }
     </style>
 </head>
 

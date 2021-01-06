@@ -86,12 +86,12 @@
 
         a {
             text-decoration: none;
-            font-size: 14px;
+            font-size: 1rem;
         }
 
-        a:hover{
+        /* a:hover{
             text-decoration:underline;
-        }
+        } */
 
     </style>
 
