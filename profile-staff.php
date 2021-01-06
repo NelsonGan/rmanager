@@ -34,7 +34,7 @@
                 </ul>
             </div>
             <div class="right-container">
-                <p class="name"><?php echo $row['name'];?><input type="submit" class="btn" value="Update" style="margin-left: 10px; height: 35px;"> </p>
+                <p class="name"><?php echo $row['name'];?><a href="updateprofile.php" class="btn" style="width: 30px; margin-left: 10px; height: 35px; font-weight: normal;">Update</a></p>
                 <p class="job-title"><?php echo $row['role'];?></p>
 
                 <p class="section">About</p>
