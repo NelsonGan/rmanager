@@ -86,12 +86,23 @@
 
         a {
             text-decoration: none;
-            font-size: 14px;
+            font-size: 1rem;
         }
 
-        a:hover{
-            text-decoration:underline;
+        body > div.sidebar > ul > li{
+            height: 49.600px;
         }
+
+        body > div.sidebar > ul > li> a{
+            height: 17.6px;
+        }
+
+        body > div.mainbody > div.topbar{
+            height:52px;
+        }
+        /* a:hover{
+            text-decoration:underline;
+        } */
 
     </style>
 

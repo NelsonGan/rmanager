@@ -26,10 +26,29 @@
     <script src="javascripts/sidebar.js"></script>
 
     <style>
-    body > div.sidebar > ul{
-        padding-left:0;
-    }
+        body>div.sidebar>ul {
+            padding-left: 0;
+        }
+
+        a ,a:hover{
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        body > div.sidebar > ul > li{
+            height: 49.600px;
+        }
+
+        body > div.sidebar > ul > li> a{
+            height: 17.6px;
+        }
+
+        body > div.mainbody > div.topbar{
+            height:52px;
+        }
     </style>
+
+
 </head>
 
 <body>
@@ -39,7 +58,7 @@
         <div class="topbar">
             <span>Select Table Number</span>
         </div>
-<br><br>
+        <br><br>
         <form action="table.php" method="post">
 
             <div class="form-group" id="custa">
