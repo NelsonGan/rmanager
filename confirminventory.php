@@ -64,6 +64,8 @@
             <input type="Submit" name="submit" value="Submit" class="btn" id="submitrecord">
 
             </form>
+
+            
         </center>
         
     </div>

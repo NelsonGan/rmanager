@@ -7,6 +7,10 @@
 
 <body>
     <?php include "sidebar.php";?>
+    <?php $GLOBALS['onclick'] = "template.php"; ?>
+    <?php include "includes/modal.php" ?>
+    
+    
 
     <?php
         function showrecordbtn($month, $year){
@@ -28,6 +32,7 @@
 
         <center>
             <p style="margin-top: 40px; font-size: 30px;">Inventory</p>
+            <input type="Submit" class="btn" onclick="showModal()">
 
             <table class="daytable">
                 <tr>
