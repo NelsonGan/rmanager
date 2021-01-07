@@ -24,196 +24,96 @@
                 <div onclick="test('appetizers', 'food', 'drinks', 'desserts')" class="tab" id="appetizersTab">Appetizers</div>
                 <div onclick="test('desserts', 'food', 'drinks', 'appetizers')" class="tab" id="dessertsTab">Desserts</div>
                 <button class="addButton">+</button>
-
-                <div id="food" class="tabcontent">
+                
+                <div id="food" class="tabcontent"> 
                     <div class="foodComponent">
 
                         <div class="imageContainer">
-                            <img src="images/borger.jpg" alt="imagePlaceholder" class="foodImg">
+                            <img src="images/borger.jpg" alt="image placeholder" class="foodImage">
                         </div>
 
                         <div class="foodInfo">
 
                             <div class="infoContainer">
-                                <div class="infoText">
-                                <p class="foodName">Name : </p>
-                                <p class="foodPrice">Price : </p>
-                                <p class="foodDesc">Description : 1 <br> 2 <br> 3 <br> 4 <br> 5 <br> 6 <br></p>
-                                </div>
-                            </div>
-
-                            <div class="buttonContainer">
-                                <button class="btn" id="button">Delete</button>
-                            </div>
-                            
-                        </div>    
-                    </div>
-                    <div class="foodComponent">
-
-                        <div class="imageContainer">
-                            <img src="images/borger.jpg" alt="imagePlaceholder" class="foodImg">
-                        </div>
-
-                        <div class="foodInfo">
-
-                            <div class="infoContainer">
-                                <div class="infoText">
-                                <p class="foodName">Name : </p>
-                                <p class="foodPrice">Price : </p>
-                                <p class="foodDesc">Description : 1 <br> 2 <br> 3 <br> 4 <br> 5 <br> 6 <br></p>
-                                </div>
-                            </div>
-
-                            <div class="buttonContainer">
-                                <button class="btn" id="button">Delete</button>
-                            </div>
-                            
-                        </div>    
-                    </div>
-                    <div class="foodComponent">
-
-                        <div class="imageContainer">
-                            <img src="images/borger.jpg" alt="imagePlaceholder" class="foodImg">
-                        </div>
-
-                        <div class="foodInfo">
-
-                            <div class="infoContainer">
-                                <div class="infoText">
-                                <p class="foodName">Name : </p>
-                                <p class="foodPrice">Price : </p>
-                                <p class="foodDesc">Description : 1 <br> 2 <br> 3 <br> 4 <br> 5 <br> 6 <br></p>
-                                </div>
-                            </div>
-
-                            <div class="buttonContainer">
-                                <button class="btn" id="button">Delete</button>
-                            </div>
-                            
-                        </div>    
-                    </div>
-                    <div class="foodComponent">
-
-                        <div class="imageContainer">
-                            <img src="images/borger.jpg" alt="imagePlaceholder" class="foodImg">
-                        </div>
-
-                        <div class="foodInfo">
-
-                            <div class="infoContainer">
-                                <div class="infoText">
-                                <p class="foodName">Name : </p>
-                                <p class="foodPrice">Price : </p>
-                                <p class="foodDesc">Description : 1 <br> 2 <br> 3 <br> 4 <br> 5 <br> 6 <br></p>
-                                </div>
-                            </div>
-
-                            <div class="buttonContainer">
-                                <button class="btn" id="button">Delete</button>
-                            </div>
-                            
-                        </div>    
-                    </div>
-                    <div class="foodComponent">
-
-                        <div class="imageContainer">
-                            <img src="images/borger.jpg" alt="imagePlaceholder" class="foodImg">
-                        </div>
-
-                        <div class="foodInfo">
-
-                            <div class="infoContainer">
-                                <div class="infoText">
-                                <p class="foodName">Name : </p>
-                                <p class="foodPrice">Price : </p>
-                                <p class="foodDesc">Description : 1 <br> 2 <br> 3 <br> 4 <br> 5 <br> 6 <br></p>
-                                </div>
-                            </div>
-
-                            <div class="buttonContainer">
-                                <button class="btn" id="button">Delete</button>
-                            </div>
-                            
-                        </div>    
-                    </div>
-                </div>
-
-                <div id="drinks" class="tabcontent">
-                    <div class="foodComponent">
-
-                        <div class="imageContainer">
-                            <img src="images/borger.jpg" alt="imagePlaceholder" class="foodImg">
-                        </div>
-
-                        <div class="foodInfo">
-
-                            <div class="infoContainer">
-                                <div class="infoText">
                                 <p class="foodName">Name : </p>
                                 <p class="foodPrice">Price : </p>
                                 <p class="foodDesc">Description : </p>
-                                </div>
                             </div>
 
                             <div class="buttonContainer">
                                 <button class="btn" id="button">Delete</button>
                             </div>
-                            
-                        </div>    
-                    </div>
+                        </div>
+                    </div> 
+                    
                 </div>
 
-                <div id="appetizers" class="tabcontent">
+                <div id="drinks" class="tabcontent"> 
                     <div class="foodComponent">
 
                         <div class="imageContainer">
-                            <img src="images/borger.jpg" alt="imagePlaceholder" class="foodImg">
+                            <img src="images/borger.jpg" alt="image placeholder" class="foodImage">
                         </div>
 
                         <div class="foodInfo">
 
                             <div class="infoContainer">
-                                <div class="infoText">
                                 <p class="foodName">Name : </p>
                                 <p class="foodPrice">Price : </p>
                                 <p class="foodDesc">Description : </p>
-                                </div>
                             </div>
 
                             <div class="buttonContainer">
                                 <button class="btn" id="button">Delete</button>
                             </div>
-                            
-                        </div>    
-                    </div>
+                        </div>
+                    </div>    
                 </div>
 
-                <div id="desserts" class="tabcontent">
+                <div id="appetizers" class="tabcontent"> 
                     <div class="foodComponent">
 
                         <div class="imageContainer">
-                            <img src="images/borger.jpg" alt="imagePlaceholder" class="foodImg">
+                            <img src="images/borger.jpg" alt="image placeholder" class="foodImage">
                         </div>
 
                         <div class="foodInfo">
 
                             <div class="infoContainer">
-                                <div class="infoText">
                                 <p class="foodName">Name : </p>
                                 <p class="foodPrice">Price : </p>
                                 <p class="foodDesc">Description : </p>
-                                </div>
                             </div>
 
                             <div class="buttonContainer">
                                 <button class="btn" id="button">Delete</button>
                             </div>
-                            
-                        </div>    
-                    </div>
+                        </div>
+                    </div>    
+                </div>
+
+                <div id="desserts" class="tabcontent"> 
+                    <div class="foodComponent">
+
+                        <div class="imageContainer">
+                            <img src="images/borger.jpg" alt="image placeholder" class="foodImage">
+                        </div>
+
+                        <div class="foodInfo">
+
+                            <div class="infoContainer">
+                                <p class="foodName">Name : </p>
+                                <p class="foodPrice">Price : </p>
+                                <p class="foodDesc">Description : </p>
+                            </div>
+
+                            <div class="buttonContainer">
+                                <button class="btn" id="button">Delete</button>
+                            </div>
+                        </div>
+                    </div>    
                 </div>
             </div>
-            
         </div>
 
     </body>
