@@ -59,3 +59,13 @@ CREATE TABLE leaves(
     status varchar(30),
     PRIMARY KEY(Leave_ID)
 );
+
+CREATE TABLE attendance(
+	Attendance_ID int(20) AUTO_INCREMENT,
+	Staff_ID int(20),
+	FOREIGN KEY (Staff_ID) REFERENCES staff(Staff_ID),
+	workdate date,
+	clockin TIME,
+	clockout TIME,
+	PRIMARY KEY(Attendance_ID)
+);
