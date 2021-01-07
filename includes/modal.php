@@ -115,6 +115,6 @@
                     <button class="modalBtn" id="noBtn" onclick="hideModal()">No</button>
                 </div>
             </div>
-</div>
+        </div>
     </div>
 </body>

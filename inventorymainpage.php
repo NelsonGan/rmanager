@@ -10,7 +10,6 @@
     <?php $GLOBALS['onclick'] = "template.php"; ?>
     <?php include "includes/modal.php" ?>
     
-    
 
     <?php
         function showrecordbtn($month, $year){
