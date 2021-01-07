@@ -44,8 +44,6 @@ CREATE TABLE supplier(
  
  CREATE TABLE log_details(
      LD_ID int(20) AUTO_INCREMENT,
-     Log_ID int(20),
-     FOREIGN KEY (Log_ID) REFERENCES inventory_log(Log_ID),
      Inventory_ID int(20),
      FOREIGN KEY (Inventory_ID) REFERENCES inventory(Inventory_ID),
      amount int(10),
@@ -62,8 +60,12 @@ CREATE TABLE leaves(
     PRIMARY KEY(Leave_ID)
 );
 
-CREATE TABLE locations(
-   Location_ID int(20) AUTO_INCREMENT,
-   name varchar(20),
-   PRIMARY KEY(Location_ID)
+CREATE TABLE attendance(
+	Attendance_ID int(20) AUTO_INCREMENT,
+	Staff_ID int(20),
+	FOREIGN KEY (Staff_ID) REFERENCES staff(Staff_ID),
+	workdate date,
+	clockin TIME,
+	clockout TIME,
+	PRIMARY KEY(Attendance_ID)
 );
