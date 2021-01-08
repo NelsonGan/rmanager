@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="stylesheets/salesreport.css">
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="javascripts/salesreport.js"></script>
+
   <script type="text/javascript">
   google.charts.load('current', {'packages':['corechart']});
   google.charts.setOnLoadCallback(drawChart);
@@ -22,13 +23,10 @@
   success: function(jsonData)
   {
   var data = new google.visualization.arrayToDataTable(jsonData);
-  var options = {
-    title: 'Sales Reports',
-    width: '600',
-    height: '400'
-  };
+
+
   var chart = new google.visualization.ColumnChart(document.getElementById('barchart'));
-  chart.draw(data);
+  chart.draw(data, {title:'Sales Report',width: 600, height: 400});
 
   }
   }).responseText;
