@@ -17,10 +17,14 @@ body span {
 .itemtable td{
     padding-top: 6px;
     padding-bottom: 6px;
+    padding-left: 5px;
 }
 
 .quantity {
-    padding: 5px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    outline: none;
 }
 
 .locationtitle{
@@ -41,4 +45,10 @@ body span {
     border: none;
     width: 62%;
     margin-top: 10px;
+}
+
+.headertext{
+    margin-top: 40px;
+    font-size: 40px;
+    font-weight: bold;
 }

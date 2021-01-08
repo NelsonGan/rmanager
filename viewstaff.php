@@ -7,6 +7,13 @@
 
 <body>
     <?php include "sidebar.php"; ?>
+
+    <?php
+        require ("includes/conn.php");
+        $id = $_SESSION['Staff_ID'];
+        $sql = "SELECT * FROM staff WHERE role<>'Owner'";
+        $result = mysqli_query($con, $sql);
+    ?>
     
     <div class="mainbody">
         <div class="topbar">
@@ -21,29 +28,20 @@
         </div>
         
         <div class="staff">
-            <div class = "profile">
-                <center>
-                    <img src="images/profile.png" alt="blank profile pic">
-                </center>
-                <h2>name</h2>
-                <p>position</p>
-            </div>
+
+            <?php
+                while ($row = mysqli_fetch_assoc($result)) { 
+            ?>
 
             <div class = "profile">
                 <center>
-                    <img src="images/profile.png" alt="blank profile pic">
+                    <a href="profile-owner.php?staffid=<?php echo $row['Staff_ID'];?>"><img src="images/profile.png" alt="blank profile pic"></a>
                 </center>
-                <h2>name</h2>
-                <p>position</p>
+                <h2><?php echo $row['name'];?></h2>
+                <p><?php echo $row['role'];?></p>
             </div>
 
-            <div class = "profile">
-                <center>
-                    <img src="images/profile.png" alt="blank profile pic">
-                </center>
-                <h2>name</h2>
-                <p>position</p>
-            </div>
+            <?php }?>
         </div>
         
     </div>
