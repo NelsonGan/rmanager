@@ -3,6 +3,8 @@
     <title>Inventory</title>
     <link href="stylesheets/default.css" rel="stylesheet" type="text/css">
     <link href="stylesheets/manageinventory.css" rel="stylesheet" type="text/css">
+
+    <script src="javascripts/manageinventory.js"></script>
 </head>
 
 <body>
@@ -47,6 +49,8 @@
                                 echo "<td>".$iteminfo['itemname']."</td>";
                                 echo "<td>".$iteminfo['unit']."</td>";
                                 echo "<td>".$iteminfo['price']."</td>";
+                                //echo '<td><button onclick="delItem("'.$iteminfo["itemname"].'")">Delete</button></td>';
+                                echo '<td><button onclick="delItem("hey")">Delete</button></td>';
                                 echo "</tr>";
                             }
                             ?>
