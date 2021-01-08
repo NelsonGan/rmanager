@@ -12,11 +12,12 @@
         <?php
             $_SESSION['role'] == "Owner";
             if ($_SESSION['role'] == 'Owner') { ?>
-                <li><a href="viewstaff.php"><i class="fas fa-user-friends"></i>Manage Staff</a></li>
-                <li><a href="viewleave.php"><i class="fas fa-copy"></i>Leave Applications</a></li>
-                <li><a href="schedule.php"><i class="fas fa-shopping-cart"></i>Staff Schedule</a></li>
-                <li><a href="salesreport.php"><i class="fas fa-warehouse"></i>Sales Report</a></li>
-                <li><a href="managemenu.php"><i class="fas fa-user"></i>Menu Management</a></li>
+                <li><a href="viewstaff.php"><i class="fas fa-user-friends"></i>&nbsp;Manage Staff</a></li>
+                <li><a href="viewleave.php"><i class="fas fa-copy"></i>&nbsp;Leave Applications</a></li>
+                <li><a href="schedule.php"><i class="fas fa-calendar-alt"></i>&nbsp;Staff Schedule</a></li>
+                <li><a href="salesreport.php"><i class="fas fa-file-alt"></i>&nbsp;Sales Report</a></li>
+                <li><a href="manageinventory.php"><i class="fas fa-warehouse"></i>&nbsp;Inventory Records</a></li>
+                <li><a href="managemenu.php"><i class="fas fa-utensils"></i>&nbsp;Menu Management</a></li>
             <?php }
             else { ?>
                 <li><a href="checkin.php"><i class="fas fa-user-friends"></i>Attendance</a></li>
@@ -31,7 +32,7 @@
                         <a href="#" >Link 3</a>
                 </div>
             <?php } ?>
-            <li><a href="includes/signout.php"><i class="fas fa-user"></i>Logout</a></li>
+            <li><a href="includes/signout.php"><i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a></li>
         </ul> 
     </div>
 </body>
