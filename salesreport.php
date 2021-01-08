@@ -16,20 +16,32 @@
   google.charts.setOnLoadCallback(drawChart);
 
   function drawChart() {
-  var jsonData = $.ajax({
-  url: 'php/saleschart.php',
-  dataType:"json",
-  async: false,
-  success: function(jsonData)
+  var data = new google.visualization.arrayToDataTable([
+    ['Day','Sales Per Day'],  
+  <?php
+  $con = mysqli_connect("localhost","root","","rmanager","3306");
+  if(!$con)
   {
-  var data = new google.visualization.arrayToDataTable(jsonData);
+  echo "Connection Not Created";
+  }
+  $data[] = array('Day','Sales per Day');
+  if(isset($_GET["filterbtn"])){
+  $Month = $_GET["monthfilter"];
+  $sql = "SELECT DAYNAME(odatetime) As Day, SUM(netamount) AS Total FROM `orders` Where DATE_FORMAT(odatetime, '%Y-%m') = '$Month' GROUP By DAYNAME(odatetime) ORDER By DAYNAME(odatetime)";
+  }Else{
+  $sql = "SELECT DAYNAME(odatetime) As Day, SUM(netamount) AS Total FROM `orders` GROUP By DAYNAME(odatetime) ORDER By DAYNAME(odatetime)";
+  }
+  $query = mysqli_query($con,$sql);
+  while($result = mysqli_fetch_array($query))
+  {
+  echo "['".$result['Day']."',".(double)$result['Total']."],";
+  }
+  ?>
+]);
 
 
   var chart = new google.visualization.ColumnChart(document.getElementById('barchart'));
   chart.draw(data, {title:'Sales Report',width: 600, height: 400});
-
-  }
-  }).responseText;
   }
 
 
@@ -52,11 +64,11 @@
         <th><div id="curve_chart"></div>
         <th rowspan="2">
           <div class="container mx-2 mt-3 p-2 bg-white border">
+          <form action="salesreport.php" method="GET">
           <h2>Filter:</h2>
-          Month: <input type="month"><br>
-          Date: <input type="date"><br><br>
-          <input type="submit">
-
+          Month: <input type="month" name="monthfilter"><br><br>
+          <input name="filterbtn" type="submit">
+        </form>
 
         </div>
       </tr>
