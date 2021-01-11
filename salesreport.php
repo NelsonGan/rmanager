@@ -10,6 +10,21 @@
   <link rel="stylesheet" href="stylesheets/salesreport.css">
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="javascripts/salesreport.js"></script>
+  <link rel="stylesheet" href="stylesheets/sidebar.css">
+  <script src="javascripts/sidebar.js"></script>
+  <style>
+  body > div.sidebar > ul > li{
+        height: 49.600px;
+    }
+
+    body > div.sidebar > ul > li> a{
+        height: 17.6px;
+    }
+
+    body > div.mainbody > div.topbar{
+        height:52px;
+    }
+  </style>
 
   <script type="text/javascript">
   google.charts.load('current', {'packages':['corechart']});
@@ -21,7 +36,6 @@
     ['Day','Sales Per Day'],
   <?php
   require "includes/conn.php";
-  $data[] = array('Day','Sales per Day');
   if(isset($_GET["filterbtn"])){
   $Month = $_GET["monthfilter"];
   $Week = $_GET["weekfilter"];
@@ -42,56 +56,29 @@
   chart.draw(data, {title:'Sales Report',width: 600, height: 400});
   }
 
-  function drawChart1() {
-  var data = new google.visualization.arrayToDataTable([
-    ['Day','Sales Per Day'],
-  <?php
-  require "includes/conn.php";
-  $data[] = array('Day','Sales per Day');
-  if(isset($_GET["filterbtn"])){
-  $Month = $_GET["monthfilter"];
-  $Week = $_GET["weekfilter"];
-  $sql = "SELECT DAYNAME(odatetime) As Day, SUM(netamount) AS Total FROM `orders` Where DATE_FORMAT(odatetime, '%Y-%m') = '$Month' AND DATE_FORMAT(odatetime, '%Y-W%U') = '$Week' GROUP By DAYNAME(odatetime) ORDER By DAYNAME(odatetime)";
-  }Else{
-  $sql = "SELECT DAYNAME(odatetime) As Day, SUM(netamount) AS Total FROM `orders` GROUP By DAYNAME(odatetime) ORDER By DAYNAME(odatetime)";
-  }
-  $query = mysqli_query($con,$sql);
-  while($result = mysqli_fetch_array($query))
-  {
-  echo "['".$result['Day']."',".(double)$result['Total']."],";
-  }
-  ?>
-]);
+function drawChart1() {
 
+        var data = google.visualization.arrayToDataTable([
+          ['Days', 'Sales per day'],
+          ['Salary',   40000],
+          ['Ingredients', 20000],
+          ['Rent',  15000],
+          ['Tax', 7000],
+          ['Others', 8000]
+        ]);
 
-  var chart = new google.visualization.ColumnChart(document.getElementById('barchart'));
-  chart.draw(data, {title:'Sales Report',width: 700, height: 400});
-  }
+        var options = {
+          title: 'Sales Summary',
+          pieHole: 0.4,
+          width: 600,
+          height: 400,
+        };
 
-  function drawChart1() {
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
-          var data = google.visualization.arrayToDataTable([
-            ['Days', 'Sales per day'],
-            ['Salary',   40000],
-            ['Ingredients', 20000],
-            ['Rent',  15000],
-            ['Tax', 7000],
-            ['Others', 8000]
-          ]);
-
-          var options = {
-            title: 'Sales Summary',
-            pieHole: 0.4,
-            width: 600,
-            height: 400,
-          };
-
-          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-          chart.draw(data, options);
-        }
+        chart.draw(data, options);
+      }
   </script>
-
 </head>
 <body>
   <div style="flex: 1";>

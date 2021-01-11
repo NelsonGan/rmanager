@@ -145,7 +145,7 @@
             $table = $_POST['table'];
             $status = "UNPAID";
 
-            $sql = "INSERT INTO orders (customername, tableno, paidstatus) 
+            $sql = "INSERT INTO orders (customername, tableno, paidstatus)
             VALUES ('$name', '$table', '$status')";
 
             if (mysqli_query($con, $sql)) {
