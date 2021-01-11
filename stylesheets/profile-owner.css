@@ -119,3 +119,8 @@
 {
     background-color: rgb(231, 231, 231);
 }
+
+.error-msg 
+{
+    color: red;
+}

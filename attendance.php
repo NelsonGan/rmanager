@@ -37,9 +37,9 @@
                     <?php
                         $sql = "SELECT *, ROUND(TIME_TO_SEC(TIMEDIFF(clockout, clockin))/3600,2) AS working_hour FROM attendance WHERE Staff_ID = '$id' AND MONTH(workdate) ='$lastmonth' AND YEAR(workdate) = '$lastyear'";
                         $results = mysqli_query($con, $sql);
-                        if (mysqli_num_rows($result) == 0) 
+                        if (mysqli_num_rows($results) == 0) 
                         {
-                            header("Location: viewstaff.php?error=norecord");
+                            header("Location: profile-owner.php?staffid=$id&error=norecord");
                         }
                         while ($row = mysqli_fetch_assoc($results)){
                     ?>

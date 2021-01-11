@@ -37,6 +37,12 @@
                     <li>Thursday - 9:00am to 5pm</li>
                     <li>Friday - 9:00am to 5pm</li>
                     <li><a href="attendance.php?staffid=<?php echo $row['Staff_ID'];?>" class="btn" style="margin-left: 0px; height: 35px;">View Attendance</a></li>
+                    <?php
+                        if (isset($_GET['error']))
+                        {
+                            echo "<li class='error-msg'>No record found!";
+                        }
+                    ?>
                 </ul>
             </div>
             <div class="right-container">
