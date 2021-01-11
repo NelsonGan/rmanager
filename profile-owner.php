@@ -36,12 +36,19 @@
                     <li>Wednesday - 9:00am to 5pm</li>
                     <li>Thursday - 9:00am to 5pm</li>
                     <li>Friday - 9:00am to 5pm</li>
-                    <li><input type="submit" class="btn" value="View Attendance" style="margin-left: 0px; height: 35px;"></li>
+                    <li><a href="attendance.php?staffid=<?php echo $row['Staff_ID'];?>" class="btn" style="margin-left: 0px; height: 35px;">View Attendance</a></li>
+                    <?php
+                        if (isset($_GET['error']))
+                        {
+                            echo "<li class='error-msg'>No record found!";
+                        }
+                    ?>
                 </ul>
             </div>
             <div class="right-container">
-                <form action="includes/deletestaff.php?staffid=<?php echo $id?>" method="post">
+                <form action="includes/deletestaff.php" method="post">
                 <p class="name"><?php echo $row['name'];?><input name="delete-submit" type="submit" class="btn" value="Delete" style="margin-left: 10px; height: 35px;"> </p>
+                <input type="hidden" name="staffid" value="<?php echo $id?>">
                 </form>
                 <p class="job-title"><?php echo $row['role'];?></p>
 

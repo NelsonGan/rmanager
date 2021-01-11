@@ -16,41 +16,36 @@
 
         <center>
             <div class="leavetable">
-                <table>
+                <table style="width: 70%;">
                     <tr>
-                        <th>Staff ID</th>
                         <th>Name</th>
                         <th>Date</th>
                         <th>Reason</th>
                         <th>Status</th>
                     </tr>
+                    <?php 
+                    require "includes/conn.php";
+                    $sql = "SELECT * FROM leaves LEFT JOIN staff ON leaves.Staff_ID = staff.Staff_ID WHERE Status='Pending' ORDER BY leavedate ASC";
+                    $results = mysqli_query($con, $sql);
+                    while ($row = mysqli_fetch_assoc($results)){
+                    ?>
                     <tr>
-                        <td>001</td>
-                        <td>Muhammad Ali</td>
-                        <td>23/11/20</td>
-                        <td>Return to hometown</td>
+                        <td><?php echo $row['name']?></td>
+                        <td><?php echo $row['leavedate']?></td>
+                        <td><?php echo $row['reason']?></td>
                         <td>
                             <center>
-                            <button class = "btn" id = "approve" onclick="document.getElementById('id01').style.display='block'">Approve</button>
-                            <button  class = "btn" id = "decline" onclick="document.getElementById('id01').style.display='block'">Decline</button>
+                            <form action="includes/approveleave" method="post">
+                                <input type="submit" name="approve-submit" class="btn" id ="approve" value="Approve">
+                                <input type="submit" name="decline-submit" class="btn" id ="decline" value="Decline">
+                                <input type="hidden" name="staffid" value="<?php echo $row['Staff_ID']?>">
+                                <input type="hidden" name="leaveid" value="<?php echo $row['Leave_ID']?>">
+                            </form>
                             </center>
                         </td>
                     </tr>
+                    <?php } ?>
                 </table>
-                <div id="id01" class="modal">
-                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                    <form class="modal-content">
-                        <div class="container">
-                            <h1>Confirmation</h1>
-                            <p>Are you sure you want to [action]?</p>
-                    
-                            <div class="clearfix">
-                            <button class="modalBtn" id="yesBtn">Yes</button>
-                            <button class="modalBtn" id="noBtn">No</button>
-                            </div>
-                        </div>
-                     </form>
-                </div>
             </div>
         </center>
     </div>
