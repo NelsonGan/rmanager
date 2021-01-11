@@ -20,11 +20,7 @@
   var data = new google.visualization.arrayToDataTable([
     ['Day','Sales Per Day'],
   <?php
-  $con = mysqli_connect("localhost","root","","rmanager","3306");
-  if(!$con)
-  {
-  echo "Connection Not Created";
-  }
+  require "includes/conn.php";
   $data[] = array('Day','Sales per Day');
   if(isset($_GET["filterbtn"])){
   $Month = $_GET["monthfilter"];
@@ -50,11 +46,7 @@
   var data = new google.visualization.arrayToDataTable([
     ['Day','Sales Per Day'],
   <?php
-  $con = mysqli_connect("localhost","root","","rmanager","3306");
-  if(!$con)
-  {
-  echo "Connection Not Created";
-  }
+  require "includes/conn.php";
   $data[] = array('Day','Sales per Day');
   if(isset($_GET["filterbtn"])){
   $Month = $_GET["monthfilter"];
