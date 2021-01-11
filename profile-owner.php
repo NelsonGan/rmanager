@@ -40,8 +40,9 @@
                 </ul>
             </div>
             <div class="right-container">
-                <form action="includes/deletestaff.php?staffid=<?php echo $id?>" method="post">
+                <form action="includes/deletestaff.php" method="post">
                 <p class="name"><?php echo $row['name'];?><input name="delete-submit" type="submit" class="btn" value="Delete" style="margin-left: 10px; height: 35px;"> </p>
+                <input type="hidden" name="staffid" value="<?php echo $id?>">
                 </form>
                 <p class="job-title"><?php echo $row['role'];?></p>
 
