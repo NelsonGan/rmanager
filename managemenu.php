@@ -25,19 +25,9 @@
           body > div.mainbody > div.topbar{
               height:52px;
           }
-          a{text-decoration: none;
+          a, a:hover,a:visited, a:focus {
+             text-decoration:none;
           }
-          a.btn {
-            text-decoration: none};
-            a:hover .btn-group { text-decoration: none }
-            a .btn-group:hover { text-decoration: none }
-            a:hover .btn-group .btn { text-decoration: none }
-            a .btn-group .btn:hover { text-decoration: none }
-            .tab:hover{
-                cursor: pointer;
-
-                transition: all 0.3s;
-            }
                   ol, ul {
             padding-left: 2px;
         }
