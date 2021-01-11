@@ -14,10 +14,11 @@
   <script type="text/javascript">
   google.charts.load('current', {'packages':['corechart']});
   google.charts.setOnLoadCallback(drawChart);
+  google.charts.setOnLoadCallback(drawChart1);
 
   function drawChart() {
   var data = new google.visualization.arrayToDataTable([
-    ['Day','Sales Per Day'],  
+    ['Day','Sales Per Day'],
   <?php
   $con = mysqli_connect("localhost","root","","rmanager","3306");
   if(!$con)
@@ -27,7 +28,8 @@
   $data[] = array('Day','Sales per Day');
   if(isset($_GET["filterbtn"])){
   $Month = $_GET["monthfilter"];
-  $sql = "SELECT DAYNAME(odatetime) As Day, SUM(netamount) AS Total FROM `orders` Where DATE_FORMAT(odatetime, '%Y-%m') = '$Month' GROUP By DAYNAME(odatetime) ORDER By DAYNAME(odatetime)";
+  $Week = $_GET["weekfilter"];
+  $sql = "SELECT DAYNAME(odatetime) As Day, SUM(netamount) AS Total FROM `orders` Where DATE_FORMAT(odatetime, '%Y-%m') = '$Month' AND DATE_FORMAT(odatetime, '%Y-W%U') = '$Week' GROUP By DAYNAME(odatetime) ORDER By DAYNAME(odatetime)";
   }Else{
   $sql = "SELECT DAYNAME(odatetime) As Day, SUM(netamount) AS Total FROM `orders` GROUP By DAYNAME(odatetime) ORDER By DAYNAME(odatetime)";
   }
@@ -44,7 +46,58 @@
   chart.draw(data, {title:'Sales Report',width: 600, height: 400});
   }
 
+  function drawChart1() {
+  var data = new google.visualization.arrayToDataTable([
+    ['Day','Sales Per Day'],
+  <?php
+  $con = mysqli_connect("localhost","root","","rmanager","3306");
+  if(!$con)
+  {
+  echo "Connection Not Created";
+  }
+  $data[] = array('Day','Sales per Day');
+  if(isset($_GET["filterbtn"])){
+  $Month = $_GET["monthfilter"];
+  $Week = $_GET["weekfilter"];
+  $sql = "SELECT DAYNAME(odatetime) As Day, SUM(netamount) AS Total FROM `orders` Where DATE_FORMAT(odatetime, '%Y-%m') = '$Month' AND DATE_FORMAT(odatetime, '%Y-W%U') = '$Week' GROUP By DAYNAME(odatetime) ORDER By DAYNAME(odatetime)";
+  }Else{
+  $sql = "SELECT DAYNAME(odatetime) As Day, SUM(netamount) AS Total FROM `orders` GROUP By DAYNAME(odatetime) ORDER By DAYNAME(odatetime)";
+  }
+  $query = mysqli_query($con,$sql);
+  while($result = mysqli_fetch_array($query))
+  {
+  echo "['".$result['Day']."',".(double)$result['Total']."],";
+  }
+  ?>
+]);
 
+
+  var chart = new google.visualization.ColumnChart(document.getElementById('barchart'));
+  chart.draw(data, {title:'Sales Report',width: 700, height: 400});
+  }
+
+  function drawChart1() {
+
+          var data = google.visualization.arrayToDataTable([
+            ['Days', 'Sales per day'],
+            ['Salary',   40000],
+            ['Ingredients', 20000],
+            ['Rent',  15000],
+            ['Tax', 7000],
+            ['Others', 8000]
+          ]);
+
+          var options = {
+            title: 'Sales Summary',
+            pieHole: 0.4,
+            width: 600,
+            height: 400,
+          };
+
+          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+          chart.draw(data, options);
+        }
   </script>
 
 </head>
@@ -60,20 +113,25 @@
     <div class="table-responsive">
     <table class="table">
       <tr>
+        <th>
+      </tr>
+      <tr>
         <th><div id="barchart"></div>
-        <th><div id="curve_chart"></div>
+        <th><div id="piechart"></div>
         <th rowspan="2">
           <div class="container mx-2 mt-3 p-2 bg-white border">
           <form action="salesreport.php" method="GET">
           <h2>Filter:</h2>
           Month: <input type="month" name="monthfilter"><br><br>
+          Week: <input type="week" name="weekfilter"<br><br><br>
           <input name="filterbtn" type="submit">
+          <input type="reset" name="reset" value ="Reset">
         </form>
 
         </div>
       </tr>
       <tr>
-        <th><div id="piechart"></div>
+        <th><div id="curve_chart"></div>
         <th><div id="combochart"></div>
       </tr>
     </table>

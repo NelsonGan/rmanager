@@ -4,8 +4,6 @@ google.charts.load('current', {'packages':['corechart']});
 google.charts.load("current", {'packages':["calendar"]});
 google.charts.setOnLoadCallback(drawChart1);
 google.charts.setOnLoadCallback(drawChart2);
-google.charts.setOnLoadCallback(drawChart3);
-google.charts.setOnLoadCallback(drawAttendance);
 
 function drawChart1() {
         var data = google.visualization.arrayToDataTable([
@@ -29,27 +27,6 @@ function drawChart1() {
         chart.draw(data, options);
       }
 function drawChart2() {
-
-        var data = google.visualization.arrayToDataTable([
-          ['Expenditures', 'Amount per month'],
-          ['Salary',   40000],
-          ['Ingredients', 20000],
-          ['Rent',  15000],
-          ['Tax', 7000],
-          ['Others', 8000]
-        ]);
-
-        var options = {
-          title: 'Montly Expenditures',
-          width: '600',
-          height: '400'
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-        chart.draw(data, options);
-      }
-function drawChart3() {
         // Some raw data (not necessarily accurate)
         var data = google.visualization.arrayToDataTable([
           ['Month', 'Starters', 'Brunch', 'Main', 'Pasta', 'Drinks', 'Average'],
