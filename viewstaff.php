@@ -23,7 +23,7 @@
         <div class="search">
             <center>
                 <input type="text" class="searchbar" placeholder="Filter...">
-                <button type="button" id="addstaff">Add Staff</button>
+                <a href="addstaff.php" class='btn' id="addstaff">Add</a>
             </center>
         </div>
         

@@ -32,7 +32,7 @@
 #addstaff{
     padding: 8px 10px;
     margin-left: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
     outline-style: none;
     cursor: pointer;
 }
