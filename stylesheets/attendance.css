@@ -9,7 +9,7 @@
 {
     width: 40%;
     border-collapse: collapse;
-    margin: 10px;
+    margin: 20px 0px;
 }
 
 .details td, .details tr 
@@ -22,10 +22,9 @@
     width: 75%;
     text-align: left;
     border-collapse: collapse;
-    margin-top: 25px;
     font-size: 15px;
     border-spacing: 10px;
-    margin: 10px;
+    margin: 40px;
 }
 
 .attendancetable, .attendancetable th, .attendancetable td 
@@ -37,4 +36,21 @@
 .attendancetable td 
 {
     background-color: rgb(231, 231, 231);
+}
+
+.profile
+{
+    width: 80%;
+    height: 300px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid rgb(177, 177, 177);
+    margin: 0 auto;
+}
+
+.profile h1 
+{
+    border-bottom: 1px solid black;
+    text-align: center;
+    padding: 10px 0px;
 }

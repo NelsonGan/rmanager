@@ -36,7 +36,7 @@
                     <li>Wednesday - 9:00am to 5pm</li>
                     <li>Thursday - 9:00am to 5pm</li>
                     <li>Friday - 9:00am to 5pm</li>
-                    <li><input type="submit" class="btn" value="View Attendance" style="margin-left: 0px; height: 35px;"></li>
+                    <li><a href="attendance.php?staffid=<?php echo $row['Staff_ID'];?>" class="btn" style="margin-left: 0px; height: 35px;">View Attendance</a></li>
                 </ul>
             </div>
             <div class="right-container">
