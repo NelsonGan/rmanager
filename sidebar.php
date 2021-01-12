@@ -16,7 +16,7 @@
                 <li><a href="viewleave.php"><i class="fas fa-copy"></i>&nbsp;Leave Applications</a></li>
                 <li><a href="schedule.php"><i class="fas fa-calendar-alt"></i>&nbsp;Staff Schedule</a></li>
                 <li><a href="salesreport.php"><i class="fas fa-file-alt"></i>&nbsp;Sales Report</a></li>
-                <li><a href="manageinventory.php"><i class="fas fa-warehouse"></i>&nbsp;Inventory Records</a></li>
+                <li><a href="manageinventory.php"><i class="fas fa-warehouse"></i>&nbsp;Manage Inventory</a></li>
                 <li><a href="managemenu.php"><i class="fas fa-utensils"></i>&nbsp;Menu Management</a></li>
             <?php }
             else { ?>

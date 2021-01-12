@@ -1,0 +1,175 @@
+.header{
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+.container {
+    margin: 20px;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    width: 50%;
+}
+
+.content {
+    display: flex;
+    text-align: left;
+}
+
+.content-left {
+    flex: 1;
+}
+
+.content-right{
+    flex: 2
+}
+
+.content-left p{
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+.content-right input {
+    height: 30px;
+    padding: 1px;
+    margin-bottom: 20px;
+    width: 60%
+}
+
+.content-right select{
+    height: 30px;
+    padding: 1px;
+    margin-bottom: 20px;
+    width: 60%
+}
+
+.uploadImageText {
+    margin-top: 60px;
+}
+
+.uploadImageTextBox {
+    margin-top: 20px;
+}
+
+textarea {
+    width: 325px;
+}
+
+.addbtn {
+    background-color: black;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 30px;
+}
+
+.errormessage{
+    color: red;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#modalwrapper{
+    background-color: black;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 60%;
+    display: none;
+}
+
+#locationmodal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 25%;
+    height: 25%;
+    opacity: 100%;
+    z-index: 2;
+    opacity: 1;
+    border-radius: 15px;
+    display: none;
+}
+
+#suppliermodal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 50%;
+    height: 53%;
+    opacity: 100%;
+    z-index: 2;
+    opacity: 1;
+    border-radius: 15px;
+    display: none;
+}
+
+.modaltitle{
+    margin: 20px;
+    font-size: 26px;
+    font-weight:bolder;
+}
+
+.inputtext{
+    font-size: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 8px 10px;
+    width: 70%;
+}
+
+.submitbutton{
+    margin: 20px;
+    background-color: black;
+    color: white;
+    font-weight: normal;
+    border: none;
+    font-size: 18px;
+    border-radius: 6px;
+    width: 30%;
+    height: 20%;
+    padding: 6px;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+.submitbutton:hover{
+    background-color: white;
+    color: black;
+}
+
+.newnote{
+    position: absolute;
+    transform: translate(20%, -70%);
+    color: green;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.failednote{
+    position: absolute;
+    transform: translate(20%, -70%);
+    color: red;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.formlabels{
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+#suppliermodal input, span{
+    margin-top: 20px;
+}
