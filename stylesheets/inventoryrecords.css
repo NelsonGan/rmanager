@@ -1,0 +1,12 @@
+.title{
+    font-size: 26px;
+    font-weight: bold;
+    margin: 25px 5px;
+}
+
+.recordselect {
+    font-size: 20px;
+    padding: 5px 10px;
+    width: 30%;
+    text-align: center;
+}

@@ -45,14 +45,16 @@
                     </tr>
 
                     <?php
-                    $sql = "SELECT * FROM inventory ORDER BY location";
+                    $sql = "SELECT * FROM inventory GROUP BY location";
                     $result = mysqli_query($con, $sql);
                     while ($row = mysqli_fetch_assoc($result)){
+                        $sql = "SELECT * FROM locations WHERE Location_ID = ".$row['location'];
+                        $locationname = mysqli_fetch_assoc(mysqli_query($con, $sql));
                         $itemcode = sprintf("%04d",$row['Inventory_ID']);
                         echo '<tr>';
                         echo "<td>".$itemcode."</td>";
                         echo "<td>".$row['itemname']."</td>";
-                        echo "<td>".$row['location']."</td>";
+                        echo "<td>".$locationname['name']."</td>";
                         echo '<td><input type="number" class="quantity" name="'.$itemcode.'" autocomplete="off" value="0" onClick="this.select();"></td>';
                         echo "<td>".$row['unit']."</td>";
                         echo "</tr>";
