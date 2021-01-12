@@ -31,7 +31,6 @@
 
         <center>
             <p style="margin-top: 40px; font-size: 30px;">Inventory</p>
-            <input type="Submit" class="btn" onclick="showModal()">
 
             <table class="daytable">
                 <tr>

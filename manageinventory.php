@@ -17,16 +17,23 @@
         </div>
 
         <center>
+
+            <?php
+            if (isset($_GET['success'])){
+                echo '<p class="successmessage">Item added successfully!</p>';
+            }
+            ?>
+
             <p class="header">Current Inventory Item List</p>
 
-            <a><button class="btn">Add New Item</button></a>
+            <a href="addinventoryitem.php"><button class="btn">Add New Item</button></a>
 
             <?php
             $sql = "SELECT * FROM locations";
             $result = mysqli_query($con, $sql);
             while ($row = mysqli_fetch_assoc($result)){
                 //We check if the location has any items before displaying the div
-                $sql = "SELECT * FROM inventory WHERE location='".$row['name']."'";
+                $sql = "SELECT * FROM inventory WHERE location='".$row['Location_ID']."'";
                 $items = mysqli_query($con, $sql);
                 if (mysqli_num_rows($items) > 0){ ?>
                     <div>
@@ -36,8 +43,9 @@
                             <tr>
                                 <th style="width: 20%;">Item Code</th>
                                 <th style="width: 30%;">Item Name</th>
-                                <th style="width: 20%;">Unit</th>
-                                <th style="width: 30%;">Unit Price</th>
+                                <th style="width: 15%;">Unit</th>
+                                <th style="width: 25%;">Unit Price</th>
+                                <th style="width: 10%;"></th>
                             </tr>
 
                             <?php 
@@ -49,8 +57,8 @@
                                 echo "<td>".$iteminfo['itemname']."</td>";
                                 echo "<td>".$iteminfo['unit']."</td>";
                                 echo "<td>".$iteminfo['price']."</td>";
-                                //echo '<td><button onclick="delItem("'.$iteminfo["itemname"].'")">Delete</button></td>';
-                                echo '<td><button onclick="delItem("hey")">Delete</button></td>';
+                                echo '<td><button class="delbtn" onclick="delItem(\''.' '.$iteminfo["itemname"].'\','.$iteminfo["Inventory_ID"].')">Delete</button></td>';
+                                //<td><button onclick="delItem(' wow')">Delete</button></td>
                                 echo "</tr>";
                             }
                             ?>
@@ -59,7 +67,11 @@
                 <?php } ?>
             <?php } ?>
         </center>
-        <!-- Write your code here! -->
+        
+        <form action="includes/deleteinventoryitem.php" method="post">
+            <input type="hidden" id="itemtext" name="itemtodel"?>
+            <button type="submit" style="border: none;" id="submitdel"></button>
+        </form>
 
     </div>
 </body>
