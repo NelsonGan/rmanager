@@ -10,14 +10,13 @@
 {
     font-size: 30px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     border-bottom: 2px solid black;
 }
 
 .content 
 {
     display: flex;
-    margin-top: 20px;
 }
 
 .content-left 

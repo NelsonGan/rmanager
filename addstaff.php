@@ -16,12 +16,19 @@
 
         <div class="container">
             <p class="name">Enter Information</p>
+                <?php
+                    if (isset($_GET['error'])) {
+                        echo '<p class="error-message">Email exists!</p>';
+                    }
+                    elseif (isset($_GET['add'])) {
+                        echo '<p class="success-message">Added staff successfully!</p>';
+                    }
+                ?>   
                 <div class="content">
                     <div class="content-left">
                         <p>Name:</p>
                         <p>Email:</p>
-                        <p>New Password:</p>
-                        <p>Confirm Password:</p>
+                        <p>Password:</p>
                         <p>Gender:</p>
                         <p>Birthday:</p>
                         <p>Phone:</p>
@@ -29,26 +36,26 @@
                         <p>Role:</p>
                     </div>
                     <div class="content-right">
-                        <input type="textbox"><br>
-                        <input type="textbox"><br>
-                        <input type="textbox"><br>
-                        <input type="textbox"><br>
-                        <select id="role" name="role">
-                            <option value="full-time">Male</option>
-                            <option value="part-time">Female</option>
+                <form action="includes/addstaff.php" method="post"> 
+                        <input type="textbox" name="name" required><br>
+                        <input type="email" name="email" required><br>
+                        <input type="password" name="pwd" required><br>
+                        <select name="gender" required>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
                         </select><br>                        
-                        <input type="date"><br>
-                        <input type="textbox"><br>
-                        <input type="textbox"><br>
-                        <select id="role" name="role">
-                            <option value="full-time">Full-time</option>
-                            <option value="part-time">Part-time</option>
+                        <input type="date" name="dob" required><br>
+                        <input type="textbox" name="phone" required><br>
+                        <input type="textbox" name="address" required><br>
+                        <select name="role" required>
+                            <option value="Full-time Staff">Full-time</option>
+                            <option value="Part-time Staff">Part-time</option>
                         </select><br>
                     </div>
                 </div>  
 
-                <input type="submit" class="btn" value="Clear" style="margin-top: 10px; height: 35px;"> 
-                <input type="submit" class="btn" value="Add" style="margin-top: 10px; height: 35px;"> 
+                <input name="add-submit" type="submit" class="btn" value="Add" style="margin-top: 10px; height: 35px;"> 
+                </form>
         </div>  
 
     </div>
