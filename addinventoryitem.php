@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <title>Default Title</title>
+    <title>Inventory</title>
     <link href="stylesheets/default.css" rel="stylesheet" type="text/css">
     <link href="stylesheets/addinventoryitem.css" rel="stylesheet" type="text/css">
     <script src="javascripts/addinventoryitem.js"></script>
