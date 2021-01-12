@@ -63,18 +63,18 @@
                         </button>
                       </div>
                       <div class="modal-body">
-                        <form>
+                        <form action="includes/insertmenu.php" method="POST">
                           <div class="form-group">
                             <label for="Item Name">Item Name</label>
-                            <input type="textbox" class="form-control" id="itemname" aria-describedby="emailHelp" placeholder="Enter Item Name">
+                            <input type="textbox" class="form-control" name="itemname" aria-describedby="emailHelp" placeholder="Enter Item Name" required>
                           </div>
                           <div class="form-group">
                             <label for="Item Price">Item Price</label>
-                            <input type="number" class="form-control" id="itemprice" placeholder="Price">
+                            <input type="number" class="form-control" name="itemprice" placeholder="Price" required>
                           </div>
                           <div class="form-group">
                             <label for="Item Type">Item Type</label>
-                            <select class="form-control" id="itemtype">
+                            <select class="form-control" name="itemtype" required>
                               <option value="null">Select-one</option>
                               <option value="Food">Food</option>
                               <option value="Drinks">Drinks</option>
@@ -84,18 +84,17 @@
                           </div>
                           <div class="form-group">
                             <label for="Description">Description</label>
-                            <input type="textarea" class="form-control" id="description" placeholder="Add Item Description">
+                            <input type="textarea" class="form-control" name="description" placeholder="Add Item Description" required>
                           </div>
                           <div class="form-group">
                             <label for="Image">Item Image</label>
-                            <input type="file" name="img" id="img" class="form-control" accept="img/*">
+                            <input type="file" name="img" class="form-control" accept="images/*" required>
                           </div>
-                          <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="Submit" Name="menusubmit" class="btn btn-primary">Save changes</button>
+                      </form>
                       </div>
                     </div>
                   </div>
