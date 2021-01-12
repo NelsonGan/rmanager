@@ -1,14 +1,8 @@
+
+
 .wrapper {
     margin-top: 50px;
     margin-left: 50px;
-}
-
-ol, ul {
-    padding-left: 0px;
-}
-
-.sidebar ul li {
-    padding: 0px;
 }
 
 .tab {
@@ -18,17 +12,9 @@ ol, ul {
     background: black;
     color: white;
 }
-a{text-decoration: none}
-a.btn {
-  text-decoration: none;
-}
-a:hover .btn-group { text-decoration: none }
-a .btn-group:hover { text-decoration: none }
-a:hover .btn-group .btn { text-decoration: none }
-a .btn-group .btn:hover { text-decoration: none }
+
 .tab:hover{
     cursor: pointer;
-
     transition: all 0.3s;
 }
 

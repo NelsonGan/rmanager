@@ -70,7 +70,7 @@
                           </div>
                           <div class="form-group">
                             <label for="Item Price">Item Price</label>
-                            <input type="number" class="form-control" name="itemprice" placeholder="Price" required>
+                            <input type="number" class="form-control" name="itemprice" step="0.01" placeholder="Price" required>
                           </div>
                           <div class="form-group">
                             <label for="Item Type">Item Type</label>
@@ -100,92 +100,131 @@
                   </div>
                 </div>
                 <div id="food" class="tabcontent">
+                  <?php
+                  $sql = "SELECT * FROM menu WHERE Type ='Food'";
+                  $result = mysqli_query($con,$sql);
+                  while($row = mysqli_fetch_array($result))
+                  {
+                    ?>
                     <div class="foodComponent">
 
                         <div class="imageContainer">
-                            <img src="images/borger.jpg" alt="image placeholder" class="foodImage">
+                            <img src="images/<?php echo $row['item_img']?>" alt="image placeholder" class="foodImage">
                         </div>
 
                         <div class="foodInfo">
 
                             <div class="infoContainer">
-                                <p class="foodName">Name : </p>
-                                <p class="foodPrice">Price : </p>
-                                <p class="foodDesc">Description : </p>
+                                <p class="foodName">Name : <?php echo $row['Name'] ?> </p>
+                                <p class="foodPrice">Price : <?php echo $row['Price'] ?> </p>
+                                <p class="foodDesc">Description : <?php echo $row['Description'] ?></p>
                             </div>
 
                             <div class="buttonContainer">
-                                <button class="btn" id="button">Delete</button>
+                              <form action="includes/deletemenu.php" method="post">
+                                <input type="hidden" name="ditemname" value="<?php echo $row['Name']?>">
+                                <button class="btn" name="deleteitem" id="button">Delete</button>
+                              </form>
                             </div>
                         </div>
                     </div>
-
+                    <?php } ?>
                 </div>
 
                 <div id="drinks" class="tabcontent">
+                  <?php
+                  $sql1 = "SELECT * FROM menu WHERE Type ='Drinks'";
+                  $result1 = mysqli_query($con,$sql1);
+                  while($row1 = mysqli_fetch_array($result1))
+                  {
+                    ?>
                     <div class="foodComponent">
 
                         <div class="imageContainer">
-                            <img src="images/borger.jpg" alt="image placeholder" class="foodImage">
+                            <img src="images/<?php echo $row1['item_img']?>" alt="image placeholder" class="foodImage">
                         </div>
 
                         <div class="foodInfo">
 
                             <div class="infoContainer">
-                                <p class="foodName">Name : </p>
-                                <p class="foodPrice">Price : </p>
-                                <p class="foodDesc">Description : </p>
+                                <p class="foodName">Name : <?php echo $row1['Name'] ?> </p>
+                                <p class="foodPrice">Price : <?php echo $row1['Price'] ?></p>
+                                <p class="foodDesc">Description : <?php echo $row1['Description'] ?></p>
                             </div>
 
                             <div class="buttonContainer">
-                                <button class="btn" id="button">Delete</button>
+                              <form action="includes/deletemenu.php" method="post">
+                                <input type="hidden" name="ditemname" value="<?php echo $row1['Name']?>">
+                                <button class="btn" name="deleteitem" id="button">Delete</button>
+                              </form>
                             </div>
                         </div>
                     </div>
+                    <?php } ?>
                 </div>
 
                 <div id="appetizers" class="tabcontent">
+                  <?php
+                  $sql2 = "SELECT * FROM menu WHERE Type ='Appertizers'";
+                  $result2 = mysqli_query($con,$sql2);
+                  while($row2 = mysqli_fetch_array($result2))
+                  {
+                    ?>
                     <div class="foodComponent">
 
                         <div class="imageContainer">
-                            <img src="images/borger.jpg" alt="image placeholder" class="foodImage">
+                            <img src="images/<?php echo $row2['item_img'] ?>" alt="image placeholder" class="foodImage">
                         </div>
 
                         <div class="foodInfo">
 
                             <div class="infoContainer">
-                                <p class="foodName">Name : </p>
-                                <p class="foodPrice">Price : </p>
-                                <p class="foodDesc">Description : </p>
+                                <p class="foodName">Name : <?php echo $row2['Name'] ?></p>
+                                <p class="foodPrice">Price : <?php echo $row2['Price'] ?></p>
+                                <p class="foodDesc">Description : <?php echo $row2['Description'] ?></p>
                             </div>
 
                             <div class="buttonContainer">
-                                <button class="btn" id="button">Delete</button>
+                              <form action="includes/deletemenu.php" method="post">
+                                <input type="hidden" name="ditemname" value="<?php echo $row2['Name']?>">
+                                <button class="btn" name="deleteitem" id="button">Delete</button>
+                              </form>
                             </div>
                         </div>
                     </div>
+                  <?php } ?>
                 </div>
 
                 <div id="desserts" class="tabcontent">
+                  <?php
+                  $sql3 = "SELECT * FROM menu WHERE Type ='Desserts'";
+                  $result3 = mysqli_query($con,$sql3);
+                  while($row3 = mysqli_fetch_array($result3))
+                  {
+                    ?>
                     <div class="foodComponent">
 
                         <div class="imageContainer">
-                            <img src="images/borger.jpg" alt="image placeholder" class="foodImage">
+                            <img src="images/<?php echo $row3['item_img']?>" alt="image placeholder" class="foodImage">
                         </div>
 
                         <div class="foodInfo">
 
                             <div class="infoContainer">
-                                <p class="foodName">Name : </p>
-                                <p class="foodPrice">Price : </p>
-                                <p class="foodDesc">Description : </p>
+                                <p class="foodName">Name : <?php echo $row3['Name'] ?></p>
+                                <p class="foodPrice">Price : <?php echo $row3['Price'] ?></p>
+                                <p class="foodDesc">Description : <?php echo $row3['Description'] ?></p>
                             </div>
 
                             <div class="buttonContainer">
-                                <button class="btn" id="button">Delete</button>
+                              <form action="includes/deletemenu.php" method="post">
+                                <input type="hidden" name="ditemname" value="<?php echo $row3['Name']?>">
+                                <button class="btn" name="deleteitem" id="button">Delete</button>
+                              </form>
                             </div>
                         </div>
                     </div>
+                  <?php } ?>
                 </div>
             </div>
         </div>

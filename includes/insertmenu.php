@@ -13,10 +13,9 @@ $sql = "INSERT INTO menu (Name, Type, Price, Description, item_img) VALUES ('$it
 mysqli_query($con,$sql);
 
 
-// echo'<script>alert("1 Record Added");
-// window.location.href = "http://localhost:8080/Rmanager/managemenu.php";
-// </script>';
+echo'<script>alert("1 Record Added");
+window.location.href = "http://localhost:8080/Rmanager/managemenu.php";
+</script>';
 }
-
 
 ?>

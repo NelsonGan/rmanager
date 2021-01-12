@@ -68,7 +68,7 @@ function drawChart1() {
         ]);
 
         var options = {
-          title: 'Sales Summary',
+          title: 'Sales Summary per Day',
           pieHole: 0.4,
           width: 600,
           height: 400,
