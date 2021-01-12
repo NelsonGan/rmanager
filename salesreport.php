@@ -57,18 +57,20 @@
   }
 
 function drawChart1() {
-
         var data = google.visualization.arrayToDataTable([
-          ['Days', 'Sales per day'],
-          ['Salary',   40000],
-          ['Ingredients', 20000],
-          ['Rent',  15000],
-          ['Tax', 7000],
-          ['Others', 8000]
+          ['Type', 'Quantity Sold'],
+          <?php
+          $sql1 = "SELECT m.Type as Type,  Sum(o.quantity) as TotalSold From menu m left join order_detail o on m.Item_ID = o.Item_ID left join orders u on o.orderid = u.orderid Group By m.Type";
+          $query1 = mysqli_query($con,$sql1);
+          while($result1 = mysqli_fetch_array($query1))
+          {
+          echo "['".$result1['Type']."',".(int)$result1['TotalSold']."],";
+          }
+          ?>
         ]);
 
         var options = {
-          title: 'Sales Summary per Day',
+          title: 'Sales Summary',
           pieHole: 0.4,
           width: 600,
           height: 400,
@@ -91,9 +93,6 @@ function drawChart1() {
     <div class="container-fluid">
     <div class="table-responsive">
     <table class="table">
-      <tr>
-        <th>
-      </tr>
       <tr>
         <th><div id="barchart"></div>
         <th><div id="piechart"></div>
