@@ -153,7 +153,7 @@ function drawChart1() {
 function drawChart3() {
         // Some raw data (not necessarily accurate)
         var data = google.visualization.arrayToDataTable([
-          ['Month', 'Starters', 'Brunch', 'Main', 'Pasta', 'Drinks', 'Average'],
+          ['Month', 'Food', 'Brunch', 'Main', 'Pasta', 'Drinks', 'Average'],
           ['2020/05',  165,      938,         522,             998,           450,      614.6],
           ['2020/06',  135,      1120,        599,             1268,          288,      682],
           ['2020/07',  157,      1167,        587,             807,           397,      623],
