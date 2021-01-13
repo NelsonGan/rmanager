@@ -116,7 +116,7 @@
 
                             <div class="infoContainer">
                                 <p class="foodName">Name : <?php echo $row['Name'] ?> </p>
-                                <p class="foodPrice">Price : <?php echo $row['Price'] ?> </p>
+                                <p class="foodPrice">Price : RM <?php echo $row['Price'] ?> </p>
                                 <p class="foodDesc">Description : <?php echo $row['Description'] ?></p>
                             </div>
 
@@ -148,7 +148,7 @@
 
                             <div class="infoContainer">
                                 <p class="foodName">Name : <?php echo $row1['Name'] ?> </p>
-                                <p class="foodPrice">Price : <?php echo $row1['Price'] ?></p>
+                                <p class="foodPrice">Price : RM <?php echo $row1['Price'] ?></p>
                                 <p class="foodDesc">Description : <?php echo $row1['Description'] ?></p>
                             </div>
 
@@ -180,7 +180,7 @@
 
                             <div class="infoContainer">
                                 <p class="foodName">Name : <?php echo $row2['Name'] ?></p>
-                                <p class="foodPrice">Price : <?php echo $row2['Price'] ?></p>
+                                <p class="foodPrice">Price : RM <?php echo $row2['Price'] ?></p>
                                 <p class="foodDesc">Description : <?php echo $row2['Description'] ?></p>
                             </div>
 
@@ -212,7 +212,7 @@
 
                             <div class="infoContainer">
                                 <p class="foodName">Name : <?php echo $row3['Name'] ?></p>
-                                <p class="foodPrice">Price : <?php echo $row3['Price'] ?></p>
+                                <p class="foodPrice">Price : RM <?php echo $row3['Price'] ?></p>
                                 <p class="foodDesc">Description : <?php echo $row3['Description'] ?></p>
                             </div>
 
