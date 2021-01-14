@@ -17,7 +17,7 @@ if (isset($_POST["update"])) {
 
 
         echo '<script>alert("Order for   \"OrderID ' . $orderid . '\"   has been updated");
-        window.location.href="history.php";
+        window.location.href="../history.php";
                 </script>';
     } else {
         die('Error:' . mysqli_error($con));
