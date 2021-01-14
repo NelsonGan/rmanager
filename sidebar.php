@@ -23,20 +23,13 @@
             else { ?>
                 <li><a href="checkin.php"><i class="fas fa-user-friends"></i>Attendance</a></li>
                 <li><a href="leaverequestform.php"><i class="fas fa-copy"></i>Apply Leave</a></li>
-                <!-- <li><a href="table.php"><i class="fas fa-shopping-cart"></i>Take Order</a></li> -->
-                <li><a href="#" onclick="Dropdown()"><i class="fas fa-shopping-cart"></i>Take Order</a></li>
-                <div class="dropdown-container" id="drop">
+                <li><a href="#" onclick="openDrop()"><i class="fas fa-shopping-cart"></i>Order</a></li>
+                <div class="dropdown-container" id="todrop">
                         <a href="table.php" >New Order</a>
                         <a href="history.php" >Order List</a>
                 </div>
                 <li><a href="inventorymainpage.php"><i class="fas fa-warehouse"></i>Manage Inventory</a></li>
                 <li><a href="profile-staff"><i class="fas fa-user"></i>Profile</a></li>
-                <li><a href="#" onclick="openDrop()"><i class="fas fa-map-pin"></i>Dropdown</a></li>
-                <div class="dropdown-container" id="todrop">
-                        <a href="#" >Link 1</a>
-                        <a href="#" >Link 2</a>
-                        <a href="#" >Link 3</a>
-                </div>
             <?php } ?>
             <li><a href="includes/signout.php"><i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a></li>
         </ul> 
