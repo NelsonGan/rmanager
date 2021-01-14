@@ -34,7 +34,7 @@
       <span>Sales Reports</span>
     </div>
     <div class="container-fluid">
-    <div class="table-responsive">
+    <div class="table table-responsive table-borderless">
     <table class="table">
       <tr>
         <th><div id="barchart"></div>
@@ -48,7 +48,8 @@
           <input name="filterbtn" type="submit">
           <input type="reset" name="reset" value ="Reset">
         </form>
-
+        <br>
+        <a href="printreport.php" class="btn btn-light">Print Report</a>
         </div>
       </tr>
       <tr>

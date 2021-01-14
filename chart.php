@@ -7,7 +7,7 @@ google.charts.setOnLoadCallback(drawChart3);
 
 function drawChart() {
 var data = new google.visualization.arrayToDataTable([
-  ['Day','Sales Per Day'],
+  ['Day','Sales Per Day (RM)'],
 <?php
 require "includes/conn.php";
 if(isset($_GET["filterbtn"])){
