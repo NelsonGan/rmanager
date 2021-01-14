@@ -8,8 +8,8 @@
   <title>Sales Reports</title>
   <link rel="stylesheet" href="stylesheets/default.css">
   <link rel="stylesheet" href="stylesheets/salesreport.css">
+  <!-- <script type="text/javascript" src="javascripts/salesreport.js"></script> -->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script src="javascripts/salesreport.js"></script>
   <link rel="stylesheet" href="stylesheets/sidebar.css">
   <script src="javascripts/sidebar.js"></script>
   <style>
@@ -30,6 +30,8 @@
   google.charts.load('current', {'packages':['corechart']});
   google.charts.setOnLoadCallback(drawChart);
   google.charts.setOnLoadCallback(drawChart1);
+  google.charts.setOnLoadCallback(drawChart2);
+  google.charts.setOnLoadCallback(drawChart3);
 
   function drawChart() {
   var data = new google.visualization.arrayToDataTable([
@@ -80,6 +82,99 @@ function drawChart1() {
 
         chart.draw(data, options);
       }
+
+  function drawChart2() {
+
+          var data = google.visualization.arrayToDataTable([
+            ['Time', 'Number of Customer'],
+            <?php
+            $sql2 = "SELECT COUNT(customername) as TotalCustomer FROM orders WHERE TIME(odatetime) BETWEEN '10:00:00' AND '12:00:00'";
+            $query2 = mysqli_query($con,$sql2);
+            while($result2 = mysqli_fetch_array($query2))
+            {
+              echo "['10 AM ~ 12 AM',".(int)$result2['TotalCustomer']."],";
+            }
+            ?>
+            <?php
+            $sql3 = "SELECT COUNT(customername) as TotalCustomer FROM orders WHERE TIME(odatetime) BETWEEN '12:00:00' AND '14:00:00'";
+            $query3 = mysqli_query($con,$sql3);
+            while($result3 = mysqli_fetch_array($query3))
+            {
+              echo "['12 AM ~ 2 PM',".(int)$result3['TotalCustomer']."],";
+            }
+            ?>
+            <?php
+            $sql4 = "SELECT COUNT(customername) as TotalCustomer FROM orders WHERE TIME(odatetime) BETWEEN '14:00:00' AND '16:00:00'";
+            $query4 = mysqli_query($con,$sql4);
+            while($result4 = mysqli_fetch_array($query4))
+            {
+              echo "['2 PM ~ 4 PM',".(int)$result4['TotalCustomer']."],";
+            }
+            ?>
+            <?php
+            $sql5 = "SELECT COUNT(customername) as TotalCustomer FROM orders WHERE TIME(odatetime) BETWEEN '16:00:00' AND '18:00:00'";
+            $query5 = mysqli_query($con,$sql5);
+            while($result5 = mysqli_fetch_array($query5))
+            {
+              echo "['4 PM ~ 6 PM',".(int)$result5['TotalCustomer']."],";
+            }
+            ?>
+            <?php
+            $sql6 = "SELECT COUNT(customername) as TotalCustomer FROM orders WHERE TIME(odatetime) BETWEEN '18:00:00' AND '20:00:00'";
+            $query6 = mysqli_query($con,$sql6);
+            while($result6 = mysqli_fetch_array($query6))
+            {
+              echo "['6 PM ~ 8 PM',".(int)$result6['TotalCustomer']."],";
+            }
+            ?>
+            <?php
+            $sql7 = "SELECT COUNT(customername) as TotalCustomer FROM orders WHERE TIME(odatetime) BETWEEN '20:00:00' AND '22:00:00'";
+            $query7 = mysqli_query($con,$sql7);
+            while($result7 = mysqli_fetch_array($query7))
+            {
+              echo "['8 PM ~ 10 PM',".(int)$result7['TotalCustomer']."],";
+            }
+            ?>
+          ]);
+
+          var options = {
+            title: 'Customer Frequency',
+            width: '600',
+            height: '400',
+            curveType: 'function',
+            legend: { position: 'bottom' }
+          };
+
+          var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+          chart.draw(data, options);
+        }
+
+function drawChart3() {
+        // Some raw data (not necessarily accurate)
+        var data = google.visualization.arrayToDataTable([
+          ['Month', 'Food', 'Brunch', 'Main', 'Pasta', 'Drinks', 'Average'],
+          ['2020/05',  165,      938,         522,             998,           450,      614.6],
+          ['2020/06',  135,      1120,        599,             1268,          288,      682],
+          ['2020/07',  157,      1167,        587,             807,           397,      623],
+          ['2020/08',  139,      1110,        615,             968,           215,      609.4],
+          ['2020/09',  136,      691,         629,             1026,          366,      569.6]
+        ]);
+
+        var options = {
+          title : 'Monthly Revenue by Menu',
+          vAxis: {title: 'Revenue'},
+          hAxis: {title: 'Month'},
+          seriesType: 'bars',
+          series: {5: {type: 'line'}},
+          width: '600',
+          height: '400'
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('combochart'));
+        chart.draw(data, options);
+      }
+
   </script>
 </head>
 <body>
