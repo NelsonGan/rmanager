@@ -37,7 +37,6 @@
   var data = new google.visualization.arrayToDataTable([
     ['Day','Sales Per Day'],
   <?php
-  session_start();
   require "includes/conn.php";
   if(isset($_GET["filterbtn"])){
   $Month = $_GET["monthfilter"];
@@ -180,7 +179,7 @@ function drawChart3() {
 </head>
 <body>
   <div style="flex: 1";>
-    <?php include "includes/sidebarspecial.php";?>
+    <?php include "sidebar.php";?>
   </div>
   <div class="mainbody">
     <div class="topbar">
