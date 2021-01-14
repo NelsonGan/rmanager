@@ -26,7 +26,9 @@
             $result = mysqli_query($con, $sql);
             while ($row = mysqli_fetch_assoc($result)){
                 //We check if the location has any items before displaying the div
-                $sql = "SELECT * FROM inventory WHERE location='".$row['name']."'";
+
+                
+                $sql = "SELECT * FROM inventory WHERE location = ".$row['Location_ID'];
                 $items = mysqli_query($con, $sql);
                 if (mysqli_num_rows($items) > 0){ ?>
                     <div>
@@ -51,7 +53,6 @@
                                 echo "<tr>";
                                 echo "<td>".$itemcode."</td>";
                                 echo "<td>".$iteminfo['itemname']."</td>";
-                                /*echo "<td>".$quantity."</td>"; */
                                 echo '<td><input type="text" class="quantity" name="'.$itemcode.'" value="'.$quantity.'" readonly></td>';
                                 echo "</tr>";
                             }

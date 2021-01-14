@@ -47,3 +47,9 @@ function checkMonth(month){
     } 
 }
 
+function openRecord(){
+    window.open(document.URL, '_blank', 'location=yes,height=570,width=520,scrollbars=yes,status=yes');
+    
+}
+
+/*window.open(this.href,'newwindow',"location=yes, width=2480, height=3508");*/
