@@ -5,7 +5,6 @@
 </head>
 
 <body>
-    <?php session_start();?>
     <div class="sidebar">
         <img src="images/logo.png" style="height: 20%; margin-bottom: 30px;">
         <ul>
