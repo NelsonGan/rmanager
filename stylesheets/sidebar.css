@@ -67,3 +67,15 @@ body{
     flex: 1;
     margin: 5px 0px 5px 40px;
 }
+
+#drop{
+  display: none;
+  flex-direction: column;
+  transition: .6s ease opacity,.6s ease transform;
+}
+
+#drop a{
+  color: white;
+  flex: 1;
+  margin: 5px 0px 5px 40px;
+}

@@ -221,7 +221,7 @@
                                 </div>
 
                                 <br /> <br />
-                                <form action="includes/updateo.php.php" method="post">
+                                <form action="includes/updateo.php" method="post">
                                     <div class="col-md-6 col-xs-12 pull pull-right">
 
 

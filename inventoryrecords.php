@@ -21,6 +21,7 @@
             <form action="inventoryrecords.php" method="POST">
                 <p class="title">YEAR:</p>
                 <select class="recordselect" name="year" id="yearselect" onchange="submit()">
+                    <option value="null">-Select a year-</option>
                     <?php 
                     $sql = "SELECT logyear FROM inventory_log GROUP BY logyear ORDER BY logyear DESC";
                     $result = mysqli_query($con, $sql);
@@ -31,7 +32,7 @@
                 </select>
                 
                 <?php
-                if (isset($_POST['year'])){
+                if (isset($_POST['year']) && $_POST['year'] != 'null'){
                     echo '<p class="title">MONTH:</p>';
                     echo '<select class="recordselect" name="month" id="monthselect" onchange="submit()">';
                     echo '<option value="null">-Select a month-</option>';
@@ -57,7 +58,7 @@
                 } 
 
                 if (isset($_POST['month'])){
-                    echo "<script>window.setMonthIndex('".$_POST['month']."');</script>";
+                    echo "<script>window.setMonthIndex('".$_POST['month']."');</script>";  
                 } 
                 ?>
                 <button id="submitform" class="invisible" type="submit"></button>
@@ -84,15 +85,17 @@
                     ?>
                     <p class="recordinfo"><b>Record created by: </b><?php echo $staffdetails['name'] ?></p>
                     <p class="recordinfo"><b>Record created on: </b><?php echo $inventoryrecord['creationdate'] ?></p>
+                    
 
                     <?php
                     $sql = "SELECT * FROM locations";
                     $result = mysqli_query($con, $sql);
                     while ($row = mysqli_fetch_assoc($result)){
                         //We check if the location has any items before displaying the div
-                        $sql = "SELECT * FROM inventory WHERE location='".$row['Location_ID']."'";
+                        $sql = "SELECT inventory.Inventory_ID, itemname, unit, price, amount FROM log_details LEFT JOIN inventory ON log_details.Inventory_ID = inventory.Inventory_ID WHERE log_details.Log_ID = ".$inventoryrecord['Log_ID']." AND location = ".$row['Location_ID'].";";
                         $items = mysqli_query($con, $sql);
-                        if (mysqli_num_rows($items) > 0){ ?>
+                        if (mysqli_num_rows($items) > 0){
+                        ?>
                             <div>
                                 <p class="locationtitle"><?php echo $row['name'] ?></p>
                                 <hr class="line">
@@ -102,7 +105,7 @@
                                         <th style="width: 30%;">Item Name</th>
                                         <th style="width: 15%;">Unit</th>
                                         <th style="width: 25%;">Unit Price</th>
-                                        <th style="width: 10%;"></th>
+                                        <th style="width: 10%;">Quantity</th>
                                     </tr>
         
                                     <?php 
@@ -114,18 +117,22 @@
                                         echo "<td>".$iteminfo['itemname']."</td>";
                                         echo "<td>".$iteminfo['unit']."</td>";
                                         echo "<td>".$iteminfo['price']."</td>";
-                                        echo '<td><button class="delbtn" onclick="delItem(\''.' '.$iteminfo["itemname"].'\','.$iteminfo["Inventory_ID"].')">Delete</button></td>';
-                                        //<td><button onclick="delItem(' wow')">Delete</button></td>
+                                        echo "<td>".$iteminfo['amount']."</td>";
                                         echo "</tr>";
                                     }
                                     ?>
                                 </table>
                             </div>
-                        <?php } ?>
-                    <?php } ?>
-                    
-            <?php }
-            } ?>
+                    <?php } //for if mysqli_num_row > 0?> 
+                <?php } //for while $row = $result?>
+                <a 
+                href="printrecord.php?year=<?php echo strval($year)?>&month=<?php echo strval($month)?>" 
+                target="_blank"
+                onclick="window.open(this.href, '_blank', 'location=yes,height=570,width=1000,scrollbars=yes,status=yes');">
+                    <button class="printbtn"><i class="fas fa-print"></i> &nbsp; Print</button>
+                </a>
+            <?php } // for if month != null?>
+        <?php } // for if year and month isset?>
         </center>
 
     </div>

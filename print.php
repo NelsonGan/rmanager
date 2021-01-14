@@ -30,7 +30,7 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <h2 class="page-header">
-                            Order Invoice
+                            Order Receipt
                             <small class="pull-right">Date: <?php echo $row["odatetime"]; ?></small>
                         </h2>
                     </div>
