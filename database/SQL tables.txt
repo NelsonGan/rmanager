@@ -69,3 +69,12 @@ CREATE TABLE attendance(
 	clockout TIME,
 	PRIMARY KEY(Attendance_ID)
 );
+
+CREATE TABLE schedule(
+	Shift_ID int(20) AUTO_INCREMENT,
+	Staff_ID int(20),
+	FOREIGN KEY (Staff_ID) REFERENCES staff(Staff_ID),
+	starttime varchar(20),
+	endtime varchar(20),
+	PRIMARY KEY(Shift_ID)
+);
