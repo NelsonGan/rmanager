@@ -87,3 +87,4 @@ CREATE TABLE schedule(
 	PRIMARY KEY(Schedule_ID)
 );
 
+ALTER TABLE `orders` ADD `staffid` INT NOT NULL AFTER `customername`;

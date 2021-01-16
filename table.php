@@ -71,7 +71,7 @@
 
                 <label for="size" class="col-sm-2 control-label">Table number :</label>
                 <div class="col-sm-7">
-                    <input class="form-control" id="size" name="table" readonly>
+                    <input class="form-control" id="size" name="table" required data-readonly>
                 </div>
 
 
