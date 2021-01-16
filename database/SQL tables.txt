@@ -70,11 +70,20 @@ CREATE TABLE attendance(
 	PRIMARY KEY(Attendance_ID)
 );
 
-CREATE TABLE schedule(
-	Shift_ID int(20) AUTO_INCREMENT,
-	Staff_ID int(20),
-	FOREIGN KEY (Staff_ID) REFERENCES staff(Staff_ID),
+CREATE TABLE shifts(
+	Shift_ID int(200) AUTO_INCREMENT,
+	day varchar(20),
 	starttime varchar(20),
 	endtime varchar(20),
 	PRIMARY KEY(Shift_ID)
 );
+
+CREATE TABLE schedule(
+	Schedule_ID int(200) AUTO_INCREMENT,
+	Staff_ID int(20),
+	FOREIGN KEY (Staff_ID) REFERENCES staff(Staff_ID),
+	Shift_ID int(200),
+	FOREIGN KEY (Shift_ID) REFERENCES shifts(Shift_ID),
+	PRIMARY KEY(Schedule_ID)
+);
+

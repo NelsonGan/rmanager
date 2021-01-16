@@ -134,13 +134,23 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
-    width: 50%;
+    width: 25%;
     height: 53%;
     opacity: 100%;
-    z-index: 2;
+    z-index: 4;
     opacity: 1;
     border-radius: 15px;
-    display: none;
+}
+
+#staffmodalwrapper{
+    background-color: black;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    opacity: 60%;
 }
 
 .modaltitle{
@@ -194,4 +204,44 @@
     padding: 5px 10px;
     width: 60%;
     margin-top: 20px;
+}
+
+.newnote{
+    margin-top: 30px;
+    margin-bottom: -20px;
+    color: green;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.failednote{
+    margin-top: 30px;
+    margin-bottom: -20px;
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#hiddenform{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+}
+
+.assignstaff {
+    overflow-y: scroll;
+    max-height: 200px;
+    width: 80%;
+    margin-top: 30px;
+    user-select: none;
+    text-align: left;
+    padding-left: 60px;
+}
+
+.assignstaff input{
+    margin: 10px;
+}
+
+.assignstaff label {
+    font-size: 20px;
 }

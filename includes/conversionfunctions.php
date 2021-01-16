@@ -84,3 +84,31 @@ function ReturnMonthToNum($mth){
         return 12;
     }
 }
+
+function ReturnNumToMonth($num){
+    if ($num == "1"){
+        return "January";
+    } elseif (($num == "2")){
+        return "February";
+    } elseif (($num == "3")){
+        return "March";
+    } elseif (($num == "4")){
+        return "April";
+    } elseif (($num == "5")){
+        return "May";
+    } elseif (($num == "6")){
+        return "June";
+    } elseif (($num == "7")){
+        return "July";
+    } elseif (($num == "8")){
+        return "August";
+    } elseif (($num == "9")){
+        return "September";
+    } elseif (($num == "10")){
+        return "October";
+    } elseif (($num == "11")){
+        return "November";
+    } elseif (($num == "12")){
+        return "December";
+    }
+}

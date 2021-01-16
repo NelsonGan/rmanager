@@ -2,18 +2,16 @@
 if (isset($_POST['add'])) 
 {
     require "conn.php";
-    $itemname = $_POST['itemname'];
-    $itemcost = $_POST['itemcost'];
-    $itemunit = $_POST['itemunit'];
-    $location = $_POST['location'];
-    $supplier = $_POST['supplier'];
+    $shiftday = $_POST['shiftday'];
+    $starttime = $_POST['shiftstart'];
+    $endtime = $_POST['shiftend'];
 
-    $sql = "INSERT INTO inventory (Supplier_ID, location, itemname, unit, price) VALUES ('$supplier', '$location', '$itemname', '$itemunit','$itemcost')";
+    $sql = "INSERT INTO shifts (shiftday, starttime, endtime) VALUES ('$shiftday', '$starttime', '$endtime');";
     if (mysqli_query($con, $sql)) {
-        header("Location: ../manageinventory.php?success=1");
+        header("Location: ../schedule.php?added=1");
     } else {
-        header("Location: ../addinventoryitem.php?error=1");
+        header("Location: ../schedule.php?added=0");
     }
 } else {
-    header("Location: ../inventorymainpage.php");
+    header("Location: ../schedule.php");
 }
