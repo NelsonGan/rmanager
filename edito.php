@@ -320,7 +320,7 @@
                             </button>
                         </div>
 
-                        <form id="oform" name="oform" action="createodl.php" method="post">
+                        <form id="oform" name="oform" action="includes/createodl.php" method="post">
                             <div class="modal-body">
 
 
@@ -380,7 +380,7 @@
 
                     function load_data(fname) {
                         $.ajax({
-                            url: "load.php",
+                            url: "includes/load.php",
                             method: "POST",
                             data: {
                                 fname: fname
@@ -405,7 +405,7 @@
                     //load data for price input
                     $('#product_1').change(function() {
                         $.ajax({
-                            url: 'secondlist.php',
+                            url: 'includes/secondlist.php',
                             data: {
                                 product_1_id: $(this).val()
                             },
