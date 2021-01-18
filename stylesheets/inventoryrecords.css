@@ -1,3 +1,21 @@
+@media print {
+    body * {
+      visibility: hidden;
+    }
+    #section-to-print, #section-to-print * {
+      visibility: visible;
+    }
+
+    #section-to-print {
+      position: fixed;
+      left: 50%;
+      top: 3%;
+      transform: translate(-50%, 0);
+      width: 125%;
+      margin: 0px;
+    }
+  }
+
 .title{
     font-size: 26px;
     font-weight: bold;

@@ -64,9 +64,11 @@
                 <button id="submitform" class="invisible" type="submit"></button>
             </form>
 
+            <div id="section-to-print">
             <?php
             if (isset($_POST['year']) && isset($_POST['month'])){
                 if ($_POST['month'] != 'null') { ?>
+                    
                     <script>window.checkMonth('<?php echo $_POST['month']; ?>');</script>
                     <p class="recordtitle">Inventory Record of <?php echo $_POST['month']; echo " "; echo $_POST['year'];?></p>
 
@@ -125,17 +127,18 @@
                             </div>
                     <?php } //for if mysqli_num_row > 0?> 
                 <?php } //for while $row = $result?>
+                </div>
+                
+                <!--
                 <a 
                 href="printrecord.php?year=<?php echo strval($year)?>&month=<?php echo strval($month)?>" 
                 target="_blank"
                 onclick="window.open(this.href, '_blank', 'location=yes,height=570,width=1000,scrollbars=yes,status=yes');">
                     <button class="printbtn"><i class="fas fa-print"></i> &nbsp; Print</button>
                 </a>
+                -->
 
-                <a 
-                href="printrecord.php?year=<?php echo strval($year)?>&month=<?php echo strval($month)?>" 
-                target="_blank"
-                onclick="window.print()">
+                <a onclick="window.print()">
                     <button class="printbtn"><i class="fas fa-print"></i> &nbsp; Print</button>
                 </a>
             <?php } // for if month != null?>
