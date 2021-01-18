@@ -32,16 +32,6 @@
                 }
             }
             ?>
-
-            <?php 
-            $unconvertedmonday = strtotime('last monday');
-            $unconvertedsunday = strtotime('this sunday');
-            $monday = date("d",$unconvertedmonday)." ".ReturnNumToMonth(date("m",$unconvertedmonday))." ".date("Y",$unconvertedmonday);
-            $sunday = date("d",$unconvertedsunday)." ".ReturnNumToMonth(date("m",$unconvertedsunday))." ".date("Y",$unconvertedsunday);
-            ?>
-            <p class="toptext">Weekly Schedule for <?php echo $monday?> until <?php echo $sunday?></p>
-
-            <button class="btn" style="margin-top: 20px;" onclick="showModal()"><i class="fas fa-plus"></i> &nbsp; Add Shift</button>
             
             <?php 
             $strtoconvert = (1 - date('w'))." days";
@@ -66,6 +56,16 @@
             $sunday = date("d/m/Y", strtotime($strtoconvert)); 
             ?>
 
+            <?php 
+            $textmonday = explode("/", $monday);
+            $textsunday = explode("/", $sunday);
+            $titlemonday = $textmonday[0]." ".ReturnNumToMonth($textmonday[1])." ".$textmonday[2];
+            $titlesunday = $textsunday[0]." ".ReturnNumToMonth($textsunday[1])." ".$textsunday[2];
+            ?>
+            <p class="toptext">Weekly Schedule for <?php echo $titlemonday?> until <?php echo $titlesunday?></p>
+
+            <button class="btn" style="margin-top: 20px;" onclick="showModal()"><i class="fas fa-plus"></i> &nbsp; Add Shift</button>
+            
             <table class="timetable">
                 <tr id="HeaderRow">
                     <td width="10%;">Monday <br> <span class="date">(<?php echo $monday ?>)</span></td>
