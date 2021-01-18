@@ -59,21 +59,35 @@
             padding-left: 0;
         }
 
-        a ,a:hover{
+        a,
+        a:hover {
             text-decoration: none;
             font-size: 16px;
         }
 
-        body > div.sidebar > ul > li{
+        body>div.sidebar>ul>li {
             height: 49.600px;
         }
 
-        body > div.sidebar > ul > li> a{
+        body>div.sidebar>ul>li>a {
             height: 17.6px;
         }
 
-        body > div.mainbody > div.topbar{
-            height:52px;
+        body>div.mainbody>div.topbar {
+            height: 52px;
+        }
+
+        .btn:focus,
+        .btn:active {
+            -webkit-box-shadow: none !important;
+            -moz-box-shadow: none !important;
+            box-shadow: none !important;
+            outline: none;
+            border: none;
+        }
+
+        .bootstrap-select .dropdown-toggle:focus {
+            outline: none !important;
         }
     </style>
 </head>
@@ -169,7 +183,8 @@
                                 <div id="container">
                                     <div id="left"></div>
                                     <div id="right">
-                                        <button type="button" id="addd" class="btn btn-outline-success add" data-toggle="modal" data-target="#addadminprofile" style="margin-right:40px; border: solid 2px;"><img src="https://img.icons8.com/android/24/000000/plus.png" /> &nbsp; Add New</button>
+                                    <button type="button" id="addd" class="btn btn-success" data-toggle="modal" data-target="#addadminprofile" style="margin-right:40px; "><i class="fas fa-plus"></i> &nbsp; Add New</button>
+
                                     </div>
                                     <br><br><br>
                                     <table class="table table-bordered" id="product_info_table">

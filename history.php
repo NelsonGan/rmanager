@@ -100,9 +100,14 @@
         body > div.mainbody > div.topbar{
             height:52px;
         }
-        /* a:hover{
-            text-decoration:underline;
-        } */
+
+        .btn:focus ,.btn:active{
+            -webkit-box-shadow: none !important;
+            -moz-box-shadow: none !important;
+            box-shadow: none !important;
+            outline: none;
+            border:none;
+        }
 
     </style>
 

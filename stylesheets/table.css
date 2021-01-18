@@ -22,7 +22,9 @@ body > form > div.form-group > label {
   margin-left:80px;
 }
 
-
+input[data-readonly] {
+  pointer-events: none;
+}
 
 #size,
 #cname {

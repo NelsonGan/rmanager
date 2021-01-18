@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf=8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -54,31 +55,45 @@
             vertical-align: middle;
         }
 
-        body > div.sidebar > ul{
-        padding-left:0;
-    }
+        body>div.sidebar>ul {
+            padding-left: 0;
+        }
 
-    a ,a:hover{
+        a,
+        a:hover {
             text-decoration: none;
             font-size: 16px;
         }
 
-        body > div.sidebar > ul > li{
+        body>div.sidebar>ul>li {
             height: 49.600px;
         }
 
-        body > div.sidebar > ul > li> a{
+        body>div.sidebar>ul>li>a {
             height: 17.6px;
         }
 
-        body > div.mainbody > div.topbar{
-            height:52px;
+        body>div.mainbody>div.topbar {
+            height: 52px;
+        }
+
+        .btn:focus,
+        .btn:active {
+            -webkit-box-shadow: none !important;
+            -moz-box-shadow: none !important;
+            box-shadow: none !important;
+            outline: none;
+            border: none;
+        }
+
+        .bootstrap-select .dropdown-toggle:focus {
+            outline: none !important;
         }
     </style>
 </head>
 
 <body>
-    <?php include "sidebar.php";?>
+    <?php include "sidebar.php"; ?>
 
     <div class="mainbody">
         <div class="topbar">
@@ -137,7 +152,7 @@
                             <div id="container">
                                 <div id="left"></div>
                                 <div id="right">
-                                    <button type="button" id="addd" class="btn btn-outline-success add" data-toggle="modal" data-target="#addadminprofile" style="margin-right:40px; border: solid 2px;"><i class="fas fa-plus"></i> &nbsp; Add New</button>
+                                    <button type="button" id="addd" class="btn btn-success" data-toggle="modal" data-target="#addadminprofile" style="margin-right:40px; "><i class="fas fa-plus"></i> &nbsp; Add New</button>
                                 </div>
                                 <br><br><br>
                                 <table class="table table-bordered" id="product_info_table">
@@ -236,7 +251,7 @@
             <div style="display: flex; align-items: center; justify-content: center;">
                 <div style="margin:0 auto; display:block;">
                     <button type="submit" name="create" id="create" class="btn btn-primary" style="left: 50; margin-right: 50px;">Create Order</button>
-                    <a onclick="return confirm('Are you sure you want to cancel this order?')" href="includes/deleteo1.php?orderid=<?php echo $lastid?>" class="btn btn-warning" id="cancel">Cancel</a>
+                    <a onclick="return confirm('Are you sure you want to cancel this order?')" href="includes/deleteo1.php?orderid=<?php echo $lastid ?>" class="btn btn-warning" id="cancel">Cancel</a>
                 </div>
             </div>
             </form>
@@ -367,19 +382,13 @@
                             $('#replace').html(data);
                         }
                     });
-                    // var price1 = document.getElementById('price1');
-                    // console.log('price1.value'); 
+                    s
                 });
 
 
                 //display data for amount input
                 // function getTotal() {
                 $('#quantity').change(function() {
-                    //var form = element.form;
-                    //   var total = Number("#quantity" .val()) * Number("#price".val());
-                    //   total = total.toFixed(2);
-                    //   "#amount".val(total);
-                    //form.amount.value = form.quantity.value * form.price.value;
                     a = Number(document.getElementById('quantity').value);
                     b = Number(document.getElementById('price1').value);
                     c = a * b;
@@ -389,57 +398,6 @@
 
                     // };
                 });
-
-
-
-                //Insert function
-                // $('#save').on('click', function() {
-                //     $("#save").attr("disabled", "disabled");
-                //     var orderid = $('#orderid').val();
-                //     var itemid = $('#product_1').val();
-                //     var quantity = $('#quantity').val();
-                //     var price1 = $('#price1').val();
-                //     var amount = $('#amount').val();
-                //     //var total =$('#total').val();
-
-                //     if (itemid != "" && quantity != "") {
-                //         $.ajax({
-                //             url: "createodl.php",
-                //             type: "POST",
-                //             data: {
-                //                 orderid: orderid,
-                //                 itemid: itemid,
-                //                 quantity: quantity,
-                //                 price1: price1,
-                //                 amount: amount,
-
-                //             },
-                //             cache: false,
-                //             success: function(dataResult) {
-                //                 var dataResult = JSON.parse(dataResult);
-                //                 if (dataResult.statusCode == 200) {
-                //                     $("#save").removeAttr("disabled");
-                //                     $('#oform').find('input:text').val('');
-                //                     $('#addadminprofile').modal('hide');
-                //                     location.reload();
-
-
-                //                 } else if (dataResult.statusCode == 201) {
-                //                     alert("Error occured !");
-                //                 }
-
-                //             }
-                //         });
-                //     } else {
-                //         alert('Please fill all the field !');
-                //     }
-
-
-
-                // });
-
-
-
 
 
             });
