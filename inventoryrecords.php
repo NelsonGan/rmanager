@@ -131,6 +131,13 @@
                 onclick="window.open(this.href, '_blank', 'location=yes,height=570,width=1000,scrollbars=yes,status=yes');">
                     <button class="printbtn"><i class="fas fa-print"></i> &nbsp; Print</button>
                 </a>
+
+                <a 
+                href="printrecord.php?year=<?php echo strval($year)?>&month=<?php echo strval($month)?>" 
+                target="_blank"
+                onclick="window.print()">
+                    <button class="printbtn"><i class="fas fa-print"></i> &nbsp; Print</button>
+                </a>
             <?php } // for if month != null?>
         <?php } // for if year and month isset?>
         </center>
