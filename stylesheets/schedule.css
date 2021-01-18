@@ -135,7 +135,8 @@
     transform: translate(-50%, -50%);
     background-color: white;
     width: 25%;
-    height: 53%;
+    height: auto;
+    max-height: 500px;
     opacity: 100%;
     z-index: 4;
     opacity: 1;
