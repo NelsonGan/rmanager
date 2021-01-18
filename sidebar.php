@@ -31,7 +31,7 @@
                 <li><a href="inventorymainpage.php"><i class="fas fa-warehouse"></i>Manage Inventory</a></li>
                 <li><a href="profile-staff"><i class="fas fa-user"></i>Profile</a></li>
             <?php } ?>
-            <li><a href="includes/signout.php"><i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a></li>
+            <li><a href="includes/signout.php"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
         </ul> 
     </div>
 </body>
