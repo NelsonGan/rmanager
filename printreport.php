@@ -172,7 +172,7 @@
       $queryMonth = mysqli_query($con,$sqlMonth);
       $sqlFood = "SELECT DATE_FORMAT(u.odatetime,'%Y/%c') AS Month, Sum(o.quantity) as TotalFoodSold From menu m left join order_detail o on m.Item_ID = o.Item_ID left join orders u on o.orderid = u.orderid WHERE m.Type = 'Food' Group By DATE_FORMAT(u.odatetime,'%Y/%c')";
       $queryFood = mysqli_query($con,$sqlFood);
-      $sqlAppertizers = "SELECT DATE_FORMAT(u.odatetime,'%Y/%c') AS Month, Sum(o.quantity) as TotalAppertizersSold From menu m left join order_detail o on m.Item_ID = o.Item_ID left join orders u on o.orderid = u.orderid WHERE m.Type = 'Appertizers' Group By DATE_FORMAT(u.odatetime,'%Y/%c')";
+      $sqlAppertizers = "SELECT DATE_FORMAT(u.odatetime,'%Y/%c') AS Month, Sum(o.quantity) as TotalAppertizersSold From menu m left join order_detail o on m.Item_ID = o.Item_ID left join orders u on o.orderid = u.orderid WHERE m.Type = 'Appetizers' Group By DATE_FORMAT(u.odatetime,'%Y/%c')";
       $queryAppertizers = mysqli_query($con,$sqlAppertizers);
       $sqlDesserts = "SELECT DATE_FORMAT(u.odatetime,'%Y/%c') AS Month, Sum(o.quantity) as TotalDessertsSold From menu m left join order_detail o on m.Item_ID = o.Item_ID left join orders u on o.orderid = u.orderid WHERE m.Type = 'Desserts' Group By DATE_FORMAT(u.odatetime,'%Y/%c')";
       $queryDesserts = mysqli_query($con,$sqlDesserts);
