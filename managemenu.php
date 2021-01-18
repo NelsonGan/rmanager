@@ -165,7 +165,7 @@
 
                 <div id="appetizers" class="tabcontent">
                   <?php
-                  $sql2 = "SELECT * FROM menu WHERE Type ='Appertizers'";
+                  $sql2 = "SELECT * FROM menu WHERE Type ='Appetizers'";
                   $result2 = mysqli_query($con,$sql2);
                   while($row2 = mysqli_fetch_array($result2))
                   {

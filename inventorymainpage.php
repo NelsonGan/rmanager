@@ -30,7 +30,7 @@
         </div>
 
         <center>
-            <p style="margin-top: 40px; font-size: 30px;">Inventory</p>
+            <p style="margin-top: 40px; font-size: 40px;">Inventory</p>
 
             <table class="daytable">
                 <tr>
