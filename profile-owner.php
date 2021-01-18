@@ -31,11 +31,69 @@
                 <img src="images/profile.png">
                 <p>Work Shifts</p>
                 <ul class="shift">
-                    <li>Monday - 9:00am to 5pm</li>
-                    <li>Tuesday - 9:00am to 5pm</li>
-                    <li>Wednesday - 9:00am to 5pm</li>
-                    <li>Thursday - 9:00am to 5pm</li>
-                    <li>Friday - 9:00am to 5pm</li>
+                <?php 
+                    $sqlmon = "SELECT * FROM schedule LEFT JOIN shifts ON schedule.Shift_ID = shifts.Shift_ID WHERE schedule.Staff_ID = '$id' AND shifts.shiftday = 'Monday';";
+                    $resultmon = mysqli_query($con,$sqlmon);
+                    while ($rowmon = mysqli_fetch_assoc($resultmon)){
+                ?>
+                    <li><?php echo $rowmon['shiftday'];?> - <?php echo $rowmon['starttime'];?> to <?php echo $rowmon['endtime'];?></li>
+                <?php
+                    }
+                ?>
+                <?php 
+                    $sqlmon = "SELECT * FROM schedule LEFT JOIN shifts ON schedule.Shift_ID = shifts.Shift_ID WHERE schedule.Staff_ID = '$id' AND shifts.shiftday = 'Tuesday';";
+                    $resultmon = mysqli_query($con,$sqlmon);
+                    while ($rowmon = mysqli_fetch_assoc($resultmon)){
+                ?>
+                    <li><?php echo $rowmon['shiftday'];?> - <?php echo $rowmon['starttime'];?> to <?php echo $rowmon['endtime'];?></li>
+                <?php
+                    }
+                ?>
+                <?php 
+                    $sqlmon = "SELECT * FROM schedule LEFT JOIN shifts ON schedule.Shift_ID = shifts.Shift_ID WHERE schedule.Staff_ID = '$id' AND shifts.shiftday = 'Wednesday';";
+                    $resultmon = mysqli_query($con,$sqlmon);
+                    while ($rowmon = mysqli_fetch_assoc($resultmon)){
+                ?>
+                    <li><?php echo $rowmon['shiftday'];?> - <?php echo $rowmon['starttime'];?> to <?php echo $rowmon['endtime'];?></li>
+                <?php
+                    }
+                ?>
+                <?php 
+                    $sqlmon = "SELECT * FROM schedule LEFT JOIN shifts ON schedule.Shift_ID = shifts.Shift_ID WHERE schedule.Staff_ID = '$id' AND shifts.shiftday = 'Thursday';";
+                    $resultmon = mysqli_query($con,$sqlmon);
+                    while ($rowmon = mysqli_fetch_assoc($resultmon)){
+                ?>
+                    <li><?php echo $rowmon['shiftday'];?> - <?php echo $rowmon['starttime'];?> to <?php echo $rowmon['endtime'];?></li>
+                <?php
+                    }
+                ?>
+                <?php 
+                    $sqlmon = "SELECT * FROM schedule LEFT JOIN shifts ON schedule.Shift_ID = shifts.Shift_ID WHERE schedule.Staff_ID = '$id' AND shifts.shiftday = 'Friday';";
+                    $resultmon = mysqli_query($con,$sqlmon);
+                    while ($rowmon = mysqli_fetch_assoc($resultmon)){
+                ?>
+                    <li><?php echo $rowmon['shiftday'];?> - <?php echo $rowmon['starttime'];?> to <?php echo $rowmon['endtime'];?></li>
+                <?php
+                    }
+                ?>
+                <?php 
+                    $sqlmon = "SELECT * FROM schedule LEFT JOIN shifts ON schedule.Shift_ID = shifts.Shift_ID WHERE schedule.Staff_ID = '$id' AND shifts.shiftday = 'Saturday';";
+                    $resultmon = mysqli_query($con,$sqlmon);
+                    while ($rowmon = mysqli_fetch_assoc($resultmon)){
+                ?>
+                    <li><?php echo $rowmon['shiftday'];?> - <?php echo $rowmon['starttime'];?> to <?php echo $rowmon['endtime'];?></li>
+                <?php
+                    }
+                ?>
+                <?php 
+                    $sqlmon = "SELECT * FROM schedule LEFT JOIN shifts ON schedule.Shift_ID = shifts.Shift_ID WHERE schedule.Staff_ID = '$id' AND shifts.shiftday = 'Sunday';";
+                    $resultmon = mysqli_query($con,$sqlmon);
+                    while ($rowmon = mysqli_fetch_assoc($resultmon)){
+                ?>
+                    <li><?php echo $rowmon['shiftday'];?> - <?php echo $rowmon['starttime'];?> to <?php echo $rowmon['endtime'];?></li>
+                <?php
+                    }
+                ?>
                     <li><a href="attendance.php?staffid=<?php echo $row['Staff_ID'];?>" class="btn" style="margin-left: 0px; height: 35px;">View Attendance</a></li>
                     <?php
                         if (isset($_GET['error']))

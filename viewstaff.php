@@ -3,6 +3,7 @@
     <title>Manage Staff</title>
     <link rel="stylesheet" href="stylesheets/viewstaff.css">
     <link href="stylesheets/default.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/manageMenu.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -22,8 +23,7 @@
 
         <div class="search">
             <center>
-                <input type="text" class="searchbar" placeholder="Filter...">
-                <a href="addstaff.php" class='btn' id="addstaff">Add</a>
+                <a href="addstaff.php"><button type="button" class="addButton" href="addstaff.php">+</button></a>
             </center>
         </div>
         
