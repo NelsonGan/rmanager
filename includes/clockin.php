@@ -1,6 +1,6 @@
 <?php
 session_start();
-date_default_timezone_set('Asia/Kuala Lumpur');
+date_default_timezone_set('Asia/Kuala_Lumpur');
 $id = $_SESSION['Staff_ID'];
 $datetoday = date('Y-m-d');
 $timenow = date("H:i:s");
