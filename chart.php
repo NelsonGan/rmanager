@@ -127,7 +127,7 @@ function drawChart2() {
               var data = google.visualization.arrayToDataTable([
                 ['Month', 'Food', 'Appetizers', 'Desserts', 'Drinks', 'Average'],
                 <?php
-                $sqlMonth = "SELECT DATE_FORMAT(u.odatetime,'%Y/%c') AS Month From menu m left join order_detail o on m.Item_ID = o.Item_ID left join orders u on o.orderid = u.orderid Group By DATE_FORMAT(u.odatetime,'%Y/%c')";
+                $sqlMonth = "SELECT DATE_FORMAT(u.odatetime,'%Y/%c') AS Month From menu m left join order_detail o on m.Item_ID = o.Item_ID left join orders u on o.orderid = u.orderid WHERE u.paidstatus='PAID' Group By DATE_FORMAT(u.odatetime,'%Y/%c')";
                 $queryMonth = mysqli_query($con,$sqlMonth);
                 $sqlFood = "SELECT DATE_FORMAT(u.odatetime,'%Y/%c') AS Month, Sum(o.quantity) as TotalFoodSold From menu m left join order_detail o on m.Item_ID = o.Item_ID left join orders u on o.orderid = u.orderid WHERE m.Type = 'Food' AND u.paidstatus='PAID' Group By DATE_FORMAT(u.odatetime,'%Y/%c')";
                 $queryFood = mysqli_query($con,$sqlFood);
@@ -141,7 +141,7 @@ function drawChart2() {
                 $queryAverage = mysqli_query($con,$sqlAverage);
                 while(($resultM = mysqli_fetch_array($queryMonth)) && ($resultF = mysqli_fetch_array($queryFood)) && ($resultA = mysqli_fetch_array($queryAppertizers)) && ($resultD = mysqli_fetch_array($queryDesserts)) && ($resultO = mysqli_fetch_array($queryDrinks)) && ($resultR = mysqli_fetch_array($queryAverage)))
                 {
-                echo "['".$resultM['Month']."',".(int)$resultF['TotalFoodSold'].",".(int)$resultA['TotalAppertizersSold'].",".(int)$resultD['TotalDessertsSold'].",".(int)$resultO['TotalDrinksSold'].",".(int)$resultR['Average']."],";
+                echo "['".$resultM['Month']."',".(int)$resultF['TotalFoodSold'].",".(int)$resultA['TotalAppertizersSold'].",".(int)$resultD['TotalDessertsSold'].",".(int)$resultO['TotalDrinksSold'].",".(double)$resultR['Average']."],";
                 }
                 ?>
               ]);
