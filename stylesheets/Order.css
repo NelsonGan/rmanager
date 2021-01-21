@@ -45,8 +45,14 @@ body {
 }
 
 #product_info_table > tbody > tr > td:nth-child(7) > button{
-  border-color: #ffc107;
+  color: #0720ff;
+  border-color:#0720ff;
   padding: 6px 12px;
+  
+}
+
+#product_info_table > tbody > tr > td:nth-child(7) > button:hover{
+  color: #ffffff;
   
 }
 

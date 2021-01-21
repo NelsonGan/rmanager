@@ -191,7 +191,7 @@
                                             echo '<td>' . $amount . '</td>';
                                             $id = $row['orderdetail_ID'];
 
-                                            echo '<td><button type="button" class="btn btn-outline-warning editbtn" data-toggle="modal" data-target="#edit"><i class="fa fa-edit" aria-hidden="true"></i></button></td>';
+                                            echo '<td><button type="button" class="btn btn-outline-primary editbtn" data-toggle="modal" data-target="#edit"><i class="fas fa-arrows-alt-v"></i></button></td>';
 
                                             echo '<td><a href="includes/deleteod.php?id=' . $id . '">
                                             <button type="button" class="btn btn-outline-danger delete"><i class="fa fa-close"></i></button></td></a>';
