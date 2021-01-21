@@ -14,12 +14,16 @@
     <?php
         function showrecordbtn($month, $year){
             require "includes/conn.php";
-            $sql = "SELECT * FROM inventory_log WHERE logmonth = $month AND logyear = $year";
-            $result = mysqli_query($con, $sql);
-            if (mysqli_num_rows($result) == 0) {
-                echo '<a href="inventory.php?month='.$month.'&year='.$year.'"><button type="button" class="createbtn">Create Record</button></a>';
+            if (date("m") >= $month) {
+                $sql = "SELECT * FROM inventory_log WHERE logmonth = $month AND logyear = $year";
+                $result = mysqli_query($con, $sql);
+                if (mysqli_num_rows($result) == 0) {
+                    echo '<a href="inventory.php?month='.$month.'&year='.$year.'"><button type="button" class="createbtn">Create Record</button></a>';
+                } else {
+                    echo '<span class="created">Created  <i class="fa fa-check" aria-hidden="true"></i></span>';
+                }
             } else {
-                echo '<span class="created">Created  <i class="fa fa-check" aria-hidden="true"></i></span>';
+                echo '<button type="button" class="createbtn" disabled>Create Record</button>';
             }
         }
     ?>

@@ -1,29 +1,3 @@
-@media print {
-    body * {
-      visibility: hidden;
-    }
-    #section-to-print, #section-to-print * {
-      visibility: visible;
-    }
-
-    #section-to-print {
-      position: fixed;
-      left: 50%;
-      top: 3%;
-      transform: translate(-50%, 0);
-      width: 130%;
-      margin: 0px;
-    }
-
-    #section-to-print .btn {
-        visibility:hidden;
-    }
-
-    #section-to-print .recordtitle {
-        margin-bottom: -50px;
-    }
-  }
-
 .title{
     font-size: 26px;
     font-weight: bold;
@@ -54,29 +28,27 @@
     font-size: 33px;
     font-weight: bold;
     margin-top: 60px;
+    margin-bottom: 40px;
 }
 
-.printbtn {
-    background-color: black;
-    font-size: 20px;
+.editbtn {
+    background-color: gray;
+    font-size: 15px;
+    font-weight: bold;
     color: white;
-    padding: 8px 10px;
+    padding: 4px 15px;
     font-family: Product Sans;
     border-radius: 6px;
     cursor: pointer;
     box-shadow: 0px;
-    border:1px solid black;
+    border: none;
     transition: all 0.2s;
     text-decoration: none;
     outline: none;
-    margin: 60px 10px;
-    width: 15%;
 }
 
-.printbtn:hover{
-    background-color: white;
-    color:black;
-    border:1px solid black;
+.editbtn:hover {
+    color: black;
 }
 
 
@@ -115,4 +87,63 @@
     padding-top: 6px;
     padding-bottom: 6px;
     padding-left: 5px;
+}
+
+
+/* CODE TO STYLE THE MODAL */
+
+#modalwrapper{
+    background-color: black;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    opacity: 60%;
+    display: none;
+}
+
+#quantitymodal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 20%;
+    height:auto;
+    opacity: 100%;
+    z-index: 2;
+    opacity: 1;
+    border-radius: 15px;
+    display: none;
+}
+
+.modaltitle{
+    margin: 20px;
+    font-size: 20px;
+    font-weight:bolder;
+}
+
+.inputtext{
+    font-size: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 8px 10px;
+    width: 70%;
+}
+
+.submitbutton{
+    margin: 20px;
+    background-color: black;
+    color: white;
+    font-weight: normal;
+    border: none;
+    font-size: 18px;
+    border-radius: 6px;
+    width: 30%;
+    height: 20%;
+    padding: 6px;
+    cursor: pointer;
+    border: 2px solid black;
 }

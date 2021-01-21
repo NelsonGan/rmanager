@@ -85,6 +85,13 @@
                     $staffdetails = mysqli_fetch_assoc($result);
                     
                     ?>
+                    <form action="editinventoryrecord.php" method="POST">
+                        <input type="hidden" name="logID" value="<?php echo $inventoryrecord['Log_ID'] ?>">
+                        <input type="hidden" name="month" value="<?php echo $month ?>">
+                        <input type="hidden" name="year" value="<?php echo $year ?>">
+                        <button type="submit" class="btn" style="margin: 30px 0;">Edit Record</button>
+                    </form>
+
                     <p class="recordinfo"><b>Record created by: </b><?php echo $staffdetails['name'] ?></p>
                     <p class="recordinfo"><b>Record created on: </b><?php echo $inventoryrecord['creationdate'] ?></p>
                     
@@ -128,15 +135,7 @@
                     <?php } //for if mysqli_num_row > 0?> 
                 <?php } //for while $row = $result?>
                 </div>
-                
-                <!--
-                <a 
-                href="printrecord.php?year=<?php echo strval($year)?>&month=<?php echo strval($month)?>" 
-                target="_blank"
-                onclick="window.open(this.href, '_blank', 'location=yes,height=570,width=1000,scrollbars=yes,status=yes');">
-                    <button class="printbtn"><i class="fas fa-print"></i> &nbsp; Print</button>
-                </a>
-                -->
+            
 
                 <a onclick="window.print()">
                     <button class="printbtn"><i class="fas fa-print"></i> &nbsp; Print</button>
