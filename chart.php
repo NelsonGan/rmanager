@@ -13,9 +13,9 @@ require "includes/conn.php";
 if(isset($_GET["filterbtn"])){
 $Month = $_GET["monthfilter"];
 $Week = $_GET["weekfilter"];
-$sql = "SELECT DAYNAME(odatetime) As Day, SUM(netamount) AS Total FROM `orders` Where DATE_FORMAT(odatetime, '%Y-%m') = '$Month' AND DATE_FORMAT(odatetime, '%Y-W%U') = '$Week' GROUP By DAYNAME(odatetime) ORDER By DAYNAME(odatetime)";
+$sql = "SELECT DAYNAME(odatetime) As Day, SUM(netamount) AS Total FROM `orders` Where DATE_FORMAT(odatetime, '%Y-%m') = '$Month' AND DATE_FORMAT(odatetime, '%Y-W%U') = '$Week' AND  paidstatus = 'PAID' GROUP By DAYNAME(odatetime) ORDER By DAYNAME(odatetime)";
 }Else{
-$sql = "SELECT DAYNAME(odatetime) As Day, SUM(netamount) AS Total FROM `orders` GROUP By DAYNAME(odatetime) ORDER By DAYNAME(odatetime)";
+$sql = "SELECT DAYNAME(odatetime) As Day, SUM(netamount) AS Total FROM `orders` WHERE paidstatus = 'PAID' GROUP By DAYNAME(odatetime) ORDER By DAYNAME(odatetime)";
 }
 $query = mysqli_query($con,$sql);
 while($result = mysqli_fetch_array($query))
@@ -34,7 +34,7 @@ function drawChart1() {
       var data = google.visualization.arrayToDataTable([
         ['Type', 'Quantity Sold'],
         <?php
-        $sql1 = "SELECT m.Type as Type,  Sum(o.quantity) as TotalSold From menu m left join order_detail o on m.Item_ID = o.Item_ID left join orders u on o.orderid = u.orderid Group By m.Type";
+        $sql1 = "SELECT m.Type as Type,  Sum(o.quantity) as TotalSold From menu m left join order_detail o on m.Item_ID = o.Item_ID left join orders u on o.orderid = u.orderid WHERE u.paidstatus = 'PAID' Group By m.Type";
         $query1 = mysqli_query($con,$sql1);
         while($result1 = mysqli_fetch_array($query1))
         {
@@ -129,15 +129,15 @@ function drawChart2() {
                 <?php
                 $sqlMonth = "SELECT DATE_FORMAT(u.odatetime,'%Y/%c') AS Month From menu m left join order_detail o on m.Item_ID = o.Item_ID left join orders u on o.orderid = u.orderid Group By DATE_FORMAT(u.odatetime,'%Y/%c')";
                 $queryMonth = mysqli_query($con,$sqlMonth);
-                $sqlFood = "SELECT DATE_FORMAT(u.odatetime,'%Y/%c') AS Month, Sum(o.quantity) as TotalFoodSold From menu m left join order_detail o on m.Item_ID = o.Item_ID left join orders u on o.orderid = u.orderid WHERE m.Type = 'Food' Group By DATE_FORMAT(u.odatetime,'%Y/%c')";
+                $sqlFood = "SELECT DATE_FORMAT(u.odatetime,'%Y/%c') AS Month, Sum(o.quantity) as TotalFoodSold From menu m left join order_detail o on m.Item_ID = o.Item_ID left join orders u on o.orderid = u.orderid WHERE m.Type = 'Food' AND u.paidstatus='PAID' Group By DATE_FORMAT(u.odatetime,'%Y/%c')";
                 $queryFood = mysqli_query($con,$sqlFood);
-                $sqlAppertizers = "SELECT DATE_FORMAT(u.odatetime,'%Y/%c') AS Month, Sum(o.quantity) as TotalAppertizersSold From menu m left join order_detail o on m.Item_ID = o.Item_ID left join orders u on o.orderid = u.orderid WHERE m.Type = 'Appetizers' Group By DATE_FORMAT(u.odatetime,'%Y/%c')";
+                $sqlAppertizers = "SELECT DATE_FORMAT(u.odatetime,'%Y/%c') AS Month, Sum(o.quantity) as TotalAppertizersSold From menu m left join order_detail o on m.Item_ID = o.Item_ID left join orders u on o.orderid = u.orderid WHERE m.Type = 'Appetizers' AND u.paidstatus='PAID' Group By DATE_FORMAT(u.odatetime,'%Y/%c')";
                 $queryAppertizers = mysqli_query($con,$sqlAppertizers);
-                $sqlDesserts = "SELECT DATE_FORMAT(u.odatetime,'%Y/%c') AS Month, Sum(o.quantity) as TotalDessertsSold From menu m left join order_detail o on m.Item_ID = o.Item_ID left join orders u on o.orderid = u.orderid WHERE m.Type = 'Desserts' Group By DATE_FORMAT(u.odatetime,'%Y/%c')";
+                $sqlDesserts = "SELECT DATE_FORMAT(u.odatetime,'%Y/%c') AS Month, Sum(o.quantity) as TotalDessertsSold From menu m left join order_detail o on m.Item_ID = o.Item_ID left join orders u on o.orderid = u.orderid WHERE m.Type = 'Desserts' AND u.paidstatus='PAID' Group By DATE_FORMAT(u.odatetime,'%Y/%c')";
                 $queryDesserts = mysqli_query($con,$sqlDesserts);
-                $sqlDrinks = "SELECT DATE_FORMAT(u.odatetime,'%Y/%c') AS Month, Sum(o.quantity) as TotalDrinksSold From menu m left join order_detail o on m.Item_ID = o.Item_ID left join orders u on o.orderid = u.orderid WHERE m.Type = 'Drinks' Group By DATE_FORMAT(u.odatetime,'%Y/%c')";
+                $sqlDrinks = "SELECT DATE_FORMAT(u.odatetime,'%Y/%c') AS Month, Sum(o.quantity) as TotalDrinksSold From menu m left join order_detail o on m.Item_ID = o.Item_ID left join orders u on o.orderid = u.orderid WHERE m.Type = 'Drinks' AND u.paidstatus='PAID' Group By DATE_FORMAT(u.odatetime,'%Y/%c')";
                 $queryDrinks = mysqli_query($con,$sqlDrinks);
-                $sqlAverage = "SELECT Month, TotalSold/4 AS Average FROM (SELECT DATE_FORMAT(u.odatetime,'%Y/%c') AS Month, Sum(o.quantity) as TotalSold From menu m left join order_detail o on m.Item_ID = o.Item_ID left join orders u on o.orderid = u.orderid Group By DATE_FORMAT(u.odatetime,'%Y/%c')) AS Average GROUP BY Month";
+                $sqlAverage = "SELECT Month, TotalSold/4 AS Average FROM (SELECT DATE_FORMAT(u.odatetime,'%Y/%c') AS Month, Sum(o.quantity) as TotalSold From menu m left join order_detail o on m.Item_ID = o.Item_ID left join orders u on o.orderid = u.orderid WHERE u.paidstatus = 'PAID' Group By DATE_FORMAT(u.odatetime,'%Y/%c')) AS Average GROUP BY Month";
                 $queryAverage = mysqli_query($con,$sqlAverage);
                 while(($resultM = mysqli_fetch_array($queryMonth)) && ($resultF = mysqli_fetch_array($queryFood)) && ($resultA = mysqli_fetch_array($queryAppertizers)) && ($resultD = mysqli_fetch_array($queryDesserts)) && ($resultO = mysqli_fetch_array($queryDrinks)) && ($resultR = mysqli_fetch_array($queryAverage)))
                 {
