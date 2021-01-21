@@ -55,7 +55,7 @@
                         echo "<td>".$itemcode."</td>";
                         echo "<td>".$row['itemname']."</td>";
                         echo "<td>".$locationname['name']."</td>";
-                        echo '<td><input type="number" class="quantity" name="'.$itemcode.'" autocomplete="off" value="0" onClick="this.select();"></td>';
+                        echo '<td><input type="number" min="0" class="quantity" name="'.$itemcode.'" autocomplete="off" value="0" onClick="this.select();"></td>';
                         echo "<td>".$row['unit']."</td>";
                         echo "</tr>";
                     }
