@@ -35,7 +35,7 @@ if (isset($_POST["save"])) {
         </script>';
             } else {
                 echo '<script>
-            window.location.href="../Order.php";
+            window.location.href="../edito.php?orderid='.$orderid.'";
             </script>';
             }
             echo json_encode(array("statusCode" => 200));

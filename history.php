@@ -89,26 +89,26 @@
             font-size: 1rem;
         }
 
-        body > div.sidebar > ul > li{
+        body>div.sidebar>ul>li {
             height: 49.600px;
         }
 
-        body > div.sidebar > ul > li> a{
+        body>div.sidebar>ul>li>a {
             height: 17.6px;
         }
 
-        body > div.mainbody > div.topbar{
-            height:52px;
+        body>div.mainbody>div.topbar {
+            height: 52px;
         }
 
-        .btn:focus ,.btn:active{
+        .btn:focus,
+        .btn:active {
             -webkit-box-shadow: none !important;
             -moz-box-shadow: none !important;
             box-shadow: none !important;
             outline: none;
-            border:none;
+            border: none;
         }
-
     </style>
 
 
@@ -133,7 +133,7 @@
                             <input type="text" class="form-control" id="search" name="search" placeholder="Order ID / Customer Name">
                         </div>
                         <div class="input-group-append">
-                            <input class="btn btn-outline-secondary" type="submit" id="submit" name="submit" value="Search">
+                            <input class="btn btn-outline-secondary" type="submit" id="submit" name="submit" value="Search" onclick="myFunction()">
                         </div>
                     </div>
 
@@ -146,6 +146,11 @@
                             source: 'includes/backend.php'
                         });
                     });
+
+                    function myFunction() {
+                        document.getElementById('sort').selectedIndex = 0;
+
+                    }
                 </script>
 
 
@@ -165,6 +170,7 @@
                                 <option value="amountasc" <?php echo (isset($_POST['sort']) && $_POST['sort'] === 'amountasc') ? 'selected' : ''; ?>>Amount (Least)</option>
                                 <option value="paid" <?php echo (isset($_POST['sort']) && $_POST['sort'] === 'paid') ? 'selected' : ''; ?>>Status (PAID)</option>
                                 <option value="unpaid" <?php echo (isset($_POST['sort']) && $_POST['sort'] === 'unpaid') ? 'selected' : ''; ?>>Status (UNPAID)</option>
+                                <option value="cancel" <?php echo (isset($_POST['sort']) && $_POST['sort'] === 'cancel') ? 'selected' : ''; ?>>Status (CANCELED)</option>
 
                             </select>
 
@@ -191,7 +197,7 @@
                     <th scope="col">Total Amount (RM)</th>
                     <th scope="col">Payment Status</th>
                     <th scope="col">Edit</th>
-                    <th scope="col">Delete</th>
+                    <!-- <th scope="col">Delete</th> -->
                     <th scope="col">Print</th>
                 </tr>
             </thead>
@@ -201,7 +207,7 @@
 
                 if (isset($_POST['submit'])) {
                     $search = $_POST['search'];
-                    $sql = "SELECT * FROM orders WHERE orderid LIKE '" . $search . "%' OR customername LIKE '" . $search . "%'";
+                    $sql = "SELECT * FROM orders WHERE orderid LIKE '" . $search . "%' OR customername LIKE '" . $search . "%' ORDER BY odatetime DESC";
                 } elseif (isset($_POST['find'])) {
 
                     $sort = $_POST['sort'];
@@ -234,12 +240,15 @@
                         case 'unpaid':
                             $sql = "SELECT * FROM orders WHERE paidstatus='UNPAID'";
                             break;
+                        case 'cancel':
+                            $sql = "SELECT * FROM orders WHERE paidstatus='CANCELED'";
+                            break;
                         default:
-                            $sql = "SELECT * FROM orders";
+                            $sql = "SELECT * FROM orders ORDER BY odatetime DESC";
                             break;
                     }
                 } else {
-                    $sql = "SELECT * FROM orders";
+                    $sql = "SELECT * FROM orders ORDER BY odatetime DESC";
                 }
 
                 $result = mysqli_query($con, $sql);
@@ -255,8 +264,8 @@
                     echo '<td>' . $row['netamount'] . '</td>';
                     echo '<td>' . $row['paidstatus'] . '</td>';
                     echo '<td><a href="edito.php?orderid=' . $row['orderid'] . '"><button type="button" class="btn btn-outline-warning editbtn"><i class="fa fa-edit" aria-hidden="true"></i></button></a></td>';
-                    echo '<td><a onclick="return confirm(\'Delete record for OrderID ' . $row['orderid'] . '?\')" href="includes/deleteo.php?orderid=' . $row['orderid'] . '">
-      <button type="button" class="btn btn-outline-danger delete"><i class="fa fa-close"></button></td></a></td>';
+                    //                 echo '<td><a onclick="return confirm(\'Delete record for OrderID ' . $row['orderid'] . '?\')" href="includes/deleteo.php?orderid=' . $row['orderid'] . '">
+                    //   <button type="button" class="btn btn-outline-danger delete"><i class="fa fa-close"></button></td></a></td>';
                     echo '<td><a href="print.php?orderid=' . $row['orderid'] . '">
       <button type="button" class="btn btn-outline-primary print"><i class="fa fa-print" aria-hidden="true"></i></button></td></a></td>';
                     echo '<tr>';

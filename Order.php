@@ -13,12 +13,12 @@
     <link rel="stylesheet" type="text/css" href="./stylesheets/Order.css">
     <!-- <link href="stylesheets/default.css" rel="stylesheet" type="text/css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+
 
     <style>
         .mainbody {
@@ -163,7 +163,7 @@
                                             <th>Unit Price</th>
                                             <th>Quantity</th>
                                             <th>Amount</th>
-
+                                            <th>Edit</th>
                                             <th>Remove</th>
                                         </tr>
                                     </thead>
@@ -191,9 +191,10 @@
                                             echo '<td>' . $amount . '</td>';
                                             $id = $row['orderdetail_ID'];
 
+                                            echo '<td><button type="button" class="btn btn-outline-warning editbtn" data-toggle="modal" data-target="#edit"><i class="fa fa-edit" aria-hidden="true"></i></button></td>';
 
                                             echo '<td><a href="includes/deleteod.php?id=' . $id . '">
-                                            <button type="button" class="btn btn-outline-danger delete" style="border: solid 2px;"><i class="fa fa-close"></i></button></td></a></td>';
+                                            <button type="button" class="btn btn-outline-danger delete"><i class="fa fa-close"></i></button></td></a>';
                                             echo '<tr>';
                                             $counter++;
                                         }
@@ -290,7 +291,7 @@
                         <div class="modal-body">
 
                             <input type="hidden" id="source" name="source" value="">
-                            <input type="hidden" id="orderid" name="orderid" value="<?php echo  $lastid; ?>">
+                            <input type="hidden" id="orderidd" name="orderidd" value="<?php echo  $lastid; ?>">
                             <div>
                                 <label for="formGroupExampleInput">Food / Drink</label>
                                 <select class="form-control select_group product" id="product_1" name="itemid" style="width:100%;" data-live-search="true" title="Food/Drink Name" required>
@@ -303,7 +304,7 @@
                                     <div> <label for="price">Unit Price (RM)</label></div>
                                     <input type="text" class="form-control" disabled>
                                 </div>
-                                <!-- <div id="price"></div> -->
+
 
                             </div>
                             <br>
@@ -335,9 +336,78 @@
 
         <!-- Insert order form-->
 
+        <!-- Edit orderd form-->
+
+        <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header1">
+                        <h5 class="modal-title" id="exampleModalLabel">Edit Quantity</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <form action="includes/editodl.php" method="POST">
+                        <div class="modal-body">
+
+
+                            <input type="hidden" id="orderd" name="orderd">
+                            <input type="hidden" id="eprice" name="eprice">
+
+
+
+                            <div class="formGroupExampleInput">
+                                <div> <label for="price">Quantity</label></div>
+                                <input type="number" class="form-control" name="equantity" id="equantity" step="1" min="0" required>
+                            </div><br>
+
+                            <div>
+                                <label for="formGroupExampleInput">Amount (RM)</label>
+                                <input type="text" class="form-control" id="eamount" name="eamount" readonly>
+                            </div>
+
+
+                            <br>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" name="usave" class="btn btn-primary">OK</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
 
         <script>
             $(document).ready(function() {
+                $(document).on('click', '.editbtn', function() {
+                    $('#edit').modal('show');
+
+                    $tr = $(this).closest('tr');
+                    var data = $tr.children("td").map(function() {
+                        return $(this).text();
+                    })
+
+                    console.log;
+                    //alert(data[0]+data[2]+data[3]+data[4]);
+                    $("#orderd").val(data[0]);
+                    $('#eprice').val(data[2]);
+                    $('#equantity').val(data[3]);
+                    $('#eamount').val(data[4]);
+
+                });
+            });
+        </script>
+        <!-- Edit orderd form-->
+
+
+        <script>
+            $(document).ready(function() {
+                
+
                 //load data in dropdwon for food input
                 $('#product_1').selectpicker();
 
@@ -368,6 +438,7 @@
                     })
                 }
 
+
                 //load data for price input
                 $('#product_1').change(function() {
                     $.ajax({
@@ -388,12 +459,26 @@
 
                 //display data for amount input
                 // function getTotal() {
+                // var qty = {
+                //     qty1: 'quantity',
+                //     qty2: 'equantity'
+                // };
                 $('#quantity').change(function() {
                     a = Number(document.getElementById('quantity').value);
                     b = Number(document.getElementById('price1').value);
                     c = a * b;
                     c = c.toFixed(2);
                     document.getElementById('amount').value = c
+
+
+                    // };
+                });
+                $('#equantity').change(function() {
+                    a = Number(document.getElementById('equantity').value);
+                    b = Number(document.getElementById('eprice').value);
+                    c = a * b;
+                    c = c.toFixed(2);
+                    document.getElementById('eamount').value = c
 
 
                     // };
@@ -405,6 +490,7 @@
 
     </div>
     <!-- mainbody -->
+    
 </body>
 
 </html>
