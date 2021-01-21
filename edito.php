@@ -156,6 +156,7 @@
                                                 <select id="status" name="status" class="form-control" style="text-align-last:center;">
                                                     <option value="PAID" <?php if ($row["paidstatus"] == "PAID") { ?> selected="selected" <?php } ?>>PAID</option>
                                                     <option value="UNPAID" <?php if ($row["paidstatus"] == "UNPAID") { ?> selected="selected" <?php } ?>>UNPAID</option>
+                                                    <option value="CANCELED" <?php if ($row["paidstatus"] == "CANCELED") { ?> selected="selected" <?php } ?>>CANCELED</option>
                                                 </select>
                                             </div>
 
@@ -183,7 +184,7 @@
                                 <div id="container">
                                     <div id="left"></div>
                                     <div id="right">
-                                    <button type="button" id="addd" class="btn btn-success" data-toggle="modal" data-target="#addadminprofile" style="margin-right:40px; "><i class="fas fa-plus"></i> &nbsp; Add New</button>
+                                        <button type="button" id="addd" class="btn btn-success" data-toggle="modal" data-target="#addadminprofile" style="margin-right:40px; "><i class="fas fa-plus"></i> &nbsp; Add New</button>
 
                                     </div>
                                     <br><br><br>
@@ -195,7 +196,7 @@
                                                 <th>Unit Price</th>
                                                 <th>Quantity</th>
                                                 <th>Amount</th>
-
+                                                <th>Edit</th>
                                                 <th>Remove</th>
                                             </tr>
                                         </thead>
@@ -223,7 +224,7 @@
                                                 echo '<td>' . $amount . '</td>';
                                                 $id = $row['orderdetail_ID'];
 
-
+                                                echo '<td><button type="button" class="btn btn-outline-primary editbtn" data-toggle="modal" data-target="#edit"><i class="fas fa-arrows-alt-v"></i></button></td>';
                                                 echo '<td><a href="includes/deleteod1.php?id=' . $id . '&orderid=' . $orderid . '">
                                             <button type="button" class="btn btn-outline-danger delete" style="border: solid 2px;"><i class="fa fa-close"></i></button></td></a></td>';
                                                 echo '<tr>';
@@ -320,11 +321,11 @@
                             </button>
                         </div>
 
-                        <form id="oform" name="oform" action="includes/createodl.php" method="post">
+                        <form id="oform" name="oform" action="includes/createodl1.php" method="post">
                             <div class="modal-body">
 
 
-                                <input type="hidden" id="orderid" name="orderid" value="<?php echo  $orderid; ?>">
+                                <input type="hidden" id="orderidd" name="orderidd" value="<?php echo  $orderid; ?>">
                                 <input type="hidden" id="source" name="source" value="history">
                                 <div>
                                     <label for="formGroupExampleInput">Food / Drink</label>
@@ -369,7 +370,72 @@
             </div>
 
             <!-- Insert order form-->
+            <!-- Edit orderd form-->
 
+            <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header1">
+                            <h5 class="modal-title" id="exampleModalLabel">Edit Quantity</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        <form action="includes/editodl1.php" method="POST">
+                            <div class="modal-body">
+
+
+                                <input type="hidden" id="orderd" name="orderd">
+                                <input type="hidden" id="eprice" name="eprice">
+                                <input type="hidden" id="orderdd" name="orderdd" value="<?php echo  $orderid; ?>">
+
+
+                                <div class="formGroupExampleInput">
+                                    <div> <label for="price">Quantity</label></div>
+                                    <input type="number" class="form-control" name="equantity" id="equantity" step="1" min="0" required>
+                                </div><br>
+
+                                <div>
+                                    <label for="formGroupExampleInput">Amount (RM)</label>
+                                    <input type="text" class="form-control" id="eamount" name="eamount" readonly>
+                                </div>
+
+
+                                <br>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" name="usave" class="btn btn-primary">OK</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                $(document).ready(function() {
+                    $(document).on('click', '.editbtn', function() {
+                        $('#edit').modal('show');
+
+                        $tr = $(this).closest('tr');
+                        var data = $tr.children("td").map(function() {
+                            return $(this).text();
+                        })
+
+                        console.log;
+                        //alert(data[0]+data[2]+data[3]+data[4]);
+                        $("#orderd").val(data[0]);
+                        $('#eprice').val(data[2]);
+                        $('#equantity').val(data[3]);
+                        $('#eamount').val(data[4]);
+
+                    });
+                });
+            </script>
+            <!-- Edit orderd form-->
 
             <script>
                 $(document).ready(function() {
@@ -437,7 +503,16 @@
 
                         // };
                     });
+                    $('#equantity').change(function() {
+                        a = Number(document.getElementById('equantity').value);
+                        b = Number(document.getElementById('eprice').value);
+                        c = a * b;
+                        c = c.toFixed(2);
+                        document.getElementById('eamount').value = c
 
+
+                        // };
+                    });
 
 
                 });
