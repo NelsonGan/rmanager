@@ -141,21 +141,23 @@
 
                 <table class="leavetable">
                 <tr>
-                    <th style="width: 25%;">Date</th>
+                    <th style="width: 20%;">Start Date</th>
+                    <th style="width: 20%;">End Date</th>
                     <th>Reason</th>
                     <th style="width: 20%;">Status</th>
                 </tr>
                 <?php 
-                    $sql = "SELECT * FROM leaves WHERE Staff_ID=$id ORDER BY leavedate DESC LIMIT 10";
+                    $sql = "SELECT * FROM leaves WHERE Staff_ID=$id ORDER BY startdate DESC LIMIT 10";
                     $results = mysqli_query($con, $sql);
                     while ($row = mysqli_fetch_assoc($results)){
-                ?>  
+                ?>
                 <tr>
-                    <td><?php echo $row['leavedate']?></td>
+                    <td><?php echo $row['startdate']?></td>
+                    <td><?php echo $row['enddate']?></td>
                     <td><?php echo $row['reason']?></td>
                     <td><?php echo $row['status']?></td>
                 </tr>
-                <?php } ?>
+                <?php }?>
                 </table>
             </div>  
         </div>

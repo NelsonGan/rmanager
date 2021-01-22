@@ -39,8 +39,12 @@
         <form action="includes/addleave.php" method="post">
             <center>
             <div class="dateSection">
-                <label for="date">Date:</label>
-                <input style="height: 35px;" type="date" name="date" required><br>
+                <label for="startdate">Start Date:</label>
+                <input style="height: 35px;" type="date" name="startdate" required><br>
+            </div>
+            <div class="dateSection">
+                <label for="enddate">End Date:&nbsp</label>
+                <input style="height: 35px;" type="date" name="enddate" required><br>
             </div>
             <div class="commentSection">
                 <label for="comment">Reason:</label>

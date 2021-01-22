@@ -19,19 +19,21 @@
                 <table style="width: 70%;">
                     <tr>
                         <th>Name</th>
-                        <th>Date</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
                         <th>Reason</th>
                         <th>Status</th>
                     </tr>
                     <?php 
                     require "includes/conn.php";
-                    $sql = "SELECT * FROM leaves LEFT JOIN staff ON leaves.Staff_ID = staff.Staff_ID WHERE Status='Pending' ORDER BY leavedate ASC";
+                    $sql = "SELECT * FROM leaves LEFT JOIN staff ON leaves.Staff_ID = staff.Staff_ID WHERE Status='Pending' ORDER BY startdate ASC";
                     $results = mysqli_query($con, $sql);
                     while ($row = mysqli_fetch_assoc($results)){
                     ?>
                     <tr>
                         <td><?php echo $row['name']?></td>
-                        <td><?php echo $row['leavedate']?></td>
+                        <td><?php echo $row['startdate']?></td>
+                        <td><?php echo $row['enddate']?></td>
                         <td><?php echo $row['reason']?></td>
                         <td>
                             <center>
