@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <title>Default Title</title>
+    <title>Attendance</title>
     <link href="stylesheets/default.css" rel="stylesheet" type="text/css">
     <link href="stylesheets/attendance.css" rel="stylesheet" type="text/css">
 </head>
@@ -27,6 +27,21 @@
         </div>  
         <div class="container">
             <center>
+            <br>
+            <form action="attendance.php?staffid=<?php echo $id?>" method="POST">
+                Select Date:
+                <input type="month" style="width: 200px; height: 30px;" id="selectdate" name="selectdate" onchange=submit(); value="<?php if (isset($_POST['selectdate']))echo $_POST['selectdate'];?>">
+            </form>
+
+            <?php 
+            if (isset($_POST['selectdate']))
+            {
+                $selecteddate = explode ("-", $_POST['selectdate']);
+                $sql = "SELECT *, ROUND(TIME_TO_SEC(TIMEDIFF(clockout, clockin))/3600,2) AS working_hour FROM attendance WHERE Staff_ID = '$id' AND MONTH(workdate) ='$selecteddate[1]' AND YEAR(workdate) = '$selecteddate[0]'";
+                $results = mysqli_query($con, $sql);
+                if (mysqli_num_rows($results) > 0) 
+                {
+            ?>
                 <table class="attendancetable">
                     <tr>
                         <th style="width: 33%;">Date</th>
@@ -35,19 +50,32 @@
                         <th style="width: 33%;">Hours Worked</th>
                     </tr>
                     <?php
-                        $sql = "SELECT *, ROUND(TIME_TO_SEC(TIMEDIFF(clockout, clockin))/3600,2) AS working_hour FROM attendance WHERE Staff_ID = '$id' AND MONTH(workdate) ='$lastmonth' AND YEAR(workdate) = '$lastyear'";
-                        $results = mysqli_query($con, $sql);
-                        if (mysqli_num_rows($results) == 0) 
-                        {
-                            header("Location: profile-owner.php?staffid=$id&error=norecord");
-                        }
+
                         while ($row = mysqli_fetch_assoc($results)){
                     ?>
                     <tr>
                         <td><?php echo $row['workdate']?></td>
                         <td><?php echo $row['clockin']?></td>
-                        <td><?php echo $row['clockout']?></td>
-                        <td><?php echo $row['working_hour']; $totalhour += $row['working_hour'];?></td>
+                        <td>
+                        <?php 
+                        if (isset($row['clockout'])) 
+                            echo $row['clockout'];
+                        else 
+                            echo "Not clocked out";
+                        ?>
+                        </td>
+                        <td>
+                        <?php 
+
+                        if (isset($row['clockout'])) 
+                        {
+                            echo $row['working_hour'];
+                            $totalhour += $row['working_hour'];
+                        }
+                        else
+                            echo '0';
+                        ?>
+                        </td>
                     </tr>
                     <?php } ?>
                 </table>
@@ -83,7 +111,16 @@
                             <td>RM<?php echo $totalpaid;?></td>
                         </tr>
                     </table>
-                </div>
+            </div>
+            <?php
+                }
+            else
+            {
+                echo "<p style='color:red; margin: 20px; font-size: 20px;'>No result found!</p>";
+            }?>
         </div>
+        <?php
+        } 
+        ?>
     </div>
 </body>

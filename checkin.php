@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <title>Default Title</title>
+    <title>Attendance</title>
     <link href="stylesheets/default.css" rel="stylesheet" type="text/css">
     <link href="stylesheets/checkin.css" rel="stylesheet" type="text/css">
 </head>
@@ -13,8 +13,9 @@
         $currentmonth = date('m');
         $currentyear = date('Y');
         $id = $_SESSION['Staff_ID'];
-        $sql = "SELECT * FROM attendance WHERE Staff_ID = '$id' AND MONTH(workdate) = '$currentmonth' AND YEAR(workdate) = '$currentyear'";
+        $sql = "SELECT * FROM attendance WHERE Staff_ID = '$id' AND MONTH(workdate) = '$currentmonth' AND YEAR(workdate) = '$currentyear' ORDER BY workdate DESC";
         $result = mysqli_query($con, $sql);
+        date_default_timezone_set('Asia/Kuala_Lumpur');
     ?>
     
     
@@ -26,18 +27,18 @@
         <div class="container">
                 <center>
                     <p><?php echo date("d/m/Y"); ?></p>
-                    <p><?php date_default_timezone_set('Asia/Kuala_Lumpur'); echo date("H:i:s");?></p>
+                    <p><?php echo date("H:i:s");?></p>
                     <form action="includes/clockin.php" method="post">
                     <?php
                         $sql = "SELECT * FROM attendance WHERE Staff_ID = '$id' AND MONTH(workdate) = '$currentmonth' AND YEAR(workdate) = '$currentyear' AND DAY(workdate) = '$currentday'";
                         $condition = mysqli_query($con, $sql);
                         $info = mysqli_fetch_assoc($condition);
 
-                        if (mysqli_num_rows($result) > 0 && isset($info['clockout']))
+                        if (mysqli_num_rows($condition) > 0 && isset($info['clockout']))
                         {
                             echo '<input type="submit" class="btn" value="Clocked Out" style="background-color: #DCDCDC; color: black; cursor: default; height: 35px; width: 130px; padding: 2px;" disabled>';
                         }
-                        else if (mysqli_num_rows($result) > 0) 
+                        else if (mysqli_num_rows($condition) > 0) 
                         {
                             echo '<input name="clockout-submit" type="submit" class="btn" value="Clock Out" style="height: 35px; width: 130px; padding: 2px;">';
                         }

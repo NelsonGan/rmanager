@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <title>Default Title</title>
+    <title>Add Menu Item</title>
     <link rel="stylesheet" href="stylesheets/addmenuitem.css">
     <link href="stylesheets/default.css" rel="stylesheet" type="text/css">
 </head>

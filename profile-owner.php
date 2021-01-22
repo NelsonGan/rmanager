@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <title>Default Title</title>
+    <title>Profile</title>
     <link href="stylesheets/default.css" rel="stylesheet" type="text/css">
     <link href="stylesheets/profile-owner.css" rel="stylesheet" type="text/css">
 </head>
