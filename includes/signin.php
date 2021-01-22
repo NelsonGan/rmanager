@@ -5,7 +5,7 @@ if (isset($_POST['login-submit'])) {
 
     $mail = $_POST['mail'];
     $password = $_POST['pwd'];
-    $sql = "SELECT * FROM staff WHERE email=? AND pwd=?";
+    $sql = "SELECT * FROM staff WHERE email= ? AND pwd= BINARY ?";
     $stmt = mysqli_stmt_init($con);
 
     if (!mysqli_stmt_prepare($stmt,$sql)) {
