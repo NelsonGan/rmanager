@@ -105,9 +105,10 @@
             </div>
             <div class="right-container">
                 <form action="includes/deletestaff.php" method="post">
-                <p class="name"><?php echo $row['name'];?><input name="delete-submit" type="submit" class="btn" value="Delete" style="margin-left: 10px; height: 35px;"> </p>
-                <input type="hidden" name="staffid" value="<?php echo $id?>">
+                <p class="name"><?php echo $row['name'];?><input onclick="window.location='modifyprofile.php?staffid=<?php echo $id?>'" class="btn" value="Update" style="width: 90px; margin-left: 10px; height: 35px;"><input name="delete-submit" type="submit" class="btn" value="Delete" style="margin-left: 10px; height: 35px;"></p>
+                <input type="hidden" name="staffid" value="<?php echo $id?>"> 
                 </form>
+
                 <p class="job-title"><?php echo $row['role'];?></p>
 
                 <p class="section">About</p>

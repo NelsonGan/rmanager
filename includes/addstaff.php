@@ -13,7 +13,7 @@ if (isset($_POST['add-submit']))
     $phone = $_POST['phone'];
     $address = $_POST['address'];
     $role = $_POST['role'];
-    $hourlyrate = '0';
+    $hourlyrate = $_POST['hourlyrate'];
     $datejoined = date("Y-m-d");
 
     $sql = "SELECT * FROM staff WHERE email = '$email'";

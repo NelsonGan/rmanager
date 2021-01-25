@@ -34,6 +34,7 @@
                         <p>Phone:</p>
                         <p>Address:</p>
                         <p>Role:</p>
+                        <p>Hourly Rate:</p>
                     </div>
                     <div class="content-right">
                 <form action="includes/addstaff.php" method="post"> 
@@ -51,6 +52,7 @@
                             <option value="Full-time Staff">Full-time</option>
                             <option value="Part-time Staff">Part-time</option>
                         </select><br>
+                        <input type="number" name="hourlyrate" min="1" max="1000" required><br>
                     </div>
                 </div>  
 
