@@ -383,6 +383,7 @@
 
         <script>
             $(document).ready(function() {
+
                 $(document).on('click', '.editbtn', function() {
                     $('#edit').modal('show');
 
@@ -392,13 +393,13 @@
                     })
 
                     console.log;
-                    //alert(data[0]+data[2]+data[3]+data[4]);
                     $("#orderd").val(data[0]);
                     $('#eprice').val(data[2]);
                     $('#equantity').val(data[3]);
                     $('#eamount').val(data[4]);
 
                 });
+
             });
         </script>
         <!-- Edit orderd form-->
@@ -406,7 +407,6 @@
 
         <script>
             $(document).ready(function() {
-                
 
                 //load data in dropdwon for food input
                 $('#product_1').selectpicker();
@@ -416,7 +416,6 @@
                 function load_data(fname) {
                     $.ajax({
                         url: "includes/load.php",
-                        //url:"C:\wamp64\www\RManager\load.php",
                         method: "POST",
                         data: {
                             fname: fname
@@ -431,19 +430,15 @@
                                 $('#product_1').html(html);
                                 $('#product_1').selectpicker('refresh');
                             }
-
-
-
                         }
                     })
                 }
 
 
-                //load data for price input
+                //return price for each item
                 $('#product_1').change(function() {
                     $.ajax({
                         url: 'includes/secondlist.php',
-                        //url:"C:\wamp64\www\RManager\secondlist.php",
                         data: {
                             product_1_id: $(this).val()
                         },
@@ -452,8 +447,7 @@
                         success: function(data) {
                             $('#replace').html(data);
                         }
-                    });
-                    s
+                    });                   
                 });
 
 
@@ -490,7 +484,7 @@
 
     </div>
     <!-- mainbody -->
-    
+
 </body>
 
 </html>
