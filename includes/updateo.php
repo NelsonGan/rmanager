@@ -6,12 +6,12 @@ if (isset($_POST["update"])) {
     include("conn.php");
     $orderid = $_POST['orderid'];
     $net = $_POST['net'];
-    $name = $_POST['nname'];
+    $name = $_POST['cname'];
     $table = $_POST['table'];
     $status= $_POST['status'];
 
 
-    $sql = "UPDATE orders SET customername='$name', tableno='$table',  paidstatus = '$status', netamount = '$net' WHERE orderid ='$orderid'";
+    $sql = "UPDATE orders SET customername='$name', tableno='$table' , netamount = '$net',  paidstatus = '$status' WHERE orderid ='$orderid'";
 
     if (mysqli_query($con, $sql)) {
 

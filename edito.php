@@ -112,132 +112,132 @@
 
             <section class="content">
                 <!-- Small boxes (Stat box) -->
+                <form action="includes/updateo.php" method="post">
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
 
-                <div class="row">
-                    <div class="col-md-12 col-xs-12">
+                            <div class="box">
+                                <div class="box-header">
 
-                        <div class="box">
-                            <div class="box-header">
-
-                            </div>
-                            <!-- /.box-header -->
-
-                            <div class="box-body">
-
-                                <div style="margin: 40px 14px 40px;">
-                                    <div style="float:right;  margin-right: 20px;">
-                                        <div class="form-group">
-                                            <label for="gross_amount" class="col-sm-12 control-label">Date: <?php $dt =  $row["odatetime"];
-                                                                                                            echo date('Y:m:d', strtotime($dt)); ?></label>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="gross_amount" class="col-sm-12 control-label">Time: <?php echo date("H:i:s", strtotime($dt)); ?></label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-4 col-xs-12 pull pull-left" style="float:left;">
-
-                                        <div class="form-group">
-
-                                            <label for="gross_amount" class="col-sm-5 control-label">Customer Name :</label>
-                                            <div class="col-sm-7">
-                                                <input class="form-control" id="cname" name="cname" style="text-align:center;" value="<?php $name = $row["customername"];
-                                                                                                                                        echo $name ?>">
-                                            </div>
-                                            <br><br>
-                                            <label for="gross_amount" class="col-sm-5 control-label">Table :</label>
-                                            <div class="col-sm-7">
-                                                <input class="form-control" id="table_name" name="table_name" value="<?php $table = $row["tableno"];
-                                                                                                                        echo $table ?>" style="text-align:center;">
-                                            </div>
-                                            <br><br>
-                                            <label for="gross_amount" class="col-sm-5 control-label">Payment Status :</label>
-                                            <div class="col-sm-7">
-                                                <select id="status" name="status" class="form-control" style="text-align-last:center;">
-                                                    <option value="PAID" <?php if ($row["paidstatus"] == "PAID") { ?> selected="selected" <?php } ?>>PAID</option>
-                                                    <option value="UNPAID" <?php if ($row["paidstatus"] == "UNPAID") { ?> selected="selected" <?php } ?>>UNPAID</option>
-                                                    <option value="CANCELED" <?php if ($row["paidstatus"] == "CANCELED") { ?> selected="selected" <?php } ?>>CANCELED</option>
-                                                </select>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
                                 </div>
+                                <!-- /.box-header -->
 
-                                <script>
-                                    $(document).ready(function() {
-                                        $('form').submit(function() {
-                                            var status = $('#status').val();
-                                            var cname = $('#cname').val();
-                                            var table = $('#table_name').val();
-                                            $(this).append('<input type="hidden" name="status" value="' + status + '">');
-                                            $(this).append('<input type="hidden" name="nname" value="' + cname + '">');
-                                            $(this).append('<input type="hidden" name="table" value="' + table + '">');
-                                            return true
+                                <div class="box-body">
+
+                                    <div style="margin: 40px 14px 40px;">
+                                        <div style="float:right;  margin-right: 20px;">
+                                            <div class="form-group">
+                                                <label for="gross_amount" class="col-sm-12 control-label">Date: <?php $dt =  $row["odatetime"];
+                                                                                                                echo date('Y:m:d', strtotime($dt)); ?></label>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="gross_amount" class="col-sm-12 control-label">Time: <?php echo date("H:i:s", strtotime($dt)); ?></label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4 col-xs-12 pull pull-left" style="float:left;">
+
+                                            <div class="form-group">
+
+                                                <label for="gross_amount" class="col-sm-5 control-label">Customer Name :</label>
+                                                <div class="col-sm-7">
+                                                    <input class="form-control" id="cname" name="cname" style="text-align:center;" value="<?php $name = $row["customername"];
+                                                                                                                                            echo $name ?> " required>
+                                                </div>
+                                                <br><br>
+                                                <label for="gross_amount" class="col-sm-5 control-label">Table :</label>
+                                                <div class="col-sm-7">
+                                                    <input class="form-control" id="table" name="table" value="<?php $table = $row["tableno"];
+                                                                                                                            echo $table ?>" style="text-align:center;" required>
+                                                </div>
+                                                <br><br>
+                                                <label for="gross_amount" class="col-sm-5 control-label">Payment Status :</label>
+                                                <div class="col-sm-7">
+                                                    <select id="status" name="status" class="form-control" style="text-align-last:center;">
+                                                        <option value="PAID" <?php if ($row["paidstatus"] == "PAID") { ?> selected="selected" <?php } ?>>PAID</option>
+                                                        <option value="UNPAID" <?php if ($row["paidstatus"] == "UNPAID") { ?> selected="selected" <?php } ?>>UNPAID</option>
+                                                        <option value="CANCELED" <?php if ($row["paidstatus"] == "CANCELED") { ?> selected="selected" <?php } ?>>CANCELED</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <!-- <script>
+                                        $(document).ready(function() {
+                                            $('form').submit(function() {
+                                                var status = $('#status').val();
+                                                var cname = $('#cname').val();
+                                                var table = $('#table_name').val();
+                                                $(this).append('<input type="hidden" name="status" value="' + status + '">');
+                                                $(this).append('<input type="hidden" name="nname" value="' + cname + '">');
+                                                $(this).append('<input type="hidden" name="table" value="' + table + '">');
+                                                return true
+                                            });
                                         });
-                                    });
-                                </script>
+                                    </script> -->
 
-                                <br> <br><br> <br><br> <br><br>
+                                    <br> <br><br> <br><br> <br><br>
 
-                                <div id="container">
-                                    <div id="left"></div>
-                                    <div id="right">
-                                        <button type="button" id="addd" class="btn btn-success" data-toggle="modal" data-target="#addadminprofile" style="margin-right:40px; "><i class="fas fa-plus"></i> &nbsp; Add New</button>
+                                    <div id="container">
+                                        <div id="left"></div>
+                                        <div id="right">
+                                            <button type="button" id="addd" class="btn btn-success" data-toggle="modal" data-target="#addadminprofile" style="margin-right:40px; "><i class="fas fa-plus"></i> &nbsp; Add New</button>
 
-                                    </div>
-                                    <br><br><br>
-                                    <table class="table table-bordered" id="product_info_table">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col" style="width:5%;">#</th>
-                                                <th>Food / Drink</th>
-                                                <th>Unit Price</th>
-                                                <th>Quantity</th>
-                                                <th>Amount</th>
-                                                <th>Edit</th>
-                                                <th>Remove</th>
-                                            </tr>
-                                        </thead>
+                                        </div>
+                                        <br><br><br>
+                                        <table class="table table-bordered" id="product_info_table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col" style="width:5%;">#</th>
+                                                    <th>Food / Drink</th>
+                                                    <th>Unit Price</th>
+                                                    <th>Quantity</th>
+                                                    <th>Amount</th>
+                                                    <th>Edit</th>
+                                                    <th>Remove</th>
+                                                </tr>
+                                            </thead>
 
-                                        <tbody>
+                                            <tbody>
 
-                                            <?php
-                                            include("includes/conn.php");
-                                            //$lastid = $_SESSION["orderid"];
-                                            $sql = "SELECT od.*,m.Name FROM order_detail od JOIN menu m on od.Item_ID = m.Item_ID WHERE od.orderid= " . $orderid . "";
+                                                <?php
+                                                include("includes/conn.php");
+                                                //$lastid = $_SESSION["orderid"];
+                                                $sql = "SELECT od.*,m.Name FROM order_detail od JOIN menu m on od.Item_ID = m.Item_ID WHERE od.orderid= " . $orderid . "";
 
-                                            $result = mysqli_query($con, $sql);
+                                                $result = mysqli_query($con, $sql);
 
 
-                                            $counter = 1;
-                                            while ($row = mysqli_fetch_array($result)) {
-                                                $price = number_format($row['price'], 2);
-                                                $amount = number_format($row['amount'], 2);
-                                                echo '<tr>';
-                                                echo '<th scope="row">' . $counter . '</th>';
-                                                echo '<td style="display:none;">' . $row['orderdetail_ID'] . '</td>';
-                                                echo '<td>' . $row['Name'] . '</td>';
-                                                echo '<td>' . $price . '</td>';
-                                                echo '<td>' . $row['quantity'] . '</td>';
-                                                echo '<td>' . $amount . '</td>';
-                                                $id = $row['orderdetail_ID'];
+                                                $counter = 1;
+                                                while ($row = mysqli_fetch_array($result)) {
+                                                    $price = number_format($row['price'], 2);
+                                                    $amount = number_format($row['amount'], 2);
+                                                    echo '<tr>';
+                                                    echo '<th scope="row">' . $counter . '</th>';
+                                                    echo '<td style="display:none;">' . $row['orderdetail_ID'] . '</td>';
+                                                    echo '<td>' . $row['Name'] . '</td>';
+                                                    echo '<td>' . $price . '</td>';
+                                                    echo '<td>' . $row['quantity'] . '</td>';
+                                                    echo '<td>' . $amount . '</td>';
+                                                    $id = $row['orderdetail_ID'];
 
-                                                echo '<td><button type="button" class="btn btn-outline-primary editbtn" data-toggle="modal" data-target="#edit"><i class="fas fa-arrows-alt-v"></i></button></td>';
-                                                echo '<td><a href="includes/deleteod1.php?id=' . $id . '&orderid=' . $orderid . '">
+                                                    echo '<td><button type="button" class="btn btn-outline-primary editbtn" data-toggle="modal" data-target="#edit"><i class="fas fa-arrows-alt-v"></i></button></td>';
+                                                    echo '<td><a href="includes/deleteod1.php?id=' . $id . '&orderid=' . $orderid . '">
                                             <button type="button" class="btn btn-outline-danger delete" style="border: solid 2px;"><i class="fa fa-close"></i></button></td></a></td>';
-                                                echo '<tr>';
-                                                $counter++;
-                                            }
-                                            ?>
+                                                    echo '<tr>';
+                                                    $counter++;
+                                                }
+                                                ?>
 
-                                        </tbody>
-                                    </table>
-                                </div>
+                                            </tbody>
+                                        </table>
+                                    </div>
 
-                                <br /> <br />
-                                <form action="includes/updateo.php" method="post">
+                                    <br /> <br />
+
                                     <div class="col-md-6 col-xs-12 pull pull-right">
 
 
@@ -277,18 +277,18 @@
                                         </div>
 
                                     </div>
+                                </div>
                             </div>
                         </div>
+                        <!-- col-md-12 -->
                     </div>
-                    <!-- col-md-12 -->
-                </div>
-                <br><br>
-                <div style="display: flex; align-items: center; justify-content: center;">
-                    <div style="margin:0 auto; display:block;">
-                        <button type="submit" name="update" id="update" class="btn btn-primary" style="left: 50; margin-right: 50px;">Save Changes</button>
-                        <a onclick="return confirm('Are you sure you want to leave without saving?')" href="history.php" class="btn btn-warning" id="cancel">Cancel</a>
+                    <br><br>
+                    <div style="display: flex; align-items: center; justify-content: center;">
+                        <div style="margin:0 auto; display:block;">
+                            <button type="submit" name="update" id="update" class="btn btn-primary" style="left: 50; margin-right: 50px;">Save Changes</button>
+                            <a onclick="return confirm('Are you sure you want to leave without saving?')" href="history.php" class="btn btn-warning" id="cancel">Cancel</a>
+                        </div>
                     </div>
-                </div>
                 </form>
 
                 <!-- /.box-body -->
