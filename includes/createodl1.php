@@ -20,7 +20,7 @@ if (isset($_POST["save"])) {
 
     if (mysqli_num_rows($result) > 0) {
         echo '<script>alert("Item has already existed in the list.");
-    window.location.href="../Order.php";
+    window.location.href="../edito.php?orderid='.$orderid.'";
     </script>';
     } else {
 
