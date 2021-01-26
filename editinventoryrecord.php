@@ -7,6 +7,9 @@
 
 <body>
     <script src="javascripts/editinventoryrecords.js"></script>
+    <?php include "sidebar.php"; ?>
+    <?php include "includes/conn.php" ?>
+    <?php include "includes/conversionfunctions.php"; ?>
     
     <div class="mainbody">
         <div class="topbar">
@@ -16,9 +19,7 @@
         <center>
         <?php
         if (isset($_POST['year']) && isset($_POST['month'])){ ?>
-            <?php include "sidebar.php"; ?>
-            <?php include "includes/conn.php" ?>
-            <?php include "includes/conversionfunctions.php"; ?>
+            
 
             <p class="recordtitle">Inventory Record of <?php numToMonth($_POST['month']) ; echo " "; echo $_POST['year'];?></p>
             <button class="btn" onclick="goBack()">Back to record</button>
