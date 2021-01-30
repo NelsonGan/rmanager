@@ -15,9 +15,6 @@
         }
         require "includes/conn.php";
         $id = $_GET['staffid'];
-        $today = date("Y-m-d");
-        $lastyear = date("Y", strtotime("$today -1 months"));
-        $lastmonth = date("m", strtotime("$today -1 months"));
         $totalhour = 0;
     ?>
     
@@ -30,14 +27,16 @@
             <br>
             <form action="attendance.php?staffid=<?php echo $id?>" method="POST">
                 Select Date:
-                <input type="month" style="width: 200px; height: 30px;" id="selectdate" name="selectdate" onchange=submit(); value="<?php if (isset($_POST['selectdate']))echo $_POST['selectdate'];?>">
+                <input type="month" style="width: 200px; height: 30px;" id="selectdate" name="selectdate" onchange=submit(); 
+                value="<?php if (isset($_POST['selectdate']))echo $_POST['selectdate'];?>">
             </form>
 
             <?php 
             if (isset($_POST['selectdate']))
             {
                 $selecteddate = explode ("-", $_POST['selectdate']);
-                $sql = "SELECT *, ROUND(TIME_TO_SEC(TIMEDIFF(clockout, clockin))/3600,2) AS working_hour FROM attendance WHERE Staff_ID = '$id' AND MONTH(workdate) ='$selecteddate[1]' AND YEAR(workdate) = '$selecteddate[0]'";
+                $sql = "SELECT *, ROUND(TIME_TO_SEC(TIMEDIFF(clockout, clockin))/3600,2) AS working_hour FROM attendance 
+                WHERE Staff_ID = '$id' AND MONTH(workdate) ='$selecteddate[1]' AND YEAR(workdate) = '$selecteddate[0]'";
                 $results = mysqli_query($con, $sql);
                 if (mysqli_num_rows($results) > 0) 
                 {
