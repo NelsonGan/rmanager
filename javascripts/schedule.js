@@ -33,12 +33,12 @@ var toRemove = [];
 var j = 0;
 function editStaffCommand(id){
     if (document.getElementById(id).checked){
-        //alert(id + "checked");
+        alert(id + "checked");
         toAdd[i] = id;
         document.getElementById("toAdd").value = toAdd.toString();
         i++;
     } else {
-        //alert(id + "unchecked");
+        alert(id + "unchecked");
         toRemove[j] = id;
         document.getElementById("toRemove").value = toRemove.toString();
         j++;

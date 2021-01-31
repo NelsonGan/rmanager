@@ -4,6 +4,9 @@ if (isset($_POST['add'])){
     $toadd = explode(",", $_POST['toAdd']);
     $toremove = explode(",", $_POST['toRemove']);
 
+    echo json_encode($toadd);
+    echo json_encode($toremove);
+
     $numtoadd = count($toadd);
     $numtoremove = count($toremove);
 
@@ -32,6 +35,6 @@ if (isset($_POST['add'])){
         }
     }
 
-    header("Location: ../schedule.php");
+    //header("Location: ../schedule.php");
 }
 
