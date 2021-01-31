@@ -101,7 +101,7 @@
     <div onclick="closeModal()" id="modalwrapper"></div>
 
     <div id="locationmodal">
-        <form action="includes/addlocation.php" method="POST">
+        <form action="includes/addlocation.php" method="POST" autocomplete="off">
             <center>
             <p class="modaltitle">Add New Location</p>
             <input type="text" name="locationname" class="inputtext" required> <br>
@@ -111,7 +111,7 @@
     </div>
 
     <div id="suppliermodal">
-        <form action="includes/addsupplier.php" method="POST">
+        <form action="includes/addsupplier.php" method="POST" autocomplete="off">
             <center>
             <p class="modaltitle">Add New Supplier</p>
 

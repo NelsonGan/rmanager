@@ -29,7 +29,6 @@ function filterFunctionDrop(){
         for (i = 1; i < numRows; i++) {
             txtValue = document.getElementById("itemlist").rows[i].cells[2].innerHTML;
             if (txtValue.toUpperCase() == filter) {
-                //document.getElementById("itemlist").rows[i].style.display = "";
                 checkFilter(i);
             } else {
                 document.getElementById("itemlist").rows[i].style.display = "none";

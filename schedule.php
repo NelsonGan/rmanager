@@ -81,9 +81,7 @@
                 <?php
                 $days = array("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday");
                 for ($i = 0; $i < 7; $i++){
-                    
-                    $day = $days[$i]; ?>
-                    
+                    $day = $days[$i]; ?>    
                     <td id="<?php echo $day; ?>" class="day">
                         <?php 
                         $sql = "SELECT * FROM shifts WHERE shiftday = '".$day."'";
@@ -112,10 +110,9 @@
                         <?php } else { ?>
                             <p style="margin-top: 20px">-no shifts-</p>
                         <?php } ?>                
-                        </td>
+                    </td>
                 <?php }
-                ?>
-                    
+                ?> 
                 </tr>
             </table>
         </center>
@@ -169,17 +166,14 @@
                         $sql = "SELECT * FROM schedule WHERE Staff_ID = ".$staff['Staff_ID']." AND Shift_ID = ".$_GET['shift'];
                         $result2 = mysqli_query($con, $sql);
                         if (mysqli_num_rows($result2) > 0){ ?>
-                            <input id="<?php echo $staff['Staff_ID'] ?>" type="checkbox" onchange="editStaffCommand(this.id)" checked>
+                            <input id="st<?php echo $staff['Staff_ID'] ?>" type="checkbox" onclick="editStaffCommand(this.id)" checked>
                         <?php } else { ?>
-                            <input id="<?php echo $staff['Staff_ID'] ?>" type="checkbox" onchange="editStaffCommand(this.id)">
+                            <input id="st<?php echo $staff['Staff_ID'] ?>" type="checkbox" onclick="editStaffCommand(this.id)">
                         <?php } ?>
                         <label for="<?php echo $staff['Staff_ID'] ?>"><?php echo $staff['name'] ?></label>
                         <br>
                     <?php } ?>
-                    
                 </div>
-                
-                
                 <button type="submit" class="submitbutton" name="add">Confirm</button>
                 </center>
             </form>
