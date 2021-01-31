@@ -115,7 +115,7 @@
                 }
             else
             {   
-                echo "<p style='color:red; margin: 20px; font-size: 20px;'>No result found!</p>";
+                echo "<p style='color:red; margin: 20px; font-size: 21px;'>No result found!</p>";
             }?>
         </div>
         <?php
