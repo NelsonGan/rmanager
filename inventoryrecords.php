@@ -99,12 +99,18 @@
                     <?php
                     $sql = "SELECT * FROM locations";
                     $result = mysqli_query($con, $sql);
+                    $count = 0;
                     while ($row = mysqli_fetch_assoc($result)){
                         //We check if the location has any items before displaying the div
                         $sql = "SELECT inventory.Inventory_ID, itemname, unit, price, amount FROM log_details LEFT JOIN inventory ON log_details.Inventory_ID = inventory.Inventory_ID WHERE log_details.Log_ID = ".$inventoryrecord['Log_ID']." AND location = ".$row['Location_ID'].";";
                         $items = mysqli_query($con, $sql);
                         if (mysqli_num_rows($items) > 0){
+                            if ($count != 0) {
+                                echo '<div class="page-break"></div>';
+                            }
+                            $count += 1;
                         ?>
+                            
                             <div>
                                 <p class="locationtitle"><?php echo $row['name'] ?></p>
                                 <hr class="line">

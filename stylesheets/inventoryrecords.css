@@ -1,24 +1,32 @@
 @media print {
     body * {
       visibility: hidden;
+      overflow-y: visible;
     }
+
     #section-to-print, #section-to-print * {
       visibility: visible;
     }
 
     #section-to-print {
-      position: fixed;
-      left: 50%;
-      top: 3%;
-      transform: translate(-50%, 0);
-      width: 130%;
+      position: static;
+      transform: translate(-22%, 0%);
+      width: 150%;
       margin: 0px;
+      display: block;
+      margin-top: -200px;
+    }
+
+    .page-break  { display:block; page-break-before:always; }
+
+    .itemtable{
+        display: block;
     }
 
     #section-to-print .btn {
         visibility:hidden;
     }
-
+    
     #section-to-print .recordtitle {
         margin-bottom: -50px;
     }
