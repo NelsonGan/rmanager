@@ -35,6 +35,6 @@ if (isset($_POST['add'])){
         }
     }
 
-    //header("Location: ../schedule.php");
+    header("Location: ../schedule.php");
 }
 
