@@ -15,6 +15,7 @@
       <div class="input-data">
         <input type="password" name="pwd" required placeholder= "Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'" required>
       </div>
+      <?php if (isset($_GET['error'])) {echo "<p class='error-message'>You've entered the wrong password! Please try again.</p>";}?>
     </div>
     <center>
       <div class="login-btn">
