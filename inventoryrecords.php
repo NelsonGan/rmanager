@@ -67,7 +67,7 @@
             <div id="section-to-print">
             <?php
             if (isset($_POST['year']) && isset($_POST['month'])){
-                if ($_POST['month'] != 'null') { ?>
+                if ($_POST['month'] != 'null' && $_POST['year'] != 'null') { ?>
                     
                     <script>window.checkMonth('<?php echo $_POST['month']; ?>');</script>
                     <p class="recordtitle">Inventory Record of <?php echo $_POST['month']; echo " "; echo $_POST['year'];?></p>
