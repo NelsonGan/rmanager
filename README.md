@@ -12,7 +12,7 @@ RManager is a restaurant management system that is equipped with the folowing fe
 
 ## Installation ##
 1. Install [WAMP](https://www.wampserver.com/en/download-wampserver-64bits/)
-2. Import [rmanager.sql]https://github.com/NelsonGan/RManager/blob/main/database/rmanager.sql on phpMyAdmin
+2. Import [rmanager.sql](https://github.com/NelsonGan/RManager/blob/main/database/rmanager.sql) on phpMyAdmin
 3. Launch the web application in localhost/RManager/login.php
 
 ## Screenshots ##
