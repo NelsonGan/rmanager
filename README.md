@@ -17,4 +17,28 @@ RManager is a restaurant management system that is equipped with the folowing fe
 
 ## Screenshots ##
 ### Login Page ###
-![picture alt](https://prnt.sc/zhdzol)
+![image](https://raw.githubusercontent.com/NelsonGan/RManager/main/images/login.png)
+
+### Attendance ###
+![image](https://raw.githubusercontent.com/NelsonGan/RManager/main/images/attendance.png)
+
+### Staff Management ###
+![image](https://raw.githubusercontent.com/NelsonGan/RManager/main/images/stafflist.png)
+
+### Menu Management ###
+![image](https://raw.githubusercontent.com/NelsonGan/RManager/main/images/menu.png)
+
+### Inventory Management ###
+![image](https://raw.githubusercontent.com/NelsonGan/RManager/main/images/inventory.png)
+
+### Ordering ###
+![image](https://raw.githubusercontent.com/NelsonGan/RManager/main/images/order.png)
+
+### Order Lists ###
+![image](https://raw.githubusercontent.com/NelsonGan/RManager/main/images/orderlist.png)
+
+### Staff Workshifts ####
+![image](https://raw.githubusercontent.com/NelsonGan/RManager/main/images/schedule.png)
+
+### Sales Report ###
+![image](https://raw.githubusercontent.com/NelsonGan/RManager/main/images/report.png)
