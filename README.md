@@ -17,4 +17,4 @@ RManager is a restaurant management system that is equipped with the folowing fe
 
 ## Screenshots ##
 ### Login Page ###
-<img src="https://prnt.sc/zhdzol">></img>
+![picture alt](https://prnt.sc/zhdzol)
