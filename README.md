@@ -2,7 +2,7 @@
 
 ## Description ##
 RManager is a restaurant management system that is equipped with the folowing features:
-* Point Of Sale (POS)
+* Point of Sale (POS)
 * Sales Report Generation
 * Staff Management
 * Inventory Management
