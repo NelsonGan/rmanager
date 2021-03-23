@@ -16,7 +16,6 @@
             <span>Inventory Records</span>
         </div>
 
-        <!-- Write your code here! -->
         <center>
             <form action="inventoryrecords.php" method="POST">
                 <p class="title">YEAR:</p>
